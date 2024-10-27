@@ -1,0 +1,123 @@
+/*! Estilo para el cuerpo de la página */
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover; /* Cubre todo el área */
+    background-position: center center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita la repetición de la imagen */
+    animation: zoom 15s infinite alternate; /* Animación de zoom en el fondo */
+    overflow: hidden; /* Evita el scroll de la página */
+  
+  }
+  
+  /*! Animación para el zoom del fondo */
+  @keyframes zoom {
+    0% {
+        background-size: 100vw 100vh; /* Tamaño inicial */
+    }
+    100% {
+        background-size: 110vw 110vh; /* Tamaño final */
+    }
+  }
+  
+  /*! Contenedor principal */
+  .container {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px; /* Espaciado interno */
+    max-height: 100vh; /* Mantiene la altura máxima */
+    overflow-y: auto; /* Permite scroll vertical */
+    position: relative; /* Necesario para el scroll interno */
+  }
+  
+  /*! Estilo para las tarjetas transparentes */
+  .transparent-card {
+    max-width: 100%; /* Ancho máximo */
+    margin-bottom: 20px; /* Espacio inferior */
+    background-color: rgba(255, 255, 255, 0.674); /* Fondo semitransparente */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Borde sutil */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+  }
+  
+  /*! Estilo para campos de formulario */
+  .form-control {
+    border-radius: 4px; /* Bordes redondeados */
+  }
+  
+  /*! Efecto de enfoque en campos de formulario */
+  .form-control:focus {
+    box-shadow: 0 0 5px 3px rgba(34, 181, 78, 0.568); /* Sombra verde al enfocar */
+  }
+  
+  /*! Ajustes responsivos */
+  @media (max-width: 768px) {
+    .transparent-card {
+        margin-bottom: 15px; /* Espacio inferior reducido */
+    }
+    .btn {
+        min-width: 100%; /* Botones ocupan todo el ancho en móviles */
+    }
+    h1, h4, p {
+        font-size: 1.2rem; /* Ajuste de tamaño de fuente en pantallas pequeñas */
+    }
+  }
+  
+  /*! Margen personalizado para el contenedor */
+  .custom-margin {
+    margin-top: 7.5rem; /* Valor por defecto para pantallas grandes */
+  }
+  
+  /* Ajustes de margen responsivos */
+  @media (max-width: 768px) { /* Para pantallas pequeñas */
+    .custom-margin {
+        margin-top: 3rem; /* Ajusta el margen para pantallas pequeñas */
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 992px) { /* Para pantallas medianas */
+    .custom-margin {
+        margin-top: 5rem; /* Ajusta el margen para pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 576px) { /* Para dispositivos muy pequeños */
+    .container {
+        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+    }
+    
+    h1 {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño para el título */
+    }
+  
+    .card-body p {
+        font-size: 1rem; /* Tamaño de fuente más pequeño para párrafos */
+    }
+  }
+  
+  /* Estilo para íconos de redes sociales */
+  .social-icons {
+    display: flex; /* Utiliza flexbox para el layout */
+    flex-wrap: wrap; /* Permite que los íconos se muevan a nuevas líneas si es necesario */
+    justify-content: center; /* Centra los íconos horizontalmente */
+    padding: 0; /* Sin padding adicional */
+  }
+  
+  .social-icon {
+    width: 40px; /* Ajusta el tamaño de los íconos */
+    height: 40px; /* Ajusta el tamaño de los íconos */
+    margin: 10px; /* Espacio entre los íconos */
+  }
+  
+  /* Ajustes de tamaño de íconos en pantallas pequeñas */
+  @media (max-width: 576px) {
+    .social-icon {
+        width: 30px; /* Tamaño más pequeño en pantallas pequeñas */
+        height: 30px; /* Tamaño más pequeño en pantallas pequeñas */
+    }
+  }
+  

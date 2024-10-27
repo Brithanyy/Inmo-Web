@@ -1,0 +1,46 @@
+
+.custom-logo {
+    width: 70px; /* Aumenta el tamaño según necesites */
+    height: 70px;
+    object-fit: cover; /* Esto asegura que la imagen mantenga su forma dentro del contenedor */
+}
+.custom-color {
+    background-color: #0C8346;
+    margin: 0; 
+    padding: 0; 
+}
+/*! Estilos para darle unos efectos al nav */
+.nav-link {
+    position: relative; /* Necesario para el pseudo-elemento */
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0; /* Inicialmente no visible */
+    height: 2px; /* Altura de la línea */
+    background: #ffffff; /* Color de la línea (puedes cambiarlo) */
+    transition: width 0.3s; /* Transición suave */
+    position: absolute;
+    bottom: -3px; /* Espaciado entre el texto y la línea */
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+    width: 100%; /* Expande la línea al 100% en hover */
+    left: 0; /* Alineado a la izquierda */
+}
+/*!Estilos cuando colapsa el nav-bar */
+.navbar-toggler {
+    border-color: transparent; /* Opcional: quitar el borde del botón de hamburguesa */
+    color: transparent;
+}
+.navbar-toggler-icon {
+    background-color: white; /* Cambia esto al color que desees */
+}
+
+.redes-sociales {
+    display: flex;
+    height: 70px;
+    width: 270px;
+}
