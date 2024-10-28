@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('https://images.unsplash.com/photo-1505843513577-22bb7d21e455?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover; /* Cubre todo el área */
+    background-size: auto;
     background-position: center center; /* Centra la imagen de fondo */
     background-repeat: no-repeat; /* Evita la repetición de la imagen */
     animation: zoom 15s infinite alternate; /* Animación de zoom en el fondo */
@@ -15,10 +15,10 @@ body {
   /*! Animación para el zoom del fondo */
   @keyframes zoom {
     0% {
-        background-size: 100vw 100vh; /* Tamaño inicial */
+        background-size: 100% 100%; /* Tamaño inicial */
     }
     100% {
-        background-size: 110vw 110vh; /* Tamaño final */
+        background-size: 110% 110%; /* Tamaño final */
     }
   }
   
