@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PropertyListComponent } from './property-list.component';
+import { ManagementHomeComponent } from './management-home.component';
 
-describe('PropertyListComponent', () => {
-  let component: PropertyListComponent;
-  let fixture: ComponentFixture<PropertyListComponent>;
+describe('ManagementHomeComponent', () => {
+  let component: ManagementHomeComponent;
+  let fixture: ComponentFixture<ManagementHomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PropertyListComponent]
+      imports: [ManagementHomeComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PropertyListComponent);
+    fixture = TestBed.createComponent(ManagementHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,13 +1,38 @@
-import { Base_Property } from "./Base_Property.model";
+import { Review } from "./Review.model";
 
-export interface Land extends Base_Property {
-    tipo_propiedad: 'Terreno';
+export interface Land {
+
+    //*Características básicas que comparten todos los tipos de propiedades
+    id?: number;
+    idUsuario?: number;
+    tipoPropiedad: 'Terreno';
+    tituloPropiedad: string;
+    descripcionPropiedad: string;
+    precioPropiedad: number;
+    superficieCubierta: string; 
+    superficieTotal: string;
+    direccionPropiedad: {
+        pais: string;
+        provincia: string;
+        localidad: string;
+        nombre_calle: string;
+        numero_calle: string;
+    };
+    ubicacionPropiedad: {
+        lat: number;
+        lng: number;
+    };
+    imagenes: string[];
+    reseñas?: Review[];
+    valoracionPromedio?: number;
+
+    //*Características específicas del tipo: Terreno 
     usoPermitido?: string[]; // Residencial, Industrial, etc.
     nivelacion?: boolean;
-    servicio_luz?: boolean;
-    servicio_gas?: boolean;
-    servicio_agua?: boolean;
-    servicio_cloaca?: boolean;
-    servicio_internet?: boolean;
-    esta_loteado?: boolean;
+    servicioLuz?: boolean;
+    servicioGas?: boolean;
+    servicioAgua?: boolean;
+    servicioCloaca?: boolean;
+    servicioInternet?: boolean;
+    estaLoteado?: boolean;
 }

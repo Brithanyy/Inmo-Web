@@ -1,7 +1,7 @@
 export interface Review {
 
     id?: number;
-    id_propiedad: number;
+    id_propiedad?: number;
     usuario: string;
     comentario: string;
     estrellas: number; //De 1 a 5
