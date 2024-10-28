@@ -1,11 +1,11 @@
 
 .custom-logo {
-    width: 70px; /* Aumenta el tamaño según necesites */
-    height: 70px;
+    width: 80px; /* Aumenta el tamaño según necesites */
+    height: 80px;
     object-fit: cover; /* Esto asegura que la imagen mantenga su forma dentro del contenedor */
 }
 .custom-color {
-    background-color: #0C8346;
+    background-color: #007200;
     margin: 0; 
     padding: 0; 
 }

@@ -9,7 +9,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  img : string = 'https://ideogram.ai/assets/progressive-image/balanced/response/4lldEKfXSwiyDSSV5jg0rA';
+  // img : string = 'https://ideogram.ai/assets/progressive-image/balanced/response/4lldEKfXSwiyDSSV5jg0rA';
+  img : string = 'assets/IMG/LogoTipo_7.jpeg'
   whatsapp = 'https://wa.me/2235942827?text=Inmo-Web a su Servicio';
   instagram = 'https://www.instagram.com/brithany__o';
 }
