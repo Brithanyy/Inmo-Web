@@ -2,12 +2,22 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-   
+    overflow: hidden; /* Evita el scroll si la imagen se desplaza */
+}
+
+/* Define la animación */
+@keyframes zoom {
+    0% {
+        background-size: 105%; /* Al inicio, ligeramente más grande */
+    }
+    100% {
+        background-size: 100%; /* Luego, el tamaño normal */
+    }
 }
 
 .transparent-card {
-    background-color: #ffffff; /* Fondo semitransparente */
-    border: 2px solid rgba(0, 0, 0, 0.2); /*Borde sutil */
+    background-color: #ffffffb0; /* Fondo semitransparente */
+    border: 2px solid #007200; /*Borde sutil */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
     border-radius: 8px; /* Bordes redondeados */                        
     max-width: 300px;                         
@@ -34,6 +44,14 @@ html, body {
     box-shadow: 0 0 5px 3px rgba(34, 181, 78, 0.568); 
 }
 
+.button-iniciar {
+    background-color: #007200;
+    color: white;
+}
+  
+.button-iniciar:hover {
+    background-color: #006400;
+}
 
 /* Media Queries para ajustar el tamaño de la tarjeta en pantallas pequeñas */
 @media (max-width: 576px) {
