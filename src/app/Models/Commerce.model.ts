@@ -8,7 +8,7 @@ export interface Commerce {
     tipoPropiedad: 'Local';
     tituloPropiedad: string;
     descripcionPropiedad: string;
-    precioPropiedad: number;
+    precioPropiedad: string;
     superficieCubierta: string; 
     superficieTotal: string;
     direccionPropiedad: {

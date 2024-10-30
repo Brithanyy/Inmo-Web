@@ -4,18 +4,24 @@ header {
     background-position: center;
     background-attachment: fixed;
     color: #ffffff;
-    height: 600px;
+    height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 20px;
   }
+
+  h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 30px;
+  }
   
   /* Ajustes en la barra de búsqueda */
   .search-bar {
     width: 100%;
-    max-width: 800px; /* Limitar el ancho máximo */
+    max-width: 1200px; /* Limitar el ancho máximo */
     margin: 0 auto;
   }
   
@@ -58,5 +64,11 @@ header {
     }
     .search-bar {
       width: 90%;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 30px;
     }
   }

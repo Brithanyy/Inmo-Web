@@ -8,15 +8,15 @@ export interface Land {
     tipoPropiedad: 'Terreno';
     tituloPropiedad: string;
     descripcionPropiedad: string;
-    precioPropiedad: number;
+    precioPropiedad: string;
     superficieCubierta: string; 
     superficieTotal: string;
     direccionPropiedad: {
         pais: string;
         provincia: string;
         localidad: string;
-        nombre_calle: string;
-        numero_calle: string;
+        nombre_calle?: string;
+        numero_calle?: string;
     };
     ubicacionPropiedad: {
         lat: number;

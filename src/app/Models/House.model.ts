@@ -8,7 +8,7 @@ export interface House {
     tipoPropiedad: 'Casa';
     tituloPropiedad: string;
     descripcionPropiedad: string;
-    precioPropiedad: number;
+    precioPropiedad: string;
     superficieCubierta: string; 
     superficieTotal: string;
     direccionPropiedad: {
@@ -34,5 +34,4 @@ export interface House {
     jardin?: boolean;
     piscina?: boolean;
     cochera?: boolean;
-    capacidad_cochera?: number;
 }
