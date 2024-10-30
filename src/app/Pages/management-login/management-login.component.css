@@ -1,0 +1,83 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.transparent-card {
+    background-color: #ffffff; /* Fondo semitransparente */
+    border: 2px solid rgba(0, 0, 0, 0.2); /*Borde sutil */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 8px; /* Bordes redondeados */                        
+    max-width: 300px;                         
+    width: 90%;  /* Cambia a 90% para ser más responsivo */
+    padding: 20px;
+    margin: 10rem auto; /* Centra verticalmente y horizontalmente */
+    margin-bottom: 20rem;
+}
+
+.login-img {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 5px 3px rgba(34, 181, 78, 0.568); 
+}
+
+
+
+.botonPass:focus {
+    box-shadow: 0 0 5px 3px rgba(34, 181, 78, 0.568); 
+}
+
+
+/* Media Queries para ajustar el tamaño de la tarjeta en pantallas pequeñas */
+@media (max-width: 576px) {
+    .transparent-card {
+        width: 95%; /* Ancho máximo en dispositivos pequeños */
+    }
+
+    .login-img {
+        width: 120px; /* Ajusta el tamaño de la imagen en pantallas pequeñas */
+        height: 120px;
+    }
+}
+.form-control {
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Color de borde del input */
+    border-radius: 0.375rem; /* Bordes redondeados en todos los lados */
+}
+
+.botonPass {
+    border: 1px solid rgba(0, 0, 0, 0.2); /* El mismo color de borde que el input */
+    border-radius: 0 0.375rem 0.375rem 0; /* Bordes redondeados solo en la derecha */
+    background-color: #fff; /* Asegura que el fondo del botón sea blanco */
+    margin-left: -1px; /* Evita el espacio entre el input y el botón */
+    z-index: 1; /* Asegura que el botón esté sobre el input */
+}
+
+/* Estilo para el borde del input cuando está enfocado */
+.form-control:focus {
+    border-color: rgba(34, 181, 78, 0.8); /* Color del borde al enfocar (más oscuro si lo deseas) */
+    box-shadow: 0 0 5px 3px rgba(34, 181, 78, 0.568); /* Sombra al enfocar */
+}
+
+.botonPass:focus {
+    border-color: rgba(34, 181, 78, 0.8); /* Asegúrate que también cambie el borde en foco si deseas */
+    box-shadow: 0 0 5px 3px rgba(34, 181, 78, 0.568);
+}
+
+/* Media Queries para ajustar el tamaño de la tarjeta en pantallas pequeñas */
+@media (max-width: 576px) {
+    .transparent-card {
+        width: 95%; /* Ancho máximo en dispositivos pequeños */
+    }
+
+    .login-img {
+        width: 120px; /* Ajusta el tamaño de la imagen en pantallas pequeñas */
+        height: 120px;
+    }
+}
