@@ -1,0 +1,62 @@
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/IMG/header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Ajustes en la barra de búsqueda */
+  .search-bar {
+    width: 100%;
+    max-width: 800px; /* Limitar el ancho máximo */
+    margin: 0 auto;
+  }
+  
+  .search-bar .form-control,
+  .search-bar .form-select,
+  .search-bar .btn-custom {
+    font-size: 1.1em; /* Ajuste de fuente para evitar corte */
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Ajuste del alto del input para evitar corte */
+  .search-bar .form-control {
+    height: auto; /* Ajusta el alto automáticamente */
+  }
+  
+  .search-bar .form-select {
+    height: auto; /* Evita que se corte el placeholder */
+    margin-right: 5px;
+  }
+  
+  /* Botón personalizado */
+  .search-bar .btn-custom {
+    background-color: #007200;
+    color: #ffffff;
+  }
+  
+  /* Efecto de sombreado verde al enfocar input y select */
+  .search-bar .form-control:focus,
+  .search-bar .form-select:focus {
+    outline: none;
+    border: 2px solid #007200;
+    box-shadow: 0 0 8px rgba(0, 114, 0, 0.5);
+  }
+  
+  /* Mejor ajuste para móviles */
+  @media (max-width: 768px) {
+    header {
+      height: 600px;
+      padding: 40px 20px;
+    }
+    .search-bar {
+      width: 90%;
+    }
+  }
