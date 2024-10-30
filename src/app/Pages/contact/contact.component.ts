@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { EmailService } from '../../Services/EmailJS/email.service.spec';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormsModule } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NavbarComponent } from "../../Components/navbar/navbar.component";
 import { FooterComponent } from "../../Components/footer/footer.component";
 
@@ -12,7 +12,8 @@ import { FooterComponent } from "../../Components/footer/footer.component";
     CommonModule,
     FormsModule,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ReactiveFormsModule
 ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
@@ -22,25 +23,39 @@ export class ContactComponent {
   instagram = 'https://www.instagram.com/brithany__o';
   empresa = 'Inmo-Web';
 
-  nombre = '';
-  correo = '';
-  mensaje = '';
 
-  constructor(private emailService: EmailService) {}
+  formulario : FormGroup;
+
+  constructor(private emailService: EmailService, private fb : FormBuilder) {
+    this.formulario = this.fb.group({
+      'nombre': ['',[Validators.required]],
+      'correo': ['',[Validators.required, Validators.email]],
+      'mensaje': ['',[Validators.required]],
+    })
+  }
+
+  get nombre() {
+    return this.formulario.get('nombre');
+  }
+  get correo() {
+    return this.formulario.get('correo');
+  }
+  get mensaje() {
+    return this.formulario.get('mensaje');
+  }
 
   enviarFormulario() {
     const formData = {
-      name : this.nombre,
-      email : this.correo,
-      message: this.mensaje
+      name : this.nombre?.value,
+      email : this.correo?.value,
+      message: this.mensaje?.value
     }
   
   this.emailService.sendEmail(formData)
   .then(() => {
     // Limpiar el formulario o mostrar un mensaje de éxito
-    this.nombre = '';
-    this.correo = '';
-    this.mensaje = '';
+    console.log("Consulta enviada con exito.");
+    this.formulario.reset();
   })
   .catch(err => {
     // Manejar el error
