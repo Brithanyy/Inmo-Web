@@ -14,19 +14,31 @@
                 <div class="card-body">
                     <h2 class="card-title text-center fw-bold">¿En qué podemos ayudarte?</h2>
                     <p class="text-center fs-5">Dejanos tu consulta y nos contactaremos a la brevedad.</p>
-                    <form (ngSubmit)="enviarFormulario()">
+                    <form (ngSubmit)="enviarFormulario()" [formGroup]="formulario">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control custom-focus" id="nombre" placeholder="Nombre" [(ngModel)]="nombre" name="nombre">
+                            <input type="text" class="form-control custom-focus" id="nombre" placeholder="Nombre" formControlName = "nombre">
                         </div>
+                        <div class="alert alert-danger" role="alert" [hidden]="nombre?.valid || !nombre?.touched">
+                            El nombre no debe de quedar vacío
+                          </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control custom-focus" id="email" placeholder="Email" [(ngModel)]="correo" name="correo">
+                            <label class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control custom-focus" placeholder="Email" formControlName = "correo">
                         </div>
+                        <div class="alert alert-danger" role="alert" [hidden]="correo?.valid || !correo?.hasError('required') || !correo?.touched">
+                            El correo no debe de quedar vacío
+                          </div>
+                          <div class="alert alert-danger" role="alert" [hidden]="!correo?.hasError('email') || correo?.hasError('required') || !correo?.touched">
+                            Por favor, ingresa un correo electrónico válido en el formato: usuario&#64;dominio.com
+                          </div>
                         <div class="mb-3">
-                            <label for="mensaje" class="form-label">Mensaje</label>
-                            <textarea class="form-control custom-focus" id="mensaje" rows="3" placeholder="Deje aquí su consulta" [(ngModel)]="mensaje" name="mensaje"></textarea>
+                            <label class="form-label">Mensaje</label>
+                            <textarea class="form-control custom-focus" rows="3" placeholder="Deje aquí su consulta" formControlName = "mensaje"></textarea>
                         </div>
+                        <div class="alert alert-danger" role="alert" [hidden]="mensaje?.valid || !mensaje?.touched">
+                            La consulta no debe de quedar vacía
+                          </div>
                         <div class="mt-5 d-flex justify-content-center">
                             <button class="btn btn-success w-100" type="submit">Enviar</button>
                         </div>
