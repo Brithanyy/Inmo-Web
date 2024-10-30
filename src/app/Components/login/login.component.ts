@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-login',
   standalone: true,
   imports: [],
-  templateUrl: './management-login.component.html',
-  styleUrl: './management-login.component.css'
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css'
 })
 export class LoginComponent {
 
