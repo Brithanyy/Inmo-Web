@@ -1,0 +1,275 @@
+{
+    "House": [
+        {
+            "id": 1,
+            "idUsuario": 1,
+            "tipoPropiedad": "Casa",
+            "tituloPropiedad": "Importante residencia de patrimonio histórico “Villa Blaquier”, en estratégica ubicación",
+            "descripcionPropiedad": "En estratégica ubicación, a cien metros de la costa, se encuentra esta importante residencia de estilo inglés, patrimonio histórico Nacional “Villa Blaquier”, emplazada sobre dos lotes contiguos que suman 2.620 m2 de superficie total, con 901 m2 cubiertos. De arquitectura con lineamientos del pintoresquismo inglés, conservando su estilo señorial y con su jardín rodeado por un muro perimetral en piedra, esta importante residencia se desarrolla en dos niveles principales, más sótano y entretecho. Al ingresar en planta baja posee, amplio hall y recepción con importante escalera de roble, sala de lectura, sector de estar y comedor de generosas dimensiones, ambos con hogar, pisos de roble de Eslavonia y cielorrasos con detalles decorativos. Siguiendo en la misma planta, cuenta con luminosa cocina, comedor diario y antecocina. Mientras que en planta alta, posee comunicados entre sí por importante hall distribuidor con arcos de medio punto; siete dormitorios, cuatros baños, dos dependencias de servicio y terraza. Por último, en el sótano posee cuatro dormitorios y en el entretecho cuenta con un espacio de servicios e instalaciones. Villa Blaquier (Historia) Es una de las primeras casonas ubicadas en la Loma Stella Maris, propiedad de Marta Unzué y Adolfo Blaquier. Su arquitectura sigue los lineamientos del pintoresquismo inglés construido por Adán Gandolfi en 1905, con el proyecto de los arquitectos ingleses Walter Basset-Smith y Collcutt. Tuvo varias modificaciones y ampliaciones, en 1914 llevada a cabo por los constructores Mannelli y Lemmi, otra en 1920 por los mismos constructores y proyectistas y en 1934 por el constructor Septimio Polidoro. Las cubiertas originalmente de chapas, fueron reemplazadas por tejas francesas posiblemente en la década de 1960. Uno de sus recursos formales y materiales es la combinación de revoque rústico con falsos encadenados y dinteles en ladrillo.",
+            "precioPropiedad": "3.500.000",
+            "superficieCubierta": "901.00 m²",
+            "superficieTotal": "2620.00 m²",
+            "direccionPropiedad": {
+                "pais": "Argentina",
+                "provincia": "Buenos Aires",
+                "localidad": "Mar del Plata",
+                "nombre_calle": "Alvear",
+                "numero_calle": "2100"
+            },
+            "ubicacionPropiedad": {
+                "lat": -38.028525871072354, 
+                "lng": -57.556245092703485
+            },
+            "imagenes": [
+                "https://www.roblescasascampos.com/wp-content/uploads/2024/07/28942019886575860202712353741904192472274539372584190742085248963969253482505-1170x785.jpg",
+                "https://www.roblescasascampos.com/wp-content/uploads/2024/07/63829724088677767858499655831209168878812031663451820820132715959600919466254-592x444.jpg",
+                "https://www.roblescasascampos.com/wp-content/uploads/2024/07/91761962737041493768990403110280830171902653493495842738190951146457647390267-1170x785.jpg"
+            ],
+            "reseñas": [],
+            "valoracionPromedio": 0,
+            "cantidadAmbientes": 13,
+            "cantidadDormitorios": 11,
+            "cantidadBaños": 4
+        },
+        {
+            "id": 2,
+            "idUsuario": 1,
+            "tipoPropiedad": "Casa",
+            "tituloPropiedad": "Importante residencia de categoría en esquina del barrio Los Troncos.",
+            "descripcionPropiedad": "En el inmejorable entorno del exclusivo y tradicional barrio Los Troncos, sobre lote en esquina de 1.005 m2, con frentes de 33,30 mts, se encuentra esta importante residencia de 687 m2. Con ingreso sobre calle Mendoza, la propiedad se desarrolla en dos plantas, retirada del frente con reja y parque perimetral. Al ingresar, en planta baja posee hall de acceso, luminoso estar, amplio comedor principal, cocina de generosas dimensiones con isla central, sala de máquinas, lavadero y family. Además, en la misma planta, posee cómodo dormitorio en suite. Luego en subsuelo cuenta con amplia cava con sector de estar. Ya en planta alta, posee cuatro cómodos dormitorios en suite, el principal con vestidor, baño con hidromasaje y balcón terraza; y los dormitorios restantes con salida a balcón corrido al frente. Además, la propiedad posee en construcción independiente, garage para dos autos con cocina, baño y sala de juegos en planta alta; trotadora para dos autos el cual se accede por calle Almafuerte mediante portón automático. Por último, cuenta con jardín, galería, espacio de fogón y piscina climatizada. Esta exclusiva residencia cuenta con detalles de estilo y confort, tales como, calefacción por losa radiante, aberturas de aluminio con DVH, aire acondicionado en todos los ambientes y cerraduras con código y huella.",
+            "precioPropiedad": "1.500.000",
+            "superficieCubierta": "687.00 m²",
+            "superficieTotal": "1005.00 m²",
+            "direccionPropiedad": {
+                "pais": "Argentina",
+                "provincia": "Buenos Aires",
+                "localidad": " ",
+                "nombre_calle": "Almafuerte & Mendoza",
+                "numero_calle": ""
+            },
+            "ubicacionPropiedad": {
+                "lat": -38.02563971092374,
+                "lng": -57.54583073420621
+            },
+            "imagenes": [
+                "https://www.roblescasascampos.com/wp-content/uploads/2024/09/6424537_8980428460110675653334811827279762947715580132478763069985742143017965678874-1170x785.jpg",
+                "https://www.roblescasascampos.com/wp-content/uploads/2024/09/6424537_32956693033423316746116733170844621487458223811657185461561397534035275720027-1170x785.jpg",
+                "https://www.roblescasascampos.com/wp-content/uploads/2024/09/6424537_78258559777041816372687999694508481800082484833788176692747482671983585533357-1170x785.jpg"
+
+            ],
+            "reseñas": [],
+            "valoracionPromedio": 0,
+            "cantidadAmbientes": 6,
+            "cantidadDormitorios": 5,
+            "cantidadBaños": 6
+        },
+        {
+            "id": 3,
+            "idUsuario": 1,
+            "tipoPropiedad": "Casa",
+            "tituloPropiedad": " ",
+            "descripcionPropiedad": " ",
+            "precioPropiedad": " ",
+            "superficieCubierta": " ",
+            "superficieTotal": " ",
+            "direccionPropiedad": {
+                "pais": "Argentina",
+                "provincia": "Buenos Aires",
+                "localidad": " ",
+                "nombre_calle": " ",
+                "numero_calle": " "
+            },
+            "ubicacionPropiedad": {
+                "lat": -0,
+                "lng": -0
+            },
+            "imagenes": [
+                "",
+                "",
+                ""
+            ],
+            "reseñas": [],
+            "valoracionPromedio": 0,
+            "cantidadAmbientes": 0,
+            "cantidadDormitorios": 0,
+            "cantidadBaños": 0
+        }
+    ],
+
+    "Departament": [
+        {
+            "id": 1,
+            "idUsuario": 1,
+            "tipoPropiedad": "Departamento",
+            "tituloPropiedad": "",
+            "descripcionPropiedad": "",
+            "precioPropiedad": "",
+            "superficieCubierta": "",
+            "superficieTotal": "",
+            "direccionPropiedad": {
+                "pais": "Argentina",
+                "provincia": "Buenos Aires",
+                "localidad": " ",
+                "nombre_calle": " ",
+                "numero_calle": " "
+            },
+            "ubicacionPropiedad": {
+                "lat": -0,
+                "lng": -0
+            },
+            "imagenes": [
+                "",
+                ""
+            ],
+            "reseñas": [],
+            "cantidadAmbientes": 0,
+            "cantidadDormitorios": 2,
+            "cantidadBaños": 1
+        },
+        {
+            "id": 2,
+            "idUsuario": 1,
+            "tipoPropiedad": "Departamento",
+            "tituloPropiedad": "",
+            "descripcionPropiedad": "",
+            "precioPropiedad": "",
+            "superficieCubierta": "",
+            "superficieTotal": "",
+            "direccionPropiedad": {
+                "pais": "Argentina",
+                "provincia": "Buenos Aires",
+                "localidad": " ",
+                "nombre_calle": " ",
+                "numero_calle": " "
+            },
+            "ubicacionPropiedad": {
+                "lat": -0,
+                "lng": -0
+            },
+            "imagenes": [
+                "",
+                ""
+            ],
+            "reseñas": [],
+            "valoracionPromedio": 0,
+            "cantidadAmbientes": 0,
+            "cantidadDormitorios": 2,
+            "cantidadBaños": 1
+        },
+        {
+            "id": 3,
+            "idUsuario": 1,
+            "tipoPropiedad": "Departamento",
+            "tituloPropiedad": "",
+            "descripcionPropiedad": "",
+            "precioPropiedad": "",
+            "superficieCubierta": "",
+            "superficieTotal": "",
+            "direccionPropiedad": {
+                "pais": "Argentina",
+                "provincia": "Buenos Aires",
+                "localidad": " ",
+                "nombre_calle": " ",
+                "numero_calle": " "
+            },
+            "ubicacionPropiedad": {
+                "lat": -0,
+                "lng": -0
+            },
+            "imagenes": [
+                "",
+                ""
+            ],
+            "reseñas": [],
+            "valoracionPromedio": 0,
+            "cantidadAmbientes": 0,
+            "cantidadDormitorios": 2,
+            "cantidadBaños": 1
+        }
+    ],
+
+    "Land": [
+        {
+            "id": 1,
+            "idUsuario": 1,
+            "tipoPropiedad": "Terreno",
+            "tituloPropiedad": "",
+            "descripcionPropiedad": "",
+            "precioPropiedad": "",
+            "superficieCubierta": "",
+            "superficieTotal": "",
+            "direccionPropiedad": {
+                "pais": "Argentina",
+                "provincia": "Buenos Aires",
+                "localidad": " ",
+                "nombre_calle": " ",
+                "numero_calle": " "
+            },
+            "ubicacionPropiedad": {
+                "lat": -0,
+                "lng": -0
+            },
+            "imagenes": [
+                "",
+                ""
+            ],
+            "reseñas": [],
+            "valoracionPromedio": 0
+        },
+        {
+            "id": 2,
+            "idUsuario": 1,
+            "tipoPropiedad": "Terreno",
+            "tituloPropiedad": "",
+            "descripcionPropiedad": "",
+            "precioPropiedad": "",
+            "superficieCubierta": "",
+            "superficieTotal": "",
+            "direccionPropiedad": {
+                "pais": "Argentina",
+                "provincia": "Buenos Aires",
+                "localidad": " ",
+                "nombre_calle": " ",
+                "numero_calle": " "
+            },
+            "ubicacionPropiedad": {
+                "lat": -0,
+                "lng": -0
+            },
+            "imagenes": [
+                "",
+                ""
+            ],
+            "reseñas": [],
+            "valoracionPromedio": 0
+        },
+        {
+            "id": 3,
+            "idUsuario": 1,
+            "tipoPropiedad": "Terreno",
+            "tituloPropiedad": "",
+            "descripcionPropiedad": "",
+            "precioPropiedad": "",
+            "superficieCubierta": "",
+            "superficieTotal": "",
+            "direccionPropiedad": {
+                "pais": "Argentina",
+                "provincia": "Buenos Aires",
+                "localidad": " ",
+                "nombre_calle": " ",
+                "numero_calle": " "
+            },
+            "ubicacionPropiedad": {
+                "lat": -0,
+                "lng": -0
+            },
+            "imagenes": [
+                "",
+                ""
+            ],
+            "reseñas": [],
+            "valoracionPromedio": 0
+        }
+    ]
+}
+

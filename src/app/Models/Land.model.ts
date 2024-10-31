@@ -25,14 +25,4 @@ export interface Land {
     imagenes: string[];
     reseñas?: Review[];
     valoracionPromedio?: number;
-
-    //*Características específicas del tipo: Terreno 
-    usoPermitido?: string[]; // Residencial, Industrial, etc.
-    nivelacion?: boolean;
-    servicioLuz?: boolean;
-    servicioGas?: boolean;
-    servicioAgua?: boolean;
-    servicioCloaca?: boolean;
-    servicioInternet?: boolean;
-    estaLoteado?: boolean;
 }

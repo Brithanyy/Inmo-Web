@@ -30,10 +30,4 @@ export interface Departament {
     cantidadAmbientes: number;
     cantidadDormitorios: number;
     cantidadBaños: number;
-    nroPiso: number;
-    balcon?: boolean;
-    jardin?: boolean;
-    piscina?: boolean;
-    cochera?: boolean;
-    espensas?: boolean;
 }

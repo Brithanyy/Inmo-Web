@@ -30,8 +30,4 @@ export interface House {
     cantidadAmbientes: number;
     cantidadDormitorios: number;
     cantidadBaños: number;
-    cantidadPlantas: number;
-    jardin?: boolean;
-    piscina?: boolean;
-    cochera?: boolean;
 }
