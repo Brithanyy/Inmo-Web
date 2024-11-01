@@ -1,0 +1,22 @@
+<div class="card h-100 shadow-sm" *ngIf="house">
+
+    @if(house) {
+        <img [src]="house.imagenes[0]" class="card-img-top" alt="Property Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ house.tituloPropiedad }}</h5>
+          <h5 class="card-title">{{ house.tipoPropiedad }}</h5>
+          <p class="card-text">
+            <strong>Precio:</strong> {{ house.precioPropiedad}}<br>
+            <strong>Tipo:</strong> {{ house.tipoPropiedad }}<br>
+            <strong>Superficie cubierta:</strong> {{ house.superficieCubierta }} m²<br>
+            <strong>Superficie total:</strong> {{ house.superficieTotal }} m²<br>
+            <strong>Ambientes:</strong> {{ house.cantidadAmbientes }}
+          </p>
+        </div>
+        <div class="card-footer bg-white border-top-0">
+          <button class="btn btn-primary w-100" (click)="directToDetails()">Ver detalles</button>
+        </div>
+      }
+
+</div>
+

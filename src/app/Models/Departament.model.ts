@@ -10,7 +10,7 @@ export interface Departament {
     descripcionPropiedad: string;
     precioPropiedad: string;
     superficieCubierta: string; 
-    superficieTotal: string;
+    superficieTotal?: string;
     direccionPropiedad: {
         pais: string;
         provincia: string;
