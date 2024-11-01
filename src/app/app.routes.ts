@@ -4,9 +4,9 @@ import { HomeComponent } from './Pages/home/home.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { AboutUsComponent } from './Pages/about-us/about-us.component';
 import { PropertiesComponent } from './Pages/properties/properties.component';
-import { ListHousesComponent } from './Pages/list-houses/list-houses.component';
-import { ListLandsComponent } from './Pages/list-lands/list-lands.component';
-import { ListDepartamentsComponent } from './Pages/list-departaments/list-departaments.component';
+import { DepartamentsListComponent } from './Pages/departaments-list/departaments-list.component';
+import { HousesListComponent } from './Pages/houses-list/houses-list.component';
+import { LandsListComponent } from './Pages/lands-list/lands-list.component';
 
 export const routes: Routes = [
 
@@ -32,17 +32,17 @@ export const routes: Routes = [
 
     {
         path: 'houses',
-        component: ListHousesComponent
+        component: HousesListComponent
     },
 
     {
         path: 'departaments',
-        component: ListDepartamentsComponent
+        component: DepartamentsListComponent
     },
 
     {
         path: 'lands',
-        component: ListLandsComponent
+        component: LandsListComponent
     },
 
     {
