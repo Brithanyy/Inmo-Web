@@ -4,9 +4,9 @@ import { HomeComponent } from './Pages/home/home.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { AboutUsComponent } from './Pages/about-us/about-us.component';
 import { PropertiesComponent } from './Pages/properties/properties.component';
-import { ListDepartamentsComponent } from './Components/list-departaments/list-departaments.component';
-import { ListHousesComponent } from './Components/list-houses/list-houses.component';
-import { ListLandsComponent } from './Components/list-lands/list-lands.component';
+import { ListHousesComponent } from './Pages/list-houses/list-houses.component';
+import { ListLandsComponent } from './Pages/list-lands/list-lands.component';
+import { ListDepartamentsComponent } from './Pages/list-departaments/list-departaments.component';
 
 export const routes: Routes = [
 
