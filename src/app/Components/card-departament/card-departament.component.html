@@ -1,0 +1,23 @@
+
+@if (errorReturned) {
+    <div class="alert alert-danger">
+      {{ errorReturned }}
+    </div>
+}
+@else if (departament) {
+    <div class="card h-100 shadow-sm" >
+      <img [src]="departament.imagenes[0]" class="card-img-top" alt="Property Image">
+      <div class="card-body">
+      <h5 class="card-title">{{ departament.tituloPropiedad }}</h5>
+      <p class="card-text">
+          <strong>Precio:</strong> US$  {{departament.precioPropiedad}}<br>
+          <strong>Tipo:</strong> {{ departament.tipoPropiedad }}<br>
+          <strong>Superficie cubierta:</strong> {{ departament.superficieCubierta }} m²<br>
+          <strong>Ambientes:</strong> {{ departament.cantidadAmbientes }}
+      </p>
+      </div>
+      <div class="card-footer bg-white border-top-0">
+      <button class="btn btn-primary w-100" (click)="directToDetails()">Ver detalles</button>
+      </div>
+    </div>
+}

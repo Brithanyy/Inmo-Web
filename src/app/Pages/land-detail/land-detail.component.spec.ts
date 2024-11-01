@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PropertyDetailComponent } from './property-detail.component';
+import { LandDetailComponent } from './land-detail.component';
 
-describe('PropertyDetailComponent', () => {
-  let component: PropertyDetailComponent;
-  let fixture: ComponentFixture<PropertyDetailComponent>;
+describe('LandDetailComponent', () => {
+  let component: LandDetailComponent;
+  let fixture: ComponentFixture<LandDetailComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PropertyDetailComponent]
+      imports: [LandDetailComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PropertyDetailComponent);
+    fixture = TestBed.createComponent(LandDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

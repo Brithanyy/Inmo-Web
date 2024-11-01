@@ -1,20 +1,15 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject, Input, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
-import { House } from '../../Models/House.model';
+import { Component, inject, Inject, Input, OnInit } from '@angular/core';
 import { HouseService } from '../../Services/House/house.service';
+import { House } from '../../Models/House.model';
 
 @Component({
-  selector: 'app-card-property',
+  selector: 'app-card-house',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink
-  ],
-  templateUrl: './card-property.component.html',
-  styleUrl: './card-property.component.css'
+  imports: [],
+  templateUrl: './card-house.component.html',
+  styleUrl: './card-house.component.css'
 })
-export class CardPropertyComponent implements OnInit {
+export class CardHouseComponent implements OnInit {
 
   @Input() houseID: number | undefined;
 
@@ -33,14 +28,19 @@ export class CardPropertyComponent implements OnInit {
 
         next: (returnedHouse) => this.house = returnedHouse,
 
-        error: (errorReturned) => this.errorReturned = errorReturned.message
+        error: (errorReturned) =>  {
+
+          this.errorReturned = errorReturned.message
+          this.showErrorMessage();
+        }
       });
     }
   }
 
-  //*Completar la implementación del método
-  showErrorMesagge() {
-
+  showErrorMessage() {
+    if (this.errorReturned) {
+      alert(`Error al cargar la propiedad: ${this.errorReturned}`);
+    }
   }
 
   directToDetails() {
