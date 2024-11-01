@@ -4,21 +4,20 @@ import { DepartamentService } from '../../Services/Departament/departament.servi
 import { CardDepartamentComponent } from "../card-departament/card-departament.component";
 import { FooterComponent } from "../footer/footer.component";
 import { NavbarComponent } from "../navbar/navbar.component";
-import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-list-departaments',
+  selector: 'app-featured-departaments',
   standalone: true,
   imports: [
     CardDepartamentComponent,
     FooterComponent,
-    NavbarComponent,
-    RouterLink
-],
-  templateUrl: './list-departaments.component.html',
-  styleUrl: './list-departaments.component.css'
+    NavbarComponent
+  ],
+  templateUrl: './featured-departaments.component.html',
+  styleUrl: './featured-departaments.component.css'
 })
-export class ListDepartamentsComponent implements OnInit {
+export class FeaturedDepartamentsComponent implements OnInit {
+
 
   departaments: Departament[] = [];
 
@@ -30,7 +29,7 @@ export class ListDepartamentsComponent implements OnInit {
     
     this.departamentService.getDepartaments().subscribe({
 
-      next: (arrayDepartaments) => this.departaments = arrayDepartaments,
+      next: (arrayLands) => this.departaments = arrayLands.slice(0 , 3), //Nos traemos las tres primeras propiedades
       
       error: (errorReturned) => {
 

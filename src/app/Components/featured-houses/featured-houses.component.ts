@@ -5,25 +5,20 @@ import { HouseService } from '../../Services/House/house.service';
 import { CardHouseComponent } from "../card-house/card-house.component";
 import { FooterComponent } from "../footer/footer.component";
 import { NavbarComponent } from "../navbar/navbar.component";
-import { HeaderComponent } from "../header/header.component";
-import { RouterLink } from '@angular/router';
-
 
 @Component({
-  selector: 'app-list-houses',
+  selector: 'app-featured-houses',
   standalone: true,
   imports: [
     CommonModule,
     CardHouseComponent,
     FooterComponent,
     NavbarComponent,
-    HeaderComponent,
-    RouterLink
-],
-  templateUrl: './list-houses.component.html',
-  styleUrl: './list-houses.component.css'
+  ],
+  templateUrl: './featured-houses.component.html',
+  styleUrl: './featured-houses.component.css'
 })
-export class ListHousesComponent implements OnInit {
+export class FeaturedHousesComponent implements OnInit {
 
 
   houses: House[] = [];
@@ -36,7 +31,7 @@ export class ListHousesComponent implements OnInit {
     
     this.houseService.getHouses().subscribe({
 
-      next: (arrayHouses) => this.houses = arrayHouses,
+      next: (arrayHouses) => this.houses = arrayHouses.slice(0 , 3), //Nos traemos las tres primeras propiedades
       
       error: (errorReturned) => {
 
@@ -53,3 +48,4 @@ export class ListHousesComponent implements OnInit {
     }
   }
 }
+

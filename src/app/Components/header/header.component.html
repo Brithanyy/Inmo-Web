@@ -1,21 +1,32 @@
-<header>
-    <div class="container search-bar">
-      <h1>Entendemos el valor de su patrimonio</h1>
-      <div class="row justify-content-center">
-        <div class="col-md-8">
-          <div class="input-group">
-            <select class="form-select">
-              <option selected>Tipo de Propiedad</option>
-              <option value="1">Casa</option>
-              <option value="2">Departamento</option>
-              <option value="3">Local</option>
-              <option value="4">Terreno</option>
-            </select>
-            <button class="btn btn-custom" type="button">
-              <i class="bi bi-search"></i> 
-            </button>
-          </div>
+<header class="d-flex align-items-center">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 text-center">
+        <h1 class="mb-4">Entendemos el valor de su patrimonio</h1>
+        <div class="search-bar bg-white p-3 rounded shadow">
+          <form class="row g-3" (ngSubmit)="onSearch()">
+            <div class="col-md-8">
+              <select class="form-select custom-select" [(ngModel)]="selectedPropertyType" name="propertyType" required>
+                <option value="" disabled selected>Tipo de Propiedad</option>
+                <option value="houses">Casa</option>
+                <option value="departaments">Departamento</option>
+                <option value="lands">Terreno</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-custom w-100" type="button" (click)="onSearch()">
+                <i class="bi bi-search"></i> Buscar
+              </button>
+            </div>
+          </form>
+
+          @if(showError) {
+            <div class="alert alert-danger mt-3">
+              Por favor, selecciona un tipo de propiedad.
+            </div>
+          }
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</header>

@@ -3,6 +3,10 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './Pages/home/home.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { AboutUsComponent } from './Pages/about-us/about-us.component';
+import { PropertiesComponent } from './Pages/properties/properties.component';
+import { ListDepartamentsComponent } from './Components/list-departaments/list-departaments.component';
+import { ListHousesComponent } from './Components/list-houses/list-houses.component';
+import { ListLandsComponent } from './Components/list-lands/list-lands.component';
 
 export const routes: Routes = [
 
@@ -19,6 +23,26 @@ export const routes: Routes = [
     {
         path: 'about',
         component: AboutUsComponent
+    },
+
+    {
+        path: 'properties',
+        component: PropertiesComponent
+    },
+
+    {
+        path: 'houses',
+        component: ListHousesComponent
+    },
+
+    {
+        path: 'departaments',
+        component: ListDepartamentsComponent
+    },
+
+    {
+        path: 'lands',
+        component: ListLandsComponent
     },
 
     {

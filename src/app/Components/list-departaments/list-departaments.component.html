@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container mt-5">
     @if (errorReturned) {
       <div class="alert alert-danger">
@@ -12,3 +13,7 @@
       }
     </div>
   </div>
+  <div class="button-container">
+    <button [routerLink]="['/home']">Atrás</button>
+  </div>
+<app-footer></app-footer>

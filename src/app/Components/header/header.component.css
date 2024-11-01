@@ -72,3 +72,10 @@ header {
       margin-bottom: 30px;
     }
   }
+
+.alert {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+  

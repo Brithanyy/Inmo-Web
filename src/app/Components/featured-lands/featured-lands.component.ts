@@ -1,24 +1,26 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
+import { CardHouseComponent } from "../card-house/card-house.component";
 import { FooterComponent } from "../footer/footer.component";
 import { NavbarComponent } from "../navbar/navbar.component";
 import { Land } from '../../Models/Land.model';
 import { LandService } from '../../Services/Land/land.service';
 import { CardLandComponent } from "../card-land/card-land.component";
-import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-list-lands',
+  selector: 'app-featured-lands',
   standalone: true,
   imports: [
-    NavbarComponent,
+    CommonModule,
+    CardHouseComponent,
     FooterComponent,
-    CardLandComponent,
-    RouterLink
+    NavbarComponent,
+    CardLandComponent
 ],
-  templateUrl: './list-lands.component.html',
-  styleUrl: './list-lands.component.css'
+  templateUrl: './featured-lands.component.html',
+  styleUrl: './featured-lands.component.css'
 })
-export class ListLandsComponent implements OnInit {
+export class FeaturedLandsComponent implements OnInit {
 
 
   lands: Land[] = [];
@@ -31,7 +33,7 @@ export class ListLandsComponent implements OnInit {
     
     this.landService.getLands().subscribe({
 
-      next: (arrayLands) => this.lands = arrayLands,
+      next: (arrayLands) => this.lands = arrayLands.slice(0 , 3), //Nos traemos las tres primeras propiedades
       
       error: (errorReturned) => {
 
