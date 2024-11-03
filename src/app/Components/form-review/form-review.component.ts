@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Review } from '../../Models/Review.model';
@@ -19,6 +19,8 @@ export class FormReviewComponent {
 
   @Input() idPropiedad?: string;
   @Input() tipoPropiedad?: string;
+  @Output() reviewAdded = new EventEmitter<void>();
+
   mensaje?: string;
   error?: string;
   reviewService = inject(ReviewService);
@@ -44,9 +46,10 @@ export class FormReviewComponent {
       };
 
       this.reviewService.addReview(newReview).subscribe({
-
-        next: (returnedRview) => alert("Tipo propiedad: " + returnedRview.tipoPropiedad + " ID: " + returnedRview.idPropiedad + " Usuario: " + returnedRview.usuario),
-
+        next: (returnedRview) => {
+          alert("Tipo propiedad: " + returnedRview.tipoPropiedad + " ID: " + returnedRview.idPropiedad + " Usuario: " + returnedRview.usuario);
+          this.reviewAdded.emit(); // Emitir evento cuando se agrega una reseña
+        },
         error: (returnedError) => {
           this.mensaje = returnedError.mesagge;
           this.showErrorMessage();
@@ -63,3 +66,5 @@ export class FormReviewComponent {
     }
   }
 }
+
+

@@ -24,7 +24,6 @@ export interface Departament {
     };
     imagenes: string[];
     reseñas?: Review[];
-    valoracionPromedio?: number;
 
     //*Características específicas del tipo: Departamento    
     cantidadAmbientes: number;

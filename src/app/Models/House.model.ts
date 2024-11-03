@@ -24,7 +24,6 @@ export interface House {
     };
     imagenes: string[];
     reseñas?: Review[];
-    valoracionPromedio?: number;
 
     //*Características específicas del tipo: Casa 
     cantidadAmbientes: number;

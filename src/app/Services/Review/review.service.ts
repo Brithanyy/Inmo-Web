@@ -13,8 +13,8 @@ export class ReviewService {
   peticionesHTTP = inject(HttpClient);
   urlBase = 'http://localhost:3000/Review';
 
-  getReviewsByPropertyType(type: string | null): Observable<Review[]> {
-    return this.peticionesHTTP.get<Review[]>(this.urlBase + "/" + type);
+  getReviews(): Observable<Review[]> {
+    return this.peticionesHTTP.get<Review[]>(this.urlBase);
   }
 
   getReviewsByPropertyID(type: string | null, id: string | null): Observable<Review[]> {

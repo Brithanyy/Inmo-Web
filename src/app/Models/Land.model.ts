@@ -24,5 +24,4 @@ export interface Land {
     };
     imagenes: string[];
     reseñas?: Review[];
-    valoracionPromedio?: number;
 }

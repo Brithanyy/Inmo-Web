@@ -25,7 +25,6 @@
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/91761962737041493768990403110280830171902653493495842738190951146457647390267-1170x785.jpg"
       ],
       "reseñas": [],
-      "valoracionPromedio": 0,
       "cantidadAmbientes": 13,
       "cantidadDormitorios": 11,
       "cantidadBanos": 4
@@ -56,7 +55,6 @@
         "https://www.roblescasascampos.com/wp-content/uploads/2024/09/6424537_78258559777041816372687999694508481800082484833788176692747482671983585533357-1170x785.jpg"
       ],
       "reseñas": [],
-      "valoracionPromedio": 0,
       "cantidadAmbientes": 6,
       "cantidadDormitorios": 5,
       "cantidadBanos": 6
@@ -91,7 +89,6 @@
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/39489232891907189322656862137522744015838021882996245425380377828034728693785-1170x675.jpg"
       ],
       "reseñas": [],
-      "valoracionPromedio": 0,
       "cantidadAmbientes": 8,
       "cantidadDormitorios": 7,
       "cantidadBanos": 7
@@ -126,7 +123,6 @@
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/31902119414764478559563055561164532167105055722619215099662711121646116757165-1170x785.jpg"
       ],
       "reseñas": [],
-      "valoracionPromedio": 0,
       "cantidadAmbientes": 7,
       "cantidadDormitorios": 6,
       "cantidadBanos": 5
@@ -159,7 +155,6 @@
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/16131508304292206628522451683075309282296297262038527402332020898415611589178-1170x785.jpg"
       ],
       "reseñas": [],
-      "valoracionPromedio": 0,
       "cantidadAmbientes": 4,
       "cantidadDormitorios": 3,
       "cantidadBanos": 3
@@ -193,7 +188,6 @@
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/54233234164841737138968516032252937779793193155751798549209858417661919613663-1170x785.jpg"
       ],
       "reseñas": [],
-      "valoracionPromedio": 0,
       "cantidadAmbientes": 4,
       "cantidadDormitorios": 3,
       "cantidadBanos": 3
@@ -223,8 +217,7 @@
       "imagenes": [
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/78223624115823532142901047624017338459660865389659973379707640428265351465641-1170x710.jpg"
       ],
-      "reseñas": [],
-      "valoracionPromedio": 0
+      "reseñas": []
     },
     {
       "id": "2",
@@ -249,8 +242,7 @@
       "imagenes": [
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/78223624115823532142901047624017338459660865389659973379707640428265351465641-592x444.jpg"
       ],
-      "reseñas": [],
-      "valoracionPromedio": 0
+      "reseñas": []
     },
     {
       "id": "3",
@@ -275,19 +267,18 @@
       "imagenes": [
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/19298789541537480219016916454635015919635137298194722280325467950727249684792-1170x785.jpg"
       ],
-      "reseñas": [],
-      "valoracionPromedio": 0
+      "reseñas": []
     }
   ],
   "Review": [
     {
-      "id": "cfda",
+      "id": "31c5",
       "tipoPropiedad": "Casa",
       "idPropiedad": "1",
       "usuario": "Rocio Ortiz",
-      "comentario": "Me parece muy hermosa esta casa, pero el precio está bastante elevado",
-      "estrellas": "2",
-      "fecha": "2024-11-03T20:19:17.538Z"
+      "comentario": "Tuve la oportunidad de visitar esta propiedad y debo decir que es absolutamente hermosa. Su estilo antiguo le confiere un encanto único que la distingue de otras. Sin embargo, es importante mencionar que el precio es bastante elevado, lo que puede ser un factor a considerar. A pesar de esto, la calidad y la estética de la propiedad definitivamente valen la pena.",
+      "estrellas": "3",
+      "fecha": "2024-11-03T21:17:21.865Z"
     }
   ]
 }
