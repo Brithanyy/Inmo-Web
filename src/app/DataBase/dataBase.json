@@ -22,14 +22,13 @@
             },
             "imagenes": [
                 "https://www.roblescasascampos.com/wp-content/uploads/2024/07/28942019886575860202712353741904192472274539372584190742085248963969253482505-1170x785.jpg",
-                "https://www.roblescasascampos.com/wp-content/uploads/2024/07/63829724088677767858499655831209168878812031663451820820132715959600919466254-592x444.jpg",
                 "https://www.roblescasascampos.com/wp-content/uploads/2024/07/91761962737041493768990403110280830171902653493495842738190951146457647390267-1170x785.jpg"
             ],
             "reseñas": [],
             "valoracionPromedio": 0,
             "cantidadAmbientes": 13,
             "cantidadDormitorios": 11,
-            "cantidadBaños": 4
+            "cantidadBanos": 4
         },
         {
             "id": "2",
@@ -61,7 +60,7 @@
             "valoracionPromedio": 0,
             "cantidadAmbientes": 6,
             "cantidadDormitorios": 5,
-            "cantidadBaños": 6
+            "cantidadBanos": 6
         },
         {
             "id": "3",
@@ -96,7 +95,7 @@
             "valoracionPromedio": 0,
             "cantidadAmbientes": 8,
             "cantidadDormitorios": 7,
-            "cantidadBaños": 7
+            "cantidadBanos": 7
         }
     ],
 
@@ -132,7 +131,7 @@
             "valoracionPromedio": 0,
             "cantidadAmbientes": 7,
             "cantidadDormitorios": 6,
-            "cantidadBaños": 5
+            "cantidadBanos": 5
         },
         {
             "id": "2",
@@ -165,7 +164,7 @@
             "valoracionPromedio": 0,
             "cantidadAmbientes": 4,
             "cantidadDormitorios": 3,
-            "cantidadBaños": 3
+            "cantidadBanos": 3
         },
         {
             "id": "3",
@@ -199,7 +198,7 @@
             "valoracionPromedio": 0,
             "cantidadAmbientes": 4,
             "cantidadDormitorios": 3,
-            "cantidadBaños": 3
+            "cantidadBanos": 3
         }
     ],
 

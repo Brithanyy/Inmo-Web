@@ -1,1 +1,34 @@
-<p>departament-detail works!</p>
+<app-navbar></app-navbar>
+
+@if(departamentBuffer) {
+
+    <div class="container mt-4">
+        <div class="card property-card">
+          <div class="property-header">
+            <h2>{{departamentBuffer.tituloPropiedad}}</h2>
+          </div>
+          <div class="property-body">
+            <div class="property-info">
+              <p><span class="property-label">Tipo:</span> {{departamentBuffer.tipoPropiedad}}</p>
+              <p><span class="property-label">Precio:</span> {{departamentBuffer.precioPropiedad}}</p>
+              <p><span class="property-label">Descripción:</span> {{departamentBuffer.descripcionPropiedad}}</p>
+              <p><span class="property-label">Superficie cubierta:</span> {{departamentBuffer.superficieCubierta}}</p>
+              <p><span class="property-label">Superficie total:</span> {{departamentBuffer.superficieTotal}}</p>
+              <p><span class="property-label">Dirección:</span> {{departamentBuffer.direccionPropiedad.nombre_calle}} {{departamentBuffer.direccionPropiedad.numero_calle}}, {{departamentBuffer.direccionPropiedad.localidad}}, {{departamentBuffer.direccionPropiedad.provincia}}, {{departamentBuffer.direccionPropiedad.pais}}</p>
+              <p><span class="property-label">Ambientes:</span> {{departamentBuffer.cantidadAmbientes}}</p>
+              <p><span class="property-label">Dormitorios:</span> {{departamentBuffer.cantidadDormitorios}}</p>
+              <p><span class="property-label">Baños:</span> {{departamentBuffer.cantidadBanos}}</p>
+            </div>
+            <div class="image-gallery">
+              <img *ngFor="let imagen of departamentBuffer.imagenes" [src]="imagen" alt="Imagen de la propiedad" class="gallery-image">
+            </div>
+          </div>
+        </div>
+    </div>
+}
+
+<div class="button-container">
+    <button routerLink="/home">Atrás</button>
+</div>
+
+<app-footer></app-footer>

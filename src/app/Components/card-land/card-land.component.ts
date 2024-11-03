@@ -1,6 +1,7 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { Land } from '../../Models/Land.model';
 import { LandService } from '../../Services/Land/land.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-land',
@@ -10,6 +11,8 @@ import { LandService } from '../../Services/Land/land.service';
   styleUrl: './card-land.component.css'
 })
 export class CardLandComponent implements OnInit {
+
+  router  = inject(Router);
 
   @Input() landID: string | undefined;
 
@@ -45,7 +48,7 @@ export class CardLandComponent implements OnInit {
 
   directToDetails() {
 
-    //*Direccionar a la ruta details:/id
+    this.router.navigate(['land-detail',  this.landID]);
   }
 
 }

@@ -1,0 +1,65 @@
+.property-card {
+    border: 2px solid #007200;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.property-header {
+    background-color: #007200;
+    color: white;
+    padding: 15px;
+}
+
+.property-body {
+    padding: 20px;
+}
+
+.property-info {
+    margin-bottom: 20px;
+}
+
+.property-label {
+    font-weight: bold;
+    color: #007200;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.gallery-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007200; 
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #015201; 
+
+}

@@ -10,6 +10,9 @@ import { LandsListComponent } from './Pages/lands-list/lands-list.component';
 import { ManagementAddHouseComponent } from './Pages/management-add-house/management-add-house.component';
 import { ManagementAddDepartamentComponent } from './Pages/management-add-departament/management-add-departament.component';
 import { ManagementAddLandComponent } from './Pages/management-add-land/management-add-land.component';
+import { DepartamentDetailComponent } from './Pages/departament-detail/departament-detail.component';
+import { HouseDetailComponent } from './Pages/house-detail/house-detail.component';
+import { LandDetailComponent } from './Pages/land-detail/land-detail.component';
 
 export const routes: Routes = [
 
@@ -46,6 +49,21 @@ export const routes: Routes = [
     {
         path: 'lands',
         component: LandsListComponent
+    },
+
+    {
+        path: 'departament-detail/:id',
+        component: DepartamentDetailComponent
+    },
+
+    {
+        path: 'house-detail/:id',
+        component: HouseDetailComponent
+    },
+
+    {
+        path: 'land-detail/:id',
+        component: LandDetailComponent
     },
 
     {

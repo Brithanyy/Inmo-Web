@@ -1,6 +1,7 @@
 import { Component, inject, Inject, Input, OnInit } from '@angular/core';
 import { HouseService } from '../../Services/House/house.service';
 import { House } from '../../Models/House.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-house',
@@ -10,6 +11,8 @@ import { House } from '../../Models/House.model';
   styleUrl: './card-house.component.css'
 })
 export class CardHouseComponent implements OnInit {
+
+  router = inject(Router);
 
   @Input() houseID: string | undefined;
 
@@ -45,7 +48,7 @@ export class CardHouseComponent implements OnInit {
 
   directToDetails() {
 
-    //*Direccionar a la ruta details:/id
+    this.router.navigate(['house-detail',  this.houseID]);
   }
 
 }

@@ -1,1 +1,35 @@
-<p>land-detail works!</p>
+<app-navbar></app-navbar>
+
+@if (landBuffer) {
+
+    <div class="container mt-4">
+        <div class="card property-card">
+          <div class="property-header">
+            <h2>{{landBuffer.tituloPropiedad}}</h2>
+          </div>
+          <div class="property-body">
+            <div class="property-info">
+              <p><span class="property-label">Tipo:</span> {{landBuffer.tipoPropiedad}}</p>
+              <p><span class="property-label">Precio:</span> {{landBuffer.precioPropiedad}}</p>
+              <p><span class="property-label">Descripción:</span> {{landBuffer.descripcionPropiedad}}</p>
+              <p><span class="property-label">Superficie total:</span> {{landBuffer.superficieTotal}}</p>
+              <p><span class="property-label">Dirección:</span> 
+                <span *ngIf="landBuffer.direccionPropiedad.nombre_calle && landBuffer.direccionPropiedad.numero_calle">
+                  {{landBuffer.direccionPropiedad.nombre_calle}} {{landBuffer.direccionPropiedad.numero_calle}},
+                </span>
+                {{landBuffer.direccionPropiedad.localidad}}, {{landBuffer.direccionPropiedad.provincia}}, {{landBuffer.direccionPropiedad.pais}}
+              </p>
+            </div>
+            <div class="image-gallery">
+              <img *ngFor="let imagen of landBuffer.imagenes" [src]="imagen" alt="Imagen de la propiedad" class="gallery-image">
+            </div>
+          </div>
+        </div>
+    </div>
+}
+
+<div class="button-container">
+    <button routerLink="/home">Atrás</button>
+</div>
+
+<app-footer></app-footer>

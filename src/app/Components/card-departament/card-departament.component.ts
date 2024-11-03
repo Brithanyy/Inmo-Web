@@ -1,6 +1,7 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { DepartamentService } from '../../Services/Departament/departament.service';
 import { Departament } from '../../Models/Departament.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-departament',
@@ -10,6 +11,8 @@ import { Departament } from '../../Models/Departament.model';
   styleUrl: './card-departament.component.css'
 })
 export class CardDepartamentComponent implements OnInit {
+
+  router = inject(Router);
 
   @Input() departamentID: string | undefined;
 
@@ -45,7 +48,7 @@ export class CardDepartamentComponent implements OnInit {
 
   directToDetails() {
 
-    //*Direccionar a la ruta details:/id
+    this.router.navigate(['departament-detail',  this.departamentID]);
   }
 
 }
