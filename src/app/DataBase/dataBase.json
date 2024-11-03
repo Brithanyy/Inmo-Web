@@ -288,6 +288,33 @@
       "comentario": "Tuve la oportunidad de visitar esta propiedad y debo decir que es realmente buena. La distribución de los espacios es muy funcional y se siente acogedora. Además, la ubicación es excelente, lo que la hace aún más atractiva. Sin duda, una opción a considerar para quienes buscan un hogar cómodo y bien ubicado. ¡Recomendada!",
       "estrellas": "5",
       "fecha": "2024-11-03T21:42:56.049Z"
+    },
+    {
+      "id": "68bf",
+      "tipoPropiedad": "Departamento",
+      "idPropiedad": "1",
+      "usuario": "Paola Colino",
+      "comentario": "Esta propiedad es espectacular. La ubicación frente a la Bahía Varese es perfecta, con vistas al mar que realmente impresionan. Los espacios son amplios y muy luminosos, especialmente el estar y los balcones, que ofrecen un ambiente acogedor y lujoso. Las habitaciones son cómodas y bien distribuidas, ideales para una familia grande. Además, los detalles de calidad, como los pisos de porcelanato y las ventanas DVH, realmente se notan. Sin dudas, una propiedad que lo tiene todo para vivir con estilo y confort. Muy recomendada.",
+      "estrellas": "5",
+      "fecha": "2024-11-03T22:27:33.894Z"
+    },
+    {
+      "id": "cbcf",
+      "tipoPropiedad": "Casa",
+      "idPropiedad": "1",
+      "usuario": "User anónimo",
+      "comentario": "Villa Blaquier es una propiedad única con un encanto histórico inigualable. Ubicada a solo cien metros de la costa y rodeada de jardines y muros de piedra, esta residencia estilo inglés combina elegancia y carácter. Desde su imponente escalera de roble hasta sus amplios salones con detalles arquitectónicos exquisitos, cada rincón cuenta una historia. Los dormitorios y espacios de servicio están perfectamente distribuidos, ofreciendo comodidad en un entorno señorial. Una verdadera joya arquitectónica, ideal para quienes valoran el patrimonio y la historia.",
+      "estrellas": "4",
+      "fecha": "2024-11-03T22:28:55.055Z"
+    },
+    {
+      "id": "b974",
+      "tipoPropiedad": "Terreno",
+      "idPropiedad": "1",
+      "usuario": "Usuario anónimo ",
+      "comentario": "Este terreno en el barrio Chauvín es una oportunidad única para desarrolladores. Con sus 5.703 m² y salida a tres calles, ofrece un enorme potencial para proyectos de gran envergadura. La ubicación estratégica y la zonificación E1 permiten múltiples usos, combinando residencias y servicios, lo que lo hace ideal para un desarrollo urbano moderno y funcional. Además, la factibilidad de construir 21.500 m² distribuidos en planta baja más seis pisos superiores abre un sinfín de posibilidades. Un lote con gran proyección y excelente ubicación.",
+      "estrellas": "4",
+      "fecha": "2024-11-03T22:43:49.133Z"
     }
   ]
 }

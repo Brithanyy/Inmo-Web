@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../../Components/navbar/navbar.component";
 import { FooterComponent } from "../../Components/footer/footer.component";
 import { FormReviewComponent } from '../../Components/form-review/form-review.component';
+import { ReviewService } from '../../Services/Review/review.service';
+import { Review } from '../../Models/Review.model';
 
 @Component({
   selector: 'app-land-detail',
@@ -24,21 +26,61 @@ export class LandDetailComponent implements OnInit {
 
   activatedRoute = inject(ActivatedRoute);
   servicioLand = inject(LandService);
+  servicioReview = inject(ReviewService);
+
   landID?: string | null;
   landBuffer?: Land;
   currentImageIndex = 0;
   selectedImage: string | null = null;
-  error?: string;
+  errorServicioLand?: string;
+
+  reviews?: Review[] = [];
+  errorServicioResena?: string;
+  isLoading = true;
 
   ngOnInit(): void {
-    
+
     this.landID = this.activatedRoute.snapshot.paramMap.get('id');
+    this.isLoading = true;
 
     this.servicioLand.getLand(this.landID).subscribe({
 
-      next: (returnedLand) => this.landBuffer = returnedLand,
-      error: (returnedError) => alert("Error: " + returnedError.mesagge)
+      next: (returnedLand) => {
+        this.landBuffer = returnedLand;
+        this.loadReviews();
+      },
+
+      error: (returnedError) => {
+        this.errorServicioLand = returnedError.message;
+        this.showErrorMessage(this.errorServicioLand);
+        this.isLoading = false;
+      }
     });
+  }
+
+  loadReviews() {
+
+    if (this.landBuffer) {
+
+      this.servicioReview.getReviews().subscribe({
+
+        next: (returnedReviews) => {
+          this.reviews = returnedReviews
+            .filter(review => review.idPropiedad === this.landBuffer?.id && review.tipoPropiedad === "Terreno")
+            .map(review => ({
+              ...review,
+              estrellas: review.estrellas || 0 
+            }));
+          this.isLoading = false;
+        },
+
+        error: (returnedError) => {
+          this.errorServicioResena = returnedError.message;
+          this.showErrorMessage(this.errorServicioResena);
+          this.isLoading = false;
+        }
+      });
+    }
   }
 
   prevImage() {
@@ -61,9 +103,9 @@ export class LandDetailComponent implements OnInit {
     this.selectedImage = null;
   }
 
-  showErrorMessage() {
-    if (this.error) {
-      alert(`Error al agregar una reseña: ${this.error}`);
+  showErrorMessage(error: string | undefined) {
+    if (error) {
+      alert(`Error: ${error}`);
     }
   }
 }

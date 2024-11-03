@@ -66,7 +66,7 @@ export class DepartamentDetailComponent implements OnInit {
 
         next: (returnedReviews) => {
           this.reviews = returnedReviews
-            .filter(review => review.idPropiedad === (this.departamentBuffer?.id && this.departamentBuffer.tipoPropiedad == 'Departamento'))
+            .filter(review => review.idPropiedad === this.departamentBuffer?.id && review.tipoPropiedad === "Departamento")
             .map(review => ({
               ...review,
               estrellas: review.estrellas || 0 

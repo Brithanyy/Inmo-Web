@@ -67,7 +67,7 @@ export class HouseDetailComponent implements OnInit {
 
         next: (returnedReviews) => {
           this.reviews = returnedReviews
-            .filter(review => review.idPropiedad === (this.houseBuffer?.id && this.houseBuffer.tipoPropiedad == 'Casa'))
+            .filter(review => review.idPropiedad === this.houseBuffer?.id && review.tipoPropiedad === "Casa")
             .map(review => ({
               ...review,
               estrellas: review.estrellas || 0 

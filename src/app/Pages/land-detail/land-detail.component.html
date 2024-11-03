@@ -1,78 +1,114 @@
 <app-navbar></app-navbar>
 
-@if (error) {
-    <div class="alert alert-danger">
-        {{error}}
-    </div>
-}
-
+@if (isLoading) {
+    <div class="loading-spinner">Cargando...</div>
+} 
 @else {
 
-    @if(landBuffer) {
-        <div class="container mt-4">
-            <div class="property-card">
-                <!-- Encabezado con título y precio -->
-                <div class="property-header">
-                    <h2>{{landBuffer.tituloPropiedad}}</h2>
-                    <div class="price">Precio US$ {{landBuffer.precioPropiedad}}</div>
+    @if (errorServicioLand) {
+        <div class="alert alert-danger">
+            {{errorServicioLand}}
+        </div>
+    } 
+
+    @else {
+            @if(landBuffer) {
+                <div class="container mt-4">
+                    <div class="property-card">
+                        <!-- Encabezado con título y precio -->
+                        <div class="property-header">
+                            <h2>{{landBuffer.tituloPropiedad}}</h2>
+                            <div class="price">Precio US$ {{landBuffer.precioPropiedad}}</div>
+                        </div>
+            
+                        <!-- Galería de imágenes -->
+                        <div class="carousel-container">
+                            @if(landBuffer.imagenes.length > 0) {
+                                <img [src]="landBuffer.imagenes[currentImageIndex]" 
+                                     alt="Imagen de la propiedad" 
+                                     class="carousel-image"
+                                     (click)="openImage(landBuffer.imagenes[currentImageIndex])">
+                                <button class="carousel-button prev" (click)="prevImage()" [disabled]="currentImageIndex === 0">❮</button>
+                                <button class="carousel-button next" (click)="nextImage()" [disabled]="currentImageIndex === landBuffer.imagenes.length - 1">❯</button>
+                                <div class="image-counter">{{currentImageIndex + 1}} / {{landBuffer.imagenes.length}}</div>
+                            }
+                        </div>
+            
+                        <!-- Modal para imagen ampliada -->
+                        @if(selectedImage) {
+                            <div class="modal" (click)="closeImage()">
+                                <img [src]="selectedImage" alt="Imagen ampliada" class="modal-image">
+                                <button class="close-modal" (click)="closeImage()">✕</button>
+                            </div>
+                        }
+            
+                        <!-- Características -->
+                        <div class="property-characteristics">
+                            <h3>Características</h3>
+                            
+                            <!-- Descripción -->
+                            <div class="description-section">
+                                <span class="characteristic-label">Descripción</span>
+                                <p>{{landBuffer.descripcionPropiedad}}</p>
+                            </div>
+                            
+                            <!-- Grid de características -->
+                            <div class="characteristics-grid">
+                                <!-- Primera fila -->
+                                <div class="characteristic-item">
+                                    <span class="characteristic-label">Superficie cubierta</span>
+                                    <span>{{landBuffer.superficieCubierta}} m²</span>
+                                </div>
+                                <div class="characteristic-item">
+                                    <span class="characteristic-label">Superficie total</span>
+                                    <span>{{landBuffer.superficieTotal}} m²</span>
+                                </div>
+                                <div class="characteristic-item">
+                                    <span class="characteristic-label">Dirección</span>
+                                    <span>{{landBuffer.direccionPropiedad.nombre_calle}} {{landBuffer.direccionPropiedad.numero_calle}}, {{landBuffer.direccionPropiedad.localidad}}, {{landBuffer.direccionPropiedad.provincia}}, {{landBuffer.direccionPropiedad.pais}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-    
-                <!-- Galería de imágenes -->
-                <div class="carousel-container">
-                    @if(landBuffer.imagenes.length > 0) {
-                        <img [src]="landBuffer.imagenes[currentImageIndex]" 
-                             alt="Imagen de la propiedad" 
-                             class="carousel-image"
-                             (click)="openImage(landBuffer.imagenes[currentImageIndex])">
-                        <button class="carousel-button prev" (click)="prevImage()" [disabled]="currentImageIndex === 0">❮</button>
-                        <button class="carousel-button next" (click)="nextImage()" [disabled]="currentImageIndex === landBuffer.imagenes.length - 1">❯</button>
-                        <div class="image-counter">{{currentImageIndex + 1}} / {{landBuffer.imagenes.length}}</div>
-                    }
-                </div>
-    
-                <!-- Modal para imagen ampliada -->
-                @if(selectedImage) {
-                    <div class="modal" (click)="closeImage()">
-                        <img [src]="selectedImage" alt="Imagen ampliada" class="modal-image">
-                        <button class="close-modal" (click)="closeImage()">✕</button>
+        
+                @if(errorServicioResena) {
+                    <div class="alert alert-danger">
+                        {{errorServicioResena}}
                     </div>
                 }
-    
-                <!-- Características -->
-                <div class="property-characteristics">
-                    <h3>Características</h3>
-                    
-                    <!-- Descripción -->
-                    <div class="description-section">
-                        <span class="characteristic-label">Descripción</span>
-                        <p>{{landBuffer.descripcionPropiedad}}</p>
-                    </div>
-                    
-                    <!-- Grid de características -->
-                    <div class="characteristics-grid">
-                        <div class="characteristic-item">
-                            <span class="characteristic-label">Superficie cubierta</span>
-                            <span>{{landBuffer.superficieCubierta}} m²</span>
+        
+                @else {
+                    @if(reviews && reviews.length > 0) {
+                        <div class="reviews-section">
+                            <h3>Reseñas</h3>
+                            @for (review of reviews; track review.id) {
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <h4>{{review.usuario}}</h4>
+                                        <div class="star-rating">
+                                            @for (star of [1,2,3,4,5]; track star) {
+                                                <span class="star" [class.filled]="star <= (review?.estrellas ?? 0)">★</span>
+                                            }
+                                        </div>
+                                    </div>
+                                    <p class="review-comment">{{review.comentario}}</p>
+                                    <p class="review-date">{{review.fecha | date:'dd/MM/yyyy'}}</p>
+                                </div>
+                            }
                         </div>
-                        <div class="characteristic-item">
-                            <span class="characteristic-label">Superficie total</span>
-                            <span>{{landBuffer.superficieTotal}} m²</span>
+                    } @else {
+                        <div class="no-reviews-card">
+                            <p>No hay reseñas para esta propiedad</p>
                         </div>
-                        <div class="characteristic-item">
-                            <span class="characteristic-label">Dirección</span>
-                            <span>
-                                @if(landBuffer.direccionPropiedad.nombre_calle && landBuffer.direccionPropiedad.numero_calle) {
-                                    {{landBuffer.direccionPropiedad.nombre_calle}} {{landBuffer.direccionPropiedad.numero_calle}},
-                                }
-                                {{landBuffer.direccionPropiedad.localidad}}, {{landBuffer.direccionPropiedad.provincia}}, {{landBuffer.direccionPropiedad.pais}}
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <app-form-review [idPropiedad]="landBuffer.id" [tipoPropiedad]="landBuffer.tipoPropiedad"></app-form-review>
+                    }
+                }
+                <app-form-review 
+                [idPropiedad]="landBuffer.id"
+                [tipoPropiedad]="landBuffer.tipoPropiedad"
+                (reviewAdded)="loadReviews()">
+                </app-form-review>
+            }
     }
 }
 
