@@ -16,10 +16,12 @@
 
   button {
     background-color: #007200;
+    border-color: #007200;
   } 
 
   button:hover {
     background-color: #015201;
+    border-color: #007200;
   }
 
   .btn.disabled, 

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { House } from '../../Models/House.model';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HouseService } from '../../Services/House/house.service';
 
@@ -54,16 +54,16 @@ export class ManagementAddHouseComponent {
         "provincia": ['', [Validators.required]],
         "localidad": ['', [Validators.required]],
         "nombre_calle": ['', [Validators.required]],
-        "numero_calle": ['', [Validators.required]]
+        "numero_calle": ['', [Validators.required, this.noNegativeNumbersValidator()]]
       }),
       "ubicacionPropiedad": this.fb.group({
-        "lat": [0, [Validators.required]],
-        "lng": [0, [Validators.required]]
+        "lat": [0, [Validators.required, this.onlyNegativeValidator()]],
+        "lng": [0, [Validators.required, this.onlyNegativeValidator()]]
       }),
-      "imagenes": [[], [Validators.required]],
-      "cantidadAmbientes": ['', [Validators.required]],
-      "cantidadDormitorios": ['', [Validators.required]],
-      "cantidadBanos": ['', [Validators.required]]
+      "imagenes":  this.fb.array([], []),
+      "cantidadAmbientes": ['', [Validators.required, this.noNegativeNumbersValidator()]],  
+      "cantidadDormitorios": ['', [Validators.required, this.noNegativeNumbersValidator()]], 
+      "cantidadBanos": ['', [Validators.required, this.noNegativeNumbersValidator()]] 
     });
   }
   get tituloPropiedad() {
@@ -95,7 +95,7 @@ export class ManagementAddHouseComponent {
  }
 
   get imagenes() {
-    return this.formulario.get("imagenes");
+    return this.formulario.get("imagenes") as FormArray;
   }
 
   get cantidadAmbientes() {
@@ -110,12 +110,34 @@ export class ManagementAddHouseComponent {
     return this.formulario.get("cantidadBanos");
   }
 
+  noNegativeNumbersValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value = control.value;
+      return value < 0 ? { 'negativeNumber': { value } } : null;
+    };
+  }
+
+  onlyNegativeValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value = control.value;
+      return (typeof value === 'number' && value < 0) ? null : { 'notNegative': { value } };
+    };
+  }
+
+  addImage(imageUrl: string) {
+    const imagesArray = this.formulario.get('imagenes') as FormArray;
+    imagesArray.push(this.fb.control(imageUrl));
+  }
+
   onSubmit() {
     if (this.formulario.valid) {
       console.log(this.formulario.value);
       this.house = this.formulario.getRawValue();
       this.houseService.addHouse(this.house).subscribe({
-        next: () => alert("House agregada con exito"),
+        next: () => {
+          alert("House agregada con exito");
+          this.formulario.reset();
+        },
         error: (err) => console.log("Error: ", err)
       })
     }
