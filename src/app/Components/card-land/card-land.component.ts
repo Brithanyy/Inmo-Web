@@ -11,7 +11,7 @@ import { LandService } from '../../Services/Land/land.service';
 })
 export class CardLandComponent implements OnInit {
 
-  @Input() landID: number | undefined;
+  @Input() landID: string | undefined;
 
   land: Land | undefined;
 

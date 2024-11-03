@@ -11,7 +11,7 @@ import { House } from '../../Models/House.model';
 })
 export class CardHouseComponent implements OnInit {
 
-  @Input() houseID: number | undefined;
+  @Input() houseID: string | undefined;
 
   house: House | undefined;
 

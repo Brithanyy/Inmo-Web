@@ -19,7 +19,7 @@ export class DepartamentService {
     return this.peticionesHTTP.get<Departament[]>(this.urlBase);
   }
 
-  getDepartament(id: number | null): Observable<Departament> {
+  getDepartament(id: string | null): Observable<Departament> {
 
     return this.peticionesHTTP.get<Departament>(this.urlBase + "/" + id);
   }
@@ -29,12 +29,12 @@ export class DepartamentService {
     return this.peticionesHTTP.post<Departament>(this.urlBase, departament);
   }
 
-  deleteDepartament(id: number | undefined): Observable<Departament> {
+  deleteDepartament(id: string | undefined): Observable<Departament> {
 
     return this.peticionesHTTP.delete<Departament>(this.urlBase + "/" + id);
   }
 
-  modifyDepartament(id: number | null, departament: Departament): Observable<Departament> {
+  modifyDepartament(id: string | null, departament: Departament): Observable<Departament> {
 
     return this.peticionesHTTP.put<Departament>(this.urlBase + "/" + id, departament);
   } 

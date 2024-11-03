@@ -3,8 +3,8 @@ import { Review } from "./Review.model";
 export interface Land {
 
     //*Características básicas que comparten todos los tipos de propiedades
-    id?: number;
-    idUsuario?: number;
+    id?: string;
+    idUsuario?: string;
     tipoPropiedad: 'Terreno';
     tituloPropiedad: string;
     descripcionPropiedad: string;

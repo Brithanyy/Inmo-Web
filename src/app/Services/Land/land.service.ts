@@ -19,7 +19,7 @@ export class LandService {
     return this.peticionesHTTP.get<Land[]>(this.urlBase);
   }
 
-  getLand(id: number | null): Observable<Land> {
+  getLand(id: string | null): Observable<Land> {
 
     return this.peticionesHTTP.get<Land>(this.urlBase + "/" + id);
   }
@@ -29,12 +29,12 @@ export class LandService {
     return this.peticionesHTTP.post<Land>(this.urlBase, land);
   }
 
-  deleteLand(id: number | undefined): Observable<Land> {
+  deleteLand(id: string | undefined): Observable<Land> {
 
     return this.peticionesHTTP.delete<Land>(this.urlBase + "/" + id);
   }
 
-  modifyLand(id: number | null, land: Land): Observable<Land> {
+  modifyLand(id: string | null, land: Land): Observable<Land> {
 
     return this.peticionesHTTP.put<Land>(this.urlBase + "/" + id, land);
   } 

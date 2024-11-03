@@ -3,8 +3,8 @@ import { Review } from "./Review.model";
 export interface House {
 
     //*Características básicas que comparten todos los tipos de propiedades
-    id?: number;
-    idUsuario?: number;
+    id?: string;
+    idUsuario?: string;
     tipoPropiedad: 'Casa';
     tituloPropiedad: string;
     descripcionPropiedad: string;
@@ -29,5 +29,5 @@ export interface House {
     //*Características específicas del tipo: Casa 
     cantidadAmbientes: number;
     cantidadDormitorios: number;
-    cantidadBaños: number;
+    cantidadBanos: number;
 }

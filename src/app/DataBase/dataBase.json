@@ -1,8 +1,8 @@
 {
     "House": [
         {
-            "id": 1,
-            "idUsuario": 1,
+            "id": "1",
+            "idUsuario": "1",
             "tipoPropiedad": "Casa",
             "tituloPropiedad": "Importante residencia de patrimonio histórico “Villa Blaquier”, en estratégica ubicación",
             "descripcionPropiedad": "En estratégica ubicación, a cien metros de la costa, se encuentra esta importante residencia de estilo inglés, patrimonio histórico Nacional “Villa Blaquier”, emplazada sobre dos lotes contiguos que suman 2.620 m2 de superficie total, con 901 m2 cubiertos. De arquitectura con lineamientos del pintoresquismo inglés, conservando su estilo señorial y con su jardín rodeado por un muro perimetral en piedra, esta importante residencia se desarrolla en dos niveles principales, más sótano y entretecho. Al ingresar en planta baja posee, amplio hall y recepción con importante escalera de roble, sala de lectura, sector de estar y comedor de generosas dimensiones, ambos con hogar, pisos de roble de Eslavonia y cielorrasos con detalles decorativos. Siguiendo en la misma planta, cuenta con luminosa cocina, comedor diario y antecocina. Mientras que en planta alta, posee comunicados entre sí por importante hall distribuidor con arcos de medio punto; siete dormitorios, cuatros baños, dos dependencias de servicio y terraza. Por último, en el sótano posee cuatro dormitorios y en el entretecho cuenta con un espacio de servicios e instalaciones. Villa Blaquier (Historia) Es una de las primeras casonas ubicadas en la Loma Stella Maris, propiedad de Marta Unzué y Adolfo Blaquier. Su arquitectura sigue los lineamientos del pintoresquismo inglés construido por Adán Gandolfi en 1905, con el proyecto de los arquitectos ingleses Walter Basset-Smith y Collcutt. Tuvo varias modificaciones y ampliaciones, en 1914 llevada a cabo por los constructores Mannelli y Lemmi, otra en 1920 por los mismos constructores y proyectistas y en 1934 por el constructor Septimio Polidoro. Las cubiertas originalmente de chapas, fueron reemplazadas por tejas francesas posiblemente en la década de 1960. Uno de sus recursos formales y materiales es la combinación de revoque rústico con falsos encadenados y dinteles en ladrillo.",
@@ -32,8 +32,8 @@
             "cantidadBaños": 4
         },
         {
-            "id": 2,
-            "idUsuario": 1,
+            "id": "2",
+            "idUsuario": "1",
             "tipoPropiedad": "Casa",
             "tituloPropiedad": "Importante residencia de categoría en esquina del barrio Los Troncos.",
             "descripcionPropiedad": "En el inmejorable entorno del exclusivo y tradicional barrio Los Troncos, sobre lote en esquina de 1.005 m2, con frentes de 33,30 mts, se encuentra esta importante residencia de 687 m2. Con ingreso sobre calle Mendoza, la propiedad se desarrolla en dos plantas, retirada del frente con reja y parque perimetral. Al ingresar, en planta baja posee hall de acceso, luminoso estar, amplio comedor principal, cocina de generosas dimensiones con isla central, sala de máquinas, lavadero y family. Además, en la misma planta, posee cómodo dormitorio en suite. Luego en subsuelo cuenta con amplia cava con sector de estar. Ya en planta alta, posee cuatro cómodos dormitorios en suite, el principal con vestidor, baño con hidromasaje y balcón terraza; y los dormitorios restantes con salida a balcón corrido al frente. Además, la propiedad posee en construcción independiente, garage para dos autos con cocina, baño y sala de juegos en planta alta; trotadora para dos autos el cual se accede por calle Almafuerte mediante portón automático. Por último, cuenta con jardín, galería, espacio de fogón y piscina climatizada. Esta exclusiva residencia cuenta con detalles de estilo y confort, tales como, calefacción por losa radiante, aberturas de aluminio con DVH, aire acondicionado en todos los ambientes y cerraduras con código y huella.",
@@ -64,8 +64,8 @@
             "cantidadBaños": 6
         },
         {
-            "id": 3,
-            "idUsuario": 1,
+            "id": "3",
+            "idUsuario": "1",
             "tipoPropiedad": "Casa",
             "tituloPropiedad": "Importante propiedad lindera al Golf de Acantilados",
             "descripcionPropiedad": "Lindera al Golf de Acantilados, se encuentra esta importante propiedad de 850 m2 cubiertos aproximadamente, sobre lote de 87,50 mts x 85 mts y una superficie total de 7.437 m2. La propiedad posee siete dormitorios en suite, sauna, gimnasio, dos canchas de tenis-paddle, piscina climatizada cubierta y descubierta, y estacionamiento para veinte autos.",
@@ -102,8 +102,8 @@
 
     "Departament": [
         {
-            "id": 1,
-            "idUsuario": 1,
+            "id": "1",
+            "idUsuario": "1",
             "tipoPropiedad": "Departamento",
             "tituloPropiedad": "Piso único, con las mejores visuales al mar y a las playas de Bahía Varese",
             "descripcionPropiedad": "En el excelente entorno de Playa de los Ingleses, actualmente Bahía Varese y a metros de Av. Colón, se encuentra este importante piso, en edificio de categoría, con las mejores visuales al mar y a las playas de Bahía Varese. La unidad de 460 m2 cuenta con palier privado, amplio hall principal de recepción, estar con vista al mar amplio y luminoso, al igual que el segundo estar y el comedor principal, dos balcones al frente, toilette de recepción y cocina de generosas dimensiones con comedor diario. En el área de servicio, posee hall de servicio, dos dependencias, dos baños con ducha, lavadero y sector de planchado. Luego, en el área privada, cuenta además con seis cómodos dormitorios con pisos de madera, de los cuales tres son en suite, y dos baños con ducha para servicio de los dormitorios restantes. Por último, cuenta con dos cocheras, detalles de calidad como pisos de porcelanato y ventanas con DVH; y se encuentra en excelente estado de conservación y mantenimiento.",
@@ -135,8 +135,8 @@
             "cantidadBaños": 5
         },
         {
-            "id": 2,
-            "idUsuario": 1,
+            "id": "2",
+            "idUsuario": "1",
             "tipoPropiedad": "Departamento",
             "tituloPropiedad": "Importante piso con vista al mar, sobre el Parque San Martín. ",
             "descripcionPropiedad": "UNICAMENTE FAMILIAS. NO SE ACEPTAN MASCOTAS. En el excelente entorno de Playa Grande, sobre el Parque San Martín, se encuentra este exclusivo piso de categoría frente al mar con 218 m2. Al ingresar, cuenta con un amplio y luminoso estar comedor con aire acondicionado y salida al balcón terraza, frente al mar con las mejores vistas, cocina con comedor diario, lavadero, toilette de recepción, dependencia de servicio con baño y tres cómodos dormitorios en suite, el principal con vestidor, baño con ducha e hidromasaje, aire acondicionado y salida a balcón. Posee cochera, baulera y acceso a los amenities que ofrece el edificio, tales como piscina climatizada exterior, piscina contracorriente en el interior, gimnasio, salón de usos múltiples, sauna seco y húmedo, vestuarios, sala de microcine y seguridad las 24 hs.",
@@ -168,8 +168,8 @@
             "cantidadBaños": 3
         },
         {
-            "id": 3,
-            "idUsuario": 1,
+            "id": "3",
+            "idUsuario": "1",
             "tipoPropiedad": "Departamento",
             "tituloPropiedad": "Exclusivo Penthouse con vistas al mar y a Playa Chica.",
             "descripcionPropiedad": "En el excelente entorno de Playa Chica, dentro de la tercera torre desarrollada del Maral Explanada, proyecto del prestigioso Arquitecto Cesar Pelli, se encuentra este exclusivo Penthouse de cuatro ambientes. La unidad de 252 m2 totales cuenta con amplio y luminoso estar comedor con salida a balcón corrido, vista al mar, toilette de recepción, cocina semi integrada con barra desayunadora, comedor diario, y lavadero separado con toilette. Mientras que en el área privada, posee tres dormitorios en suite, el principal con vestidor, dos de ellos con hidromasaje y vista al mar. La unidad posee además calefacción por aire central, como así también el acceso a los excelentes amenities que el complejo ofrece, tales como piscina climatizada interior, piscina lúdica con hidroterapia, minipiscina con hidromasaje, circuito de agua, sauna seco, sauna húmedo, sala de masajes, sector de relax, microcine, business center, sala de juegos, Sky club (sala de estar en piso 24), quincho en piso 24, áreas verdes y de recreación proyectadas en 5.200 m2, sistema de seguridad con vigilancia las 24 hs. con circuito cerrado de TV en áreas comunes, central telefónica IP, WIFI en zonas comunes, laundry, sistema de reciclado de agua, sistema ablandador de agua y grupo electrógeno de emergencias.",
@@ -205,8 +205,8 @@
 
     "Land": [
         {
-            "id": 1,
-            "idUsuario": 1,
+            "id": "1",
+            "idUsuario": "1",
             "tipoPropiedad": "Terreno",
             "tituloPropiedad": "Importante lote para desarrollo, en estratégica ubicación del barrio Chauvin",
             "descripcionPropiedad": "En estratégica ubicación del barrio Chauvín, se encuentra este importante lote irregular para desarrollo de 5.703 m2 con salida a tres calles. Cuenta con 54,14 mts de frente sobre calle Larrea, fondos de 105,50 mts y 97,8 mts con salida a calle Azcuénaga y Mitre. El lote se encuentra emplazado sobre distrito E1, zona destinada a la localización de usos urbanos de equipamiento y servicios, compatibles con uso residencial de densidad media, con FOS 0,5 y dados los indicadores de la zona, incentivos y premios vigentes, cuenta con la factibilidad de construir 21.500 m2 en planta baja más 6 pisos superiores.",
@@ -231,8 +231,8 @@
             "valoracionPromedio": 0
         },
         {
-            "id": 2,
-            "idUsuario": 1,
+            "id": "2",
+            "idUsuario": "1",
             "tipoPropiedad": "Terreno",
             "tituloPropiedad": "Importante manzana a metros del acceso a Santa Clara y del Mar",
             "descripcionPropiedad": "En excelente ubicación, a metros del acceso a Santa Clara y del mar, se ubica esta importante manzana de 8476 m2 de superficie total, con 75 mts de frente y 110 mts de fondo. Actualmente posee una superficie cubierta de 195 m2, cerco de alambrado perimetral y cuenta con la posibilidad de subdivisión.",
@@ -257,8 +257,8 @@
             "valoracionPromedio": 0
         },
         {
-            "id": 3,
-            "idUsuario": 1,
+            "id": "3",
+            "idUsuario": "1",
             "tipoPropiedad": "Terreno",
             "tituloPropiedad": "Importante lote triangular frente al mar, en zona Norte",
             "descripcionPropiedad": "En excelente ubicación de zona Norte, frente al mar con inmejorables visuales, se encuentra este lote o fracción de 710 m2 en forma triangular y con salida a tres calles. Cuenta con 58,10 mts de frente sobre Av. Felix U. Camet, 51 mts sobre calle Libres del Sur y 27,83 mts sobre calle Alice. Se encuentra emplazado sobre Distrito R3, zona destinada a la localización de uso residencial de densidad media con viviendas individuales y colectivas, por lo cual cuenta con la factibilidad de desarrollar en él 2.000 m2 en hasta 8 niveles (planta baja y siete pisos superiores).",

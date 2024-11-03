@@ -34,7 +34,7 @@ export class ManagementAddHouseComponent {
     imagenes: [],
     cantidadAmbientes: 0,
     cantidadDormitorios: 0,
-    cantidadBaños: 0
+    cantidadBanos: 0
 };
 
   formulario : FormGroup;
@@ -53,8 +53,8 @@ export class ManagementAddHouseComponent {
         "pais": ['', [Validators.required]],
         "provincia": ['', [Validators.required]],
         "localidad": ['', [Validators.required]],
-        "nombreCalle": ['', [Validators.required]],
-        "numeroCalle": ['', [Validators.required]]
+        "nombre_calle": ['', [Validators.required]],
+        "numero_calle": ['', [Validators.required]]
       }),
       "ubicacionPropiedad": this.fb.group({
         "lat": [0, [Validators.required]],
@@ -107,7 +107,7 @@ export class ManagementAddHouseComponent {
   }
 
   get cantidadBanos() {
-    return this.formulario.get("cantidadBaños");
+    return this.formulario.get("cantidadBanos");
   }
 
   onSubmit() {

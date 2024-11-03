@@ -18,7 +18,7 @@ export class HouseService {
     return this.peticionesHTTP.get<House[]>(this.urlBase);
   }
 
-  getHouse(id: number | null): Observable<House> {
+  getHouse(id: string | null): Observable<House> {
 
     return this.peticionesHTTP.get<House>(this.urlBase + "/" + id);
   }
@@ -28,12 +28,12 @@ export class HouseService {
     return this.peticionesHTTP.post<House>(this.urlBase, house);
   }
 
-  deleteHouse(id: number | undefined): Observable<House> {
+  deleteHouse(id: string | undefined): Observable<House> {
 
     return this.peticionesHTTP.delete<House>(this.urlBase + "/" + id);
   }
 
-  modifyHouse(id: number | null, house: House): Observable<House> {
+  modifyHouse(id: string | null, house: House): Observable<House> {
 
     return this.peticionesHTTP.put<House>(this.urlBase + "/" + id, house);
   } 
