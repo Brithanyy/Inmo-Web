@@ -27,25 +27,30 @@ export class HouseDetailComponent implements OnInit {
   activatedRoute = inject(ActivatedRoute);
   servicioHouse = inject(HouseService);
   servicioReview = inject(ReviewService); //!Atributo nuevo
+
   tipoPropiedad = 'Casa'; //!Atributo nuevo
   houseID?: string | null;
   houseBuffer?: House;
   currentImageIndex = 0;
   selectedImage: string | null = null;
   errorServicioHouse?: string;
+
   reviews?: Review[] = [];//!Atributo nuevo
   errorServicioResena?: string;//!Atributo nuevo
-  isLoading = true;//!Atributo nuevo
+  isLoading = true; //!Atributo nuevo
 
   ngOnInit(): void {
+
     this.houseID = this.activatedRoute.snapshot.paramMap.get('id');
     this.isLoading = true;
   
     this.servicioHouse.getHouse(this.houseID).subscribe({
+
       next: (returnedHouse) => {
         this.houseBuffer = returnedHouse;
         this.loadReviews();
       },
+
       error: (returnedError) => {
         this.errorServicioHouse = returnedError.mesagge;
         this.showErrorMessage(this.errorServicioHouse);
@@ -55,17 +60,21 @@ export class HouseDetailComponent implements OnInit {
   }
 
   loadReviews() {
+
     if (this.houseBuffer) {
+
       this.servicioReview.getReviews().subscribe({
+
         next: (returnedReviews) => {
           this.reviews = returnedReviews
-            .filter(review => review.idPropiedad === this.houseBuffer?.id)
+            .filter(review => review.idPropiedad === (this.houseBuffer?.id && this.houseBuffer.tipoPropiedad == 'Casa'))
             .map(review => ({
               ...review,
               estrellas: review.estrellas || 0 
             }));
           this.isLoading = false;
         },
+
         error: (returnedError) => {
           this.errorServicioResena = returnedError.message;
           this.showErrorMessage(this.errorServicioResena);

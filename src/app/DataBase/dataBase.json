@@ -279,6 +279,15 @@
       "comentario": "Tuve la oportunidad de visitar esta propiedad y debo decir que es absolutamente hermosa. Su estilo antiguo le confiere un encanto único que la distingue de otras. Sin embargo, es importante mencionar que el precio es bastante elevado, lo que puede ser un factor a considerar. A pesar de esto, la calidad y la estética de la propiedad definitivamente valen la pena.",
       "estrellas": "3",
       "fecha": "2024-11-03T21:17:21.865Z"
+    },
+    {
+      "id": "e4fe",
+      "tipoPropiedad": "Casa",
+      "idPropiedad": "2",
+      "usuario": "Brisa Ortiz",
+      "comentario": "Tuve la oportunidad de visitar esta propiedad y debo decir que es realmente buena. La distribución de los espacios es muy funcional y se siente acogedora. Además, la ubicación es excelente, lo que la hace aún más atractiva. Sin duda, una opción a considerar para quienes buscan un hogar cómodo y bien ubicado. ¡Recomendada!",
+      "estrellas": "5",
+      "fecha": "2024-11-03T21:42:56.049Z"
     }
   ]
 }

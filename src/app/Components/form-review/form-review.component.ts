@@ -46,10 +46,8 @@ export class FormReviewComponent {
       };
 
       this.reviewService.addReview(newReview).subscribe({
-        next: (returnedRview) => {
-          alert("Tipo propiedad: " + returnedRview.tipoPropiedad + " ID: " + returnedRview.idPropiedad + " Usuario: " + returnedRview.usuario);
-          this.reviewAdded.emit(); // Emitir evento cuando se agrega una reseña
-        },
+        next: (returnedRview) => this.reviewAdded.emit(), // Emitir evento cuando se agrega una reseña (sí se renderiza la lista al mismo tiempo que se agrega)
+      
         error: (returnedError) => {
           this.mensaje = returnedError.mesagge;
           this.showErrorMessage();

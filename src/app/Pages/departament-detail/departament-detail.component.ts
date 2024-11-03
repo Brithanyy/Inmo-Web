@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../../Components/navbar/navbar.component";
 import { FooterComponent } from "../../Components/footer/footer.component";
 import { FormReviewComponent } from '../../Components/form-review/form-review.component';
+import { ReviewService } from '../../Services/Review/review.service';
+import { Review } from '../../Models/Review.model';
 
 @Component({
   selector: 'app-departament-detail',
@@ -24,21 +26,61 @@ export class DepartamentDetailComponent implements OnInit {
 
   activatedRoute = inject(ActivatedRoute);
   servicioDepartament = inject(DepartamentService);
+  servicioReview = inject(ReviewService);
+
   departamentID?: string | null;
   departamentBuffer?: Departament;
   currentImageIndex = 0;
   selectedImage: string | null = null;
-  error?: string;
+  errorServicioDepartament?: string;
+
+  reviews?: Review[] = [];
+  errorServicioResena?: string;
+  isLoading = true;
 
   ngOnInit(): void {
-    
-    this.departamentID = this.activatedRoute.snapshot.paramMap.get('id');
 
+    this.departamentID = this.activatedRoute.snapshot.paramMap.get('id');
+    this.isLoading = true;
+  
     this.servicioDepartament.getDepartament(this.departamentID).subscribe({
 
-      next: (returnedDepartament) => this.departamentBuffer = returnedDepartament,
-      error: (returnedError) => alert("Error: " + returnedError.mesagge)
+      next: (returnedDepartament) => {
+        this.departamentBuffer = returnedDepartament;
+        this.loadReviews();
+      },
+
+      error: (returnedError) => {
+        this.errorServicioDepartament = returnedError.mesagge;
+        this.showErrorMessage(this.errorServicioDepartament);
+        this.isLoading = false;
+      }
     });
+  }
+
+  loadReviews() {
+
+    if (this.departamentBuffer) {
+
+      this.servicioReview.getReviews().subscribe({
+
+        next: (returnedReviews) => {
+          this.reviews = returnedReviews
+            .filter(review => review.idPropiedad === (this.departamentBuffer?.id && this.departamentBuffer.tipoPropiedad == 'Departamento'))
+            .map(review => ({
+              ...review,
+              estrellas: review.estrellas || 0 
+            }));
+          this.isLoading = false;
+        },
+
+        error: (returnedError) => {
+          this.errorServicioResena = returnedError.message;
+          this.showErrorMessage(this.errorServicioResena);
+          this.isLoading = false;
+        }
+      });
+    }
   }
 
   prevImage() {
@@ -61,9 +103,9 @@ export class DepartamentDetailComponent implements OnInit {
     this.selectedImage = null;
   }
 
-  showErrorMessage() {
-    if (this.error) {
-      alert(`Error al agregar una reseña: ${this.error}`);
+  showErrorMessage(error: string | undefined) {
+    if (error) {
+      alert(`Error al cargar las reseña: ${error}`);
     }
   }
 }
