@@ -1,28 +1,76 @@
 <app-navbar></app-navbar>
 
 @if(departamentBuffer) {
-
     <div class="container mt-4">
-        <div class="card property-card">
-          <div class="property-header">
-            <h2>{{departamentBuffer.tituloPropiedad}}</h2>
-          </div>
-          <div class="property-body">
-            <div class="property-info">
-              <p><span class="property-label">Tipo:</span> {{departamentBuffer.tipoPropiedad}}</p>
-              <p><span class="property-label">Precio:</span> {{departamentBuffer.precioPropiedad}}</p>
-              <p><span class="property-label">Descripción:</span> {{departamentBuffer.descripcionPropiedad}}</p>
-              <p><span class="property-label">Superficie cubierta:</span> {{departamentBuffer.superficieCubierta}}</p>
-              <p><span class="property-label">Superficie total:</span> {{departamentBuffer.superficieTotal}}</p>
-              <p><span class="property-label">Dirección:</span> {{departamentBuffer.direccionPropiedad.nombre_calle}} {{departamentBuffer.direccionPropiedad.numero_calle}}, {{departamentBuffer.direccionPropiedad.localidad}}, {{departamentBuffer.direccionPropiedad.provincia}}, {{departamentBuffer.direccionPropiedad.pais}}</p>
-              <p><span class="property-label">Ambientes:</span> {{departamentBuffer.cantidadAmbientes}}</p>
-              <p><span class="property-label">Dormitorios:</span> {{departamentBuffer.cantidadDormitorios}}</p>
-              <p><span class="property-label">Baños:</span> {{departamentBuffer.cantidadBanos}}</p>
+        <div class="property-card">
+            <!-- Encabezado con título y precio -->
+            <div class="property-header">
+                <h2>{{departamentBuffer.tituloPropiedad}}</h2>
+                <div class="price">Precio US$ {{departamentBuffer.precioPropiedad}}</div>
             </div>
-            <div class="image-gallery">
-              <img *ngFor="let imagen of departamentBuffer.imagenes" [src]="imagen" alt="Imagen de la propiedad" class="gallery-image">
+
+            <!-- Galería de imágenes -->
+            <div class="carousel-container">
+                @if(departamentBuffer.imagenes.length > 0) {
+                    <img [src]="departamentBuffer.imagenes[currentImageIndex]" 
+                         alt="Imagen de la propiedad" 
+                         class="carousel-image"
+                         (click)="openImage(departamentBuffer.imagenes[currentImageIndex])">
+                    <button class="carousel-button prev" (click)="prevImage()" [disabled]="currentImageIndex === 0">❮</button>
+                    <button class="carousel-button next" (click)="nextImage()" [disabled]="currentImageIndex === departamentBuffer.imagenes.length - 1">❯</button>
+                    <div class="image-counter">{{currentImageIndex + 1}} / {{departamentBuffer.imagenes.length}}</div>
+                }
             </div>
-          </div>
+
+            <!-- Modal para imagen ampliada -->
+            @if(selectedImage) {
+                <div class="modal" (click)="closeImage()">
+                    <img [src]="selectedImage" alt="Imagen ampliada" class="modal-image">
+                    <button class="close-modal" (click)="closeImage()">✕</button>
+                </div>
+            }
+
+            <!-- Características -->
+            <div class="property-characteristics">
+                <h3>Características</h3>
+                
+                <!-- Descripción -->
+                <div class="description-section">
+                    <span class="characteristic-label">Descripción</span>
+                    <p>{{departamentBuffer.descripcionPropiedad}}</p>
+                </div>
+                
+                <!-- Grid de características -->
+                <div class="characteristics-grid">
+                    <!-- Primera fila -->
+                    <div class="characteristic-item">
+                        <span class="characteristic-label">Superficie cubierta</span>
+                        <span>{{departamentBuffer.superficieCubierta}} m²</span>
+                    </div>
+                    <div class="characteristic-item">
+                        <span class="characteristic-label">Superficie total</span>
+                        <span>{{departamentBuffer.superficieTotal}} m²</span>
+                    </div>
+                    <div class="characteristic-item">
+                        <span class="characteristic-label">Dirección</span>
+                        <span>{{departamentBuffer.direccionPropiedad.nombre_calle}} {{departamentBuffer.direccionPropiedad.numero_calle}}, {{departamentBuffer.direccionPropiedad.localidad}}, {{departamentBuffer.direccionPropiedad.provincia}}, {{departamentBuffer.direccionPropiedad.pais}}</span>
+                    </div>
+                    
+                    <!-- Segunda fila -->
+                    <div class="characteristic-item">
+                        <span class="characteristic-label">Ambientes</span>
+                        <span>{{departamentBuffer.cantidadAmbientes}}</span>
+                    </div>
+                    <div class="characteristic-item">
+                        <span class="characteristic-label">Dormitorios</span>
+                        <span>{{departamentBuffer.cantidadDormitorios}}</span>
+                    </div>
+                    <div class="characteristic-item">
+                        <span class="characteristic-label">Baños</span>
+                        <span>{{departamentBuffer.cantidadBanos}}</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 }

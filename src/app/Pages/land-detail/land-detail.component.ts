@@ -24,6 +24,8 @@ export class LandDetailComponent implements OnInit {
   servicioLand = inject(LandService);
   landID?: string | null;
   landBuffer?: Land;
+  currentImageIndex = 0;
+  selectedImage: string | null = null;
 
   ngOnInit(): void {
     
@@ -34,5 +36,25 @@ export class LandDetailComponent implements OnInit {
       next: (returnedLand) => this.landBuffer = returnedLand,
       error: (returnedError) => alert("Error: " + returnedError.mesagge)
     });
+  }
+
+  prevImage() {
+    if (this.landBuffer && this.currentImageIndex > 0) {
+      this.currentImageIndex--;
+    }
+  }
+
+  nextImage() {
+    if (this.landBuffer && this.currentImageIndex < this.landBuffer.imagenes.length - 1) {
+      this.currentImageIndex++;
+    }
+  }
+
+  openImage(image: string) {
+    this.selectedImage = image;
+  }
+
+  closeImage() {
+    this.selectedImage = null;
   }
 }

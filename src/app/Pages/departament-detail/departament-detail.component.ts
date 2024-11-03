@@ -24,6 +24,8 @@ export class DepartamentDetailComponent implements OnInit {
   servicioDepartament = inject(DepartamentService);
   departamentID?: string | null;
   departamentBuffer?: Departament;
+  currentImageIndex = 0;
+  selectedImage: string | null = null;
 
   ngOnInit(): void {
     
@@ -34,5 +36,25 @@ export class DepartamentDetailComponent implements OnInit {
       next: (returnedDepartament) => this.departamentBuffer = returnedDepartament,
       error: (returnedError) => alert("Error: " + returnedError.mesagge)
     });
+  }
+
+  prevImage() {
+    if (this.departamentBuffer && this.currentImageIndex > 0) {
+      this.currentImageIndex--;
+    }
+  }
+
+  nextImage() {
+    if (this.departamentBuffer && this.currentImageIndex < this.departamentBuffer.imagenes.length - 1) {
+      this.currentImageIndex++;
+    }
+  }
+
+  openImage(image: string) {
+    this.selectedImage = image;
+  }
+
+  closeImage() {
+    this.selectedImage = null;
   }
 }

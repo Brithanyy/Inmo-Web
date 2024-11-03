@@ -1,65 +1,202 @@
 .property-card {
-    border: 2px solid #007200;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
     border-radius: 10px;
-    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .property-header {
-    background-color: #007200;
-    color: white;
-    padding: 15px;
-}
-
-.property-body {
-    padding: 20px;
-}
-
-.property-info {
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.property-label {
+.property-header h2 {
+    color: #007200;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 24px;
     font-weight: bold;
     color: #007200;
 }
 
-.image-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
+/* Estilos del carrusel */
+.carousel-container {
+    position: relative;
+    width: 500px; /* Ancho fijo más pequeño */
+    height: 500px; /* Altura igual al ancho para hacerlo cuadrado */
+    overflow: hidden;
+    margin: 20px auto; /* centro el carrusel */
 }
 
-.gallery-image {
-    width: 150px;
-    height: 150px;
+.carousel-image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.3s ease;
 }
 
-.gallery-image:hover {
-    transform: scale(1.05);
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.image-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+/* Modal para imagen ampliada */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-image {
+    max-width: 800px; /* Limitamos el ancho máximo */
+    max-height: 600px; /* Limitamos la altura máxima */
+    object-fit: contain; /* Mantiene la proporción sin estirar */
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-modal:hover {
+    background-color: #cc0000;
+}
+
+/* Características */
+.property-characteristics {
+    margin-top: 30px;
+}
+
+.description-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.characteristic-item {
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+.characteristic-label {
+    font-weight: bold;
+    color: #007200;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+/*Estilos para el precio*/
+.price {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #007200;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #e8f5e9, #ffffff, #e8f5e9);
+    border-radius: 8px;
+    display: inline-block;
+    margin: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 114, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.price::before {
+    font-size: 0.5em;
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    color: #005700;
+    font-weight: normal;
+}
+
+.price:hover {
+    transform: scale(1.05);
+}
+
+.price::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #007200, transparent);
 }
 
 button {
     padding: 10px 20px;
-    background-color: #007200; 
-    color: white; 
+    background-color: #007200;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: #015201; 
-
+    background-color: #015201;
 }
