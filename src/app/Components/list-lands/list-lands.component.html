@@ -4,13 +4,16 @@
         {{ errorReturned }}
       </div>
     }
-    <div class="row">
-      @for (land of lands; track $index) {
-        <div class="col-md-4 mb-4">
-          <app-card-land [landID]="land.id"></app-card-land>
-        </div>
-      }
-    </div>
-  </div>
+
+    @else {
+      <div class="row">
+        @for (land of lands; track $index) {
+          <div class="col-md-4 mb-4">
+            <app-card-land [landID]="land.id"></app-card-land>
+          </div>
+        }
+      </div>
+    }
+</div>
 
 

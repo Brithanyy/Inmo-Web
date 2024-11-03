@@ -11,7 +11,6 @@ export class LandService {
   constructor() { }
 
   urlBase: string = "http://localhost:3000/Land";
-
   peticionesHTTP = inject(HttpClient);
 
   getLands(): Observable<Land[]> {

@@ -1,7 +1,7 @@
+import { Land } from './../../Models/Land.model';
 import { Component, inject, Input, OnInit } from '@angular/core';
-import { Land } from '../../Models/Land.model';
-import { LandService } from '../../Services/Land/land.service';
 import { Router } from '@angular/router';
+import { LandService } from '../../Services/Land/land.service';
 
 @Component({
   selector: 'app-card-land',
@@ -13,11 +13,8 @@ import { Router } from '@angular/router';
 export class CardLandComponent implements OnInit {
 
   router  = inject(Router);
-
   @Input() landID: string | undefined;
-
   land: Land | undefined;
-
   landService = inject(LandService);
 
   //*Si es que aparece un error, lo interpolamos y mostramos un mensaje si es que esta variable no está vacía

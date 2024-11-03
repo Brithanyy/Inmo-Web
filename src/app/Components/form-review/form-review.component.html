@@ -1,0 +1,60 @@
+<div class="container mt-4">
+
+    @if (error) {
+        <div class="alert alert-danger">
+            {{error}}
+        </div>
+    }
+
+    @else {
+        <h2 class="text">Agregar Reseña</h2>
+        <form [formGroup]="formAdd">
+        
+        <div class="mb-3">
+            <label for="usuario" class="form-label">Usuario</label>
+            <input
+            type="text"
+            class="form-control"
+            id="usuario"
+            formControlName="usuario"
+            />
+            <div *ngIf="formAdd.get('usuario')?.invalid && formAdd.get('usuario')?.touched" class="text-danger">
+            El nombre de usuario es requerido.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="comentario" class="form-label">Comentario</label>
+            <textarea
+            class="form-control"
+            id="comentario"
+            rows="3"
+            formControlName="comentario"
+            ></textarea>
+            <div *ngIf="formAdd.get('comentario')?.invalid && formAdd.get('comentario')?.touched" class="text-danger">
+            El comentario es requerido.
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="estrellas" class="form-label">Estrellas</label>
+            <select
+            class="form-select"
+            id="estrellas"
+            formControlName="estrellas"
+            >
+            <option *ngFor="let star of [1, 2, 3, 4, 5]" [value]="star">{{ star }}</option>
+            </select>
+        </div>
+        
+        <button 
+            class="btn btn-success" 
+            (click)="onSubmit()" 
+            [disabled]="formAdd.invalid">
+            Enviar Reseña
+        </button>        
+    </form>
+    }
+
+</div>
+

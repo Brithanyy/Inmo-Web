@@ -4,13 +4,15 @@
         {{ errorReturned }}
       </div>
     }
-    <div class="row">
-      @for (departament of departaments; track $index) {
-        <div class="col-md-4 mb-4">
-          <app-card-departament [departamentID]="departament.id"></app-card-departament>
-        </div>
-      }
-    </div>
-  </div>
+    @else {
+      <div class="row">
+        @for (departament of departaments; track $index) {
+          <div class="col-md-4 mb-4">
+            <app-card-departament [departamentID]="departament.id"></app-card-departament>
+          </div>
+        }
+      </div>
+    }
+</div>
 
 

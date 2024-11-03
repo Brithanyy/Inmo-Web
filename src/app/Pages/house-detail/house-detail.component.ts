@@ -5,6 +5,7 @@ import { House } from '../../Models/House.model';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../../Components/navbar/navbar.component";
 import { FooterComponent } from "../../Components/footer/footer.component";
+import { FormReviewComponent } from "../../Components/form-review/form-review.component";
 
 @Component({
   selector: 'app-house-detail',
@@ -13,7 +14,8 @@ import { FooterComponent } from "../../Components/footer/footer.component";
     CommonModule,
     RouterLink,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    FormReviewComponent
 ],
   templateUrl: './house-detail.component.html',
   styleUrl: './house-detail.component.css'
@@ -26,6 +28,7 @@ export class HouseDetailComponent implements OnInit {
   houseBuffer?: House;
   currentImageIndex = 0;
   selectedImage: string | null = null;
+  error?: string;
 
   ngOnInit(): void {
     
@@ -34,7 +37,10 @@ export class HouseDetailComponent implements OnInit {
     this.servicioHouse.getHouse(this.houseID).subscribe({
 
       next: (returnedHouse) => this.houseBuffer = returnedHouse,
-      error: (returnedError) => alert("Error: " + returnedError.mesagge)
+      error: (returnedError) => {
+        this.error = returnedError.mesagge;
+        this.showErrorMessage();
+      }
     });
   }
 
@@ -57,5 +63,11 @@ export class HouseDetailComponent implements OnInit {
 
   closeImage() {
     this.selectedImage = null;
+  }
+
+  showErrorMessage() {
+    if (this.error) {
+      alert(`Error al agregar una reseña: ${this.error}`);
+    }
   }
 }

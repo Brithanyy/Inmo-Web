@@ -4,12 +4,14 @@
       {{ errorReturned }}
     </div>
   }
-  <div class="row">
-    @for (house of houses; track $index) {
-      <div class="col-md-4 mb-4">
-        <app-card-house [houseID]="house.id"></app-card-house>
-      </div>
-    }
-  </div>
+  @else {
+    <div class="row">
+      @for (house of houses; track $index) {
+        <div class="col-md-4 mb-4">
+          <app-card-house [houseID]="house.id"></app-card-house>
+        </div>
+      }
+    </div>
+  }
 </div>
 

@@ -5,6 +5,7 @@ import { Land } from '../../Models/Land.model';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from "../../Components/navbar/navbar.component";
 import { FooterComponent } from "../../Components/footer/footer.component";
+import { FormReviewComponent } from '../../Components/form-review/form-review.component';
 
 @Component({
   selector: 'app-land-detail',
@@ -13,7 +14,8 @@ import { FooterComponent } from "../../Components/footer/footer.component";
     CommonModule,
     RouterLink,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    FormReviewComponent
 ],
   templateUrl: './land-detail.component.html',
   styleUrl: './land-detail.component.css'
@@ -26,6 +28,7 @@ export class LandDetailComponent implements OnInit {
   landBuffer?: Land;
   currentImageIndex = 0;
   selectedImage: string | null = null;
+  error?: string;
 
   ngOnInit(): void {
     
@@ -56,5 +59,11 @@ export class LandDetailComponent implements OnInit {
 
   closeImage() {
     this.selectedImage = null;
+  }
+
+  showErrorMessage() {
+    if (this.error) {
+      alert(`Error al agregar una reseña: ${this.error}`);
+    }
   }
 }
