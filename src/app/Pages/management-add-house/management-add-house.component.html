@@ -1,11 +1,11 @@
 <div class="container mt-5">
-    <form class="form-house shadow-lg p-4 rounded" [formGroup]="formulario">
-      <h2 class="text-center mb-4">Registrar Casa</h2>
+    <form class="form-house shadow-lg p-4 rounded" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <h2 class="text-center mb-4">Agregar Casa</h2>
   
       <!--! Título Propiedad -->
       <div class="mb-3">
         <label for="tituloPropiedad" class="form-label">Título de la Propiedad</label>
-        <input type="text" id="tituloPropiedad" formControlName="tituloPropiedad" class="form-control" placeholder="Ej. Casa en la costa" >
+        <input type="text" id="tituloPropiedad" formControlName="tituloPropiedad" class="form-control" placeholder="Ej. Casa en la costa"  [ngClass]="{'is-invalid': tituloPropiedad?.invalid && tituloPropiedad?.touched}">
         <div *ngIf="tituloPropiedad?.invalid && tituloPropiedad?.touched" class="invalid-feedback">
           El título de la propiedad es obligatorio.
         </div>
@@ -14,7 +14,7 @@
       <!--! Descripción Propiedad -->
       <div class="mb-3">
         <label for="descripcionPropiedad" class="form-label">Descripción</label>
-        <textarea id="descripcionPropiedad" formControlName="descripcionPropiedad" class="form-control" rows="3" placeholder="Escribe una breve descripción de la propiedad"></textarea>
+        <textarea id="descripcionPropiedad" formControlName="descripcionPropiedad" class="form-control" rows="3" placeholder="Escribe una breve descripción de la propiedad" [ngClass]="{'is-invalid': formulario.get('descripcionPropiedad')?.invalid && formulario.get('descripcionPropiedad')?.touched}"></textarea>
         <div *ngIf="descripcionPropiedad?.invalid && descripcionPropiedad?.touched" class="invalid-feedback">
           La descripción es obligatoria.
         </div>
@@ -23,7 +23,7 @@
       <!--! Precio Propiedad -->
       <div class="mb-3">
         <label for="precioPropiedad" class="form-label">Precio</label>
-        <input type="text" id="precioPropiedad" formControlName="precioPropiedad" class="form-control" placeholder="Ej. 150000 USD" >
+        <input type="text" id="precioPropiedad" formControlName="precioPropiedad" class="form-control" placeholder="Ej. 150000" [ngClass]="{'is-invalid': formulario.get('precioPropiedad')?.invalid && formulario.get('precioPropiedad')?.touched}">
         <div *ngIf="precioPropiedad?.invalid && precioPropiedad?.touched" class="invalid-feedback">
             El precio es obligatorio y debe ser un número válido.
           </div>
@@ -34,14 +34,14 @@
       <div class="row">
         <div class="col-md-6 mb-3">
           <label for="superficieCubierta" class="form-label">Superficie Cubierta (m²)</label>
-          <input type="number" id="superficieCubierta" formControlName="superficieCubierta" class="form-control" placeholder="Ej. 100">
+          <input type="number" id="superficieCubierta" formControlName="superficieCubierta" class="form-control" placeholder="Ej. 100" [ngClass]="{'is-invalid': formulario.get('superficieCubierta')?.invalid && formulario.get('superficieCubierta')?.touched}">
           <div *ngIf="superficieCubierta?.invalid && superficieCubierta?.touched" class="invalid-feedback">
             La superficie cubierta es obligatoria y debe ser mayor que 0.
           </div>
         </div>
         <div class="col-md-6 mb-3">
           <label for="superficieTotal" class="form-label">Superficie Total (m²)</label>
-          <input type="number" id="superficieTotal" formControlName="superficieTotal" class="form-control" placeholder="Ej. 200">
+          <input type="number" id="superficieTotal" formControlName="superficieTotal" class="form-control" placeholder="Ej. 200" [ngClass]="{'is-invalid': formulario.get('superficieTotal')?.invalid && formulario.get('superficieTotal')?.touched}">
           <div *ngIf="superficieTotal?.invalid && superficieTotal?.touched" class="invalid-feedback">
             La superficie total es obligatoria y debe ser mayor que 0.
           </div>
@@ -53,7 +53,7 @@
         <legend class="h6">Dirección</legend>
         <div class="mb-3">
           <label for="pais" class="form-label">País</label>
-          <input type="text" id="pais" formControlName="pais" class="form-control" placeholder="Ej. Argentina">
+          <input type="text" id="pais" formControlName="pais" class="form-control" placeholder="Ej. Argentina" [ngClass]="{'is-invalid': formulario.get('direccionPropiedad.pais')?.invalid && formulario.get('direccionPropiedad.pais')?.touched}">
           <div *ngIf="formulario.get('direccionPropiedad.pais')?.invalid &&  formulario.get('direccionPropiedad.pais')?.touched" class="invalid-feedback">
             El país es obligatorio.
           </div>
@@ -61,14 +61,14 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="provincia" class="form-label">Provincia</label>
-            <input type="text" id="provincia" formControlName="provincia" class="form-control" placeholder="Ej. Buenos Aires">
+            <input type="text" id="provincia" formControlName="provincia" class="form-control" placeholder="Ej. Buenos Aires" [ngClass]="{'is-invalid': formulario.get('direccionPropiedad.provincia')?.invalid && formulario.get('direccionPropiedad.provincia')?.touched}">
             <div *ngIf="formulario.get('direccionPropiedad.provincia')?.invalid &&  formulario.get('direccionPropiedad.provincia')?.touched" class="invalid-feedback">
               La provincia es obligatoria.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="localidad" class="form-label">Localidad</label>
-            <input type="text" id="localidad" formControlName="localidad" class="form-control" placeholder="Ej. Mar del Plata">
+            <input type="text" id="localidad" formControlName="localidad" class="form-control" placeholder="Ej. Mar del Plata" [ngClass]="{'is-invalid': formulario.get('direccionPropiedad.localidad')?.invalid && formulario.get('direccionPropiedad.localidad')?.touched}">
             <div *ngIf="formulario.get('direccionPropiedad.localidad')?.invalid &&   formulario.get('direccionPropiedad.localidad')?.touched" class="invalid-feedback">
               La localidad es obligatoria.
             </div>
@@ -77,15 +77,15 @@
         <div class="row">
           <div class="col-md-8 mb-3">
             <label for="nombre_calle" class="form-label">Calle</label>
-            <input type="text" id="nombre_calle" formControlName="nombreCalle" class="form-control" placeholder="Ej. Av. Libertador">
-            <div *ngIf="formulario.get('direccionPropiedad.nombreCalle')?.invalid && formulario.get('direccionPropiedad.nombreCalle')?.touched" class="invalid-feedback">
+            <input type="text" id="nombre_calle" formControlName="nombre_calle" class="form-control" placeholder="Ej. Av. Libertador" [ngClass]="{'is-invalid': formulario.get('direccionPropiedad.nombre_calle')?.invalid && formulario.get('direccionPropiedad.nombre_calle')?.touched}">
+            <div *ngIf="formulario.get('direccionPropiedad.nombre_calle')?.invalid && formulario.get('direccionPropiedad.nombre_calle')?.touched" class="invalid-feedback">
               El nombre de la calle es obligatorio.
             </div>
           </div>
           <div class="col-md-4 mb-3">
             <label for="numero_calle" class="form-label">Número</label>
-            <input type="number" id="numero_calle" formControlName="numeroCalle" class="form-control" placeholder="Ej. 1234">
-            <div *ngIf="formulario.get('direccionPropiedad.numeroCalle')?.invalid &&  formulario.get('direccionPropiedad.numeroCalle')?.touched" class="invalid-feedback">
+            <input type="number" id="numero_calle" formControlName="numero_calle" class="form-control" placeholder="Ej. 1234" [ngClass]="{'is-invalid': formulario.get('direccionPropiedad.numero_calle')?.invalid && formulario.get('direccionPropiedad.numero_calle')?.touched}">
+            <div *ngIf="formulario.get('direccionPropiedad.numero_calle')?.invalid &&  formulario.get('direccionPropiedad.numero_calle')?.touched" class="invalid-feedback">
               El número de la calle es obligatorio y debe ser mayor que 0.
             </div>
           </div>
@@ -98,14 +98,14 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="lat" class="form-label">Latitud</label>
-            <input type="number" id="lat" formControlName="lat" class="form-control" placeholder="Ej. -34.6037">
+            <input type="number" id="lat" formControlName="lat" class="form-control" placeholder="Ej. -34.6037" [ngClass]="{'is-invalid': formulario.get('ubicacionPropiedad.lat')?.invalid && formulario.get('ubicacionPropiedad.lat')?.touched}">
             <div *ngIf="formulario.get('ubicacionPropiedad.lat')?.invalid && formulario.get('ubicacionPropiedad.lat')?.touched" class="invalid-feedback">
               La latitud es obligatoria y debe ser un número válido.
             </div>
           </div>
           <div class="col-md-6 mb-3">
             <label for="lng" class="form-label">Longitud</label>
-            <input type="number" id="lng" formControlName="lng" class="form-control" placeholder="Ej. -58.3816">
+            <input type="number" id="lng" formControlName="lng" class="form-control" placeholder="Ej. -58.3816" [ngClass]="{'is-invalid': formulario.get('ubicacionPropiedad.lng')?.invalid && formulario.get('ubicacionPropiedad.lng')?.touched}">
             <div *ngIf="formulario.get('ubicacionPropiedad.lng')?.invalid && formulario.get('ubicacionPropiedad.lng')?.touched" class="invalid-feedback">
               La longitud es obligatoria y debe ser un número válido.
             </div>
@@ -117,21 +117,21 @@
       <div class="row">
         <div class="col-md-4 mb-3">
           <label for="cantidadAmbientes" class="form-label">Ambientes</label>
-          <input type="number" id="cantidadAmbientes" formControlName="cantidadAmbientes" class="form-control">
+          <input type="number" id="cantidadAmbientes" formControlName="cantidadAmbientes" class="form-control" [ngClass]="{'is-invalid': formulario.get('cantidadAmbientes')?.invalid && formulario.get('cantidadAmbientes')?.touched}">
           <div *ngIf="cantidadAmbientes?.invalid &&  cantidadAmbientes?.touched" class="invalid-feedback">
             La cantidad de ambientes es obligatoria y debe ser mayor que 0.
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <label for="cantidadDormitorios" class="form-label">Dormitorios</label>
-          <input type="number" id="cantidadDormitorios" formControlName="cantidadDormitorios" class="form-control">
+          <input type="number" id="cantidadDormitorios" formControlName="cantidadDormitorios" class="form-control" [ngClass]="{'is-invalid': formulario.get('cantidadDormitorios')?.invalid && formulario.get('cantidadDormitorios')?.touched}">
           <div *ngIf="cantidadDormitorios?.invalid &&   cantidadDormitorios?.touched" class="invalid-feedback">
             La cantidad de dormitorios es obligatoria y debe ser mayor que 0.
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <label for="cantidadBaños" class="form-label">Baños</label>
-          <input type="number" id="cantidadBaños" formControlName="cantidadBanos" class="form-control">
+          <label for="cantidadBanos" class="form-label">Baños</label>
+          <input type="number" id="cantidadBanos" formControlName="cantidadBanos" class="form-control" [ngClass]="{'is-invalid': formulario.get('cantidadBanos')?.invalid && formulario.get('cantidadBanos')?.touched}">
           <div *ngIf="cantidadBanos?.invalid && cantidadBanos?.touched" class="invalid-feedback">
             La cantidad de baños es obligatoria y debe ser mayor que 0.
           </div>

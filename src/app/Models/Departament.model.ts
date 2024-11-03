@@ -3,8 +3,8 @@ import { Review } from "./Review.model";
 export interface Departament {
 
     //*Características básicas que comparten todos los tipos de propiedades
-    id?: number;
-    idUsuario?: number;
+    id?: string;
+    idUsuario?: string;
     tipoPropiedad: 'Departamento';
     tituloPropiedad: string;
     descripcionPropiedad: string;
@@ -29,5 +29,5 @@ export interface Departament {
     //*Características específicas del tipo: Departamento    
     cantidadAmbientes: number;
     cantidadDormitorios: number;
-    cantidadBaños: number;
+    cantidadBanos: number;
 }

@@ -11,7 +11,7 @@ import { Departament } from '../../Models/Departament.model';
 })
 export class CardDepartamentComponent implements OnInit {
 
-  @Input() departamentID: number | undefined;
+  @Input() departamentID: string | undefined;
 
   departament: Departament | undefined;
 
