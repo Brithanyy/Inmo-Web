@@ -7,6 +7,9 @@ import { PropertiesComponent } from './Pages/properties/properties.component';
 import { DepartamentsListComponent } from './Pages/departaments-list/departaments-list.component';
 import { HousesListComponent } from './Pages/houses-list/houses-list.component';
 import { LandsListComponent } from './Pages/lands-list/lands-list.component';
+import { ManagementAddHouseComponent } from './Pages/management-add-house/management-add-house.component';
+import { ManagementAddDepartamentComponent } from './Pages/management-add-departament/management-add-departament.component';
+import { ManagementAddLandComponent } from './Pages/management-add-land/management-add-land.component';
 
 export const routes: Routes = [
 
@@ -48,6 +51,19 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+
+    {
+        path: 'add-house',
+        component: ManagementAddHouseComponent
+    },
+    {
+        path: 'add-departament',
+        component: ManagementAddDepartamentComponent
+    },
+    {
+        path: 'add-land',
+        component: ManagementAddLandComponent
     },
 
     {

@@ -1,0 +1,37 @@
+.form-house {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  .form-house input:focus, .form-house textarea:focus {
+    border-color: #015201;
+    box-shadow: 0 0 8px rgba(6, 179, 32, 0.418);
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  button {
+    background-color: #007200;
+  } 
+
+  button:hover {
+    background-color: #015201;
+  }
+
+  .btn.disabled, 
+.btn:disabled {
+  background-color: #007200; 
+  color: #ffffff; 
+  cursor: not-allowed; 
+  opacity: 1; 
+}
+
+.btn:active, 
+.btn.active {
+  background-color: #015201;
+  color: #ffffff;
+}

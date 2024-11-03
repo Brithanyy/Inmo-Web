@@ -1,1 +1,146 @@
-<p>management-add-house works!</p>
+<div class="container mt-5">
+    <form class="form-house shadow-lg p-4 rounded" [formGroup]="formulario">
+      <h2 class="text-center mb-4">Registrar Casa</h2>
+  
+      <!--! Título Propiedad -->
+      <div class="mb-3">
+        <label for="tituloPropiedad" class="form-label">Título de la Propiedad</label>
+        <input type="text" id="tituloPropiedad" formControlName="tituloPropiedad" class="form-control" placeholder="Ej. Casa en la costa" >
+        <div *ngIf="tituloPropiedad?.invalid && tituloPropiedad?.touched" class="invalid-feedback">
+          El título de la propiedad es obligatorio.
+        </div>
+      </div>
+  
+      <!--! Descripción Propiedad -->
+      <div class="mb-3">
+        <label for="descripcionPropiedad" class="form-label">Descripción</label>
+        <textarea id="descripcionPropiedad" formControlName="descripcionPropiedad" class="form-control" rows="3" placeholder="Escribe una breve descripción de la propiedad"></textarea>
+        <div *ngIf="descripcionPropiedad?.invalid && descripcionPropiedad?.touched" class="invalid-feedback">
+          La descripción es obligatoria.
+        </div>
+      </div>
+  
+      <!--! Precio Propiedad -->
+      <div class="mb-3">
+        <label for="precioPropiedad" class="form-label">Precio</label>
+        <input type="text" id="precioPropiedad" formControlName="precioPropiedad" class="form-control" placeholder="Ej. 150000 USD" >
+        <div *ngIf="precioPropiedad?.invalid && precioPropiedad?.touched" class="invalid-feedback">
+            El precio es obligatorio y debe ser un número válido.
+          </div>
+          
+      </div>
+  
+      <!--! Superficie Cubierta y Total -->
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="superficieCubierta" class="form-label">Superficie Cubierta (m²)</label>
+          <input type="number" id="superficieCubierta" formControlName="superficieCubierta" class="form-control" placeholder="Ej. 100">
+          <div *ngIf="superficieCubierta?.invalid && superficieCubierta?.touched" class="invalid-feedback">
+            La superficie cubierta es obligatoria y debe ser mayor que 0.
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="superficieTotal" class="form-label">Superficie Total (m²)</label>
+          <input type="number" id="superficieTotal" formControlName="superficieTotal" class="form-control" placeholder="Ej. 200">
+          <div *ngIf="superficieTotal?.invalid && superficieTotal?.touched" class="invalid-feedback">
+            La superficie total es obligatoria y debe ser mayor que 0.
+          </div>
+        </div>
+      </div>
+  
+      <!--! Dirección Propiedad -->
+      <fieldset class="border p-3 rounded mb-3" formGroupName = "direccionPropiedad">
+        <legend class="h6">Dirección</legend>
+        <div class="mb-3">
+          <label for="pais" class="form-label">País</label>
+          <input type="text" id="pais" formControlName="pais" class="form-control" placeholder="Ej. Argentina">
+          <div *ngIf="formulario.get('direccionPropiedad.pais')?.invalid &&  formulario.get('direccionPropiedad.pais')?.touched" class="invalid-feedback">
+            El país es obligatorio.
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="provincia" class="form-label">Provincia</label>
+            <input type="text" id="provincia" formControlName="provincia" class="form-control" placeholder="Ej. Buenos Aires">
+            <div *ngIf="formulario.get('direccionPropiedad.provincia')?.invalid &&  formulario.get('direccionPropiedad.provincia')?.touched" class="invalid-feedback">
+              La provincia es obligatoria.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="localidad" class="form-label">Localidad</label>
+            <input type="text" id="localidad" formControlName="localidad" class="form-control" placeholder="Ej. Mar del Plata">
+            <div *ngIf="formulario.get('direccionPropiedad.localidad')?.invalid &&   formulario.get('direccionPropiedad.localidad')?.touched" class="invalid-feedback">
+              La localidad es obligatoria.
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 mb-3">
+            <label for="nombre_calle" class="form-label">Calle</label>
+            <input type="text" id="nombre_calle" formControlName="nombreCalle" class="form-control" placeholder="Ej. Av. Libertador">
+            <div *ngIf="formulario.get('direccionPropiedad.nombreCalle')?.invalid && formulario.get('direccionPropiedad.nombreCalle')?.touched" class="invalid-feedback">
+              El nombre de la calle es obligatorio.
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="numero_calle" class="form-label">Número</label>
+            <input type="number" id="numero_calle" formControlName="numeroCalle" class="form-control" placeholder="Ej. 1234">
+            <div *ngIf="formulario.get('direccionPropiedad.numeroCalle')?.invalid &&  formulario.get('direccionPropiedad.numeroCalle')?.touched" class="invalid-feedback">
+              El número de la calle es obligatorio y debe ser mayor que 0.
+            </div>
+          </div>
+        </div>
+      </fieldset>
+  
+      <!--! Ubicación Propiedad -->
+      <fieldset class="border p-3 rounded mb-3" formGroupName = "ubicacionPropiedad">
+        <legend class="h6">Ubicación</legend>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="lat" class="form-label">Latitud</label>
+            <input type="number" id="lat" formControlName="lat" class="form-control" placeholder="Ej. -34.6037">
+            <div *ngIf="formulario.get('ubicacionPropiedad.lat')?.invalid && formulario.get('ubicacionPropiedad.lat')?.touched" class="invalid-feedback">
+              La latitud es obligatoria y debe ser un número válido.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lng" class="form-label">Longitud</label>
+            <input type="number" id="lng" formControlName="lng" class="form-control" placeholder="Ej. -58.3816">
+            <div *ngIf="formulario.get('ubicacionPropiedad.lng')?.invalid && formulario.get('ubicacionPropiedad.lng')?.touched" class="invalid-feedback">
+              La longitud es obligatoria y debe ser un número válido.
+            </div>
+          </div>
+        </div>
+      </fieldset>
+  
+      <!--! Características de la Casa -->
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="cantidadAmbientes" class="form-label">Ambientes</label>
+          <input type="number" id="cantidadAmbientes" formControlName="cantidadAmbientes" class="form-control">
+          <div *ngIf="cantidadAmbientes?.invalid &&  cantidadAmbientes?.touched" class="invalid-feedback">
+            La cantidad de ambientes es obligatoria y debe ser mayor que 0.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="cantidadDormitorios" class="form-label">Dormitorios</label>
+          <input type="number" id="cantidadDormitorios" formControlName="cantidadDormitorios" class="form-control">
+          <div *ngIf="cantidadDormitorios?.invalid &&   cantidadDormitorios?.touched" class="invalid-feedback">
+            La cantidad de dormitorios es obligatoria y debe ser mayor que 0.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="cantidadBaños" class="form-label">Baños</label>
+          <input type="number" id="cantidadBaños" formControlName="cantidadBanos" class="form-control">
+          <div *ngIf="cantidadBanos?.invalid && cantidadBanos?.touched" class="invalid-feedback">
+            La cantidad de baños es obligatoria y debe ser mayor que 0.
+          </div>
+        </div>
+      </div>
+  
+      <!--! Botón Enviar -->
+      <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="formulario.invalid">Registrar Propiedad</button> 
+      
+    </form>
+  </div>
+  
