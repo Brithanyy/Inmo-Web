@@ -3,11 +3,13 @@ import { House } from '../../Models/House.model';
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HouseService } from '../../Services/House/house.service';
+import { ManagementHeaderComponent } from "../../Components/management-header/management-header.component";
+import { ManagementFooterComponent } from "../../Components/management-footer/management-footer.component";
 
 @Component({
   selector: 'app-management-add-house',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, ManagementHeaderComponent, ManagementFooterComponent],
   templateUrl: './management-add-house.component.html',
   styleUrl: './management-add-house.component.css'
 })

@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './management-footer.component.css'
 })
 export class ManagementFooterComponent {
-
+  anioEmpresa: number = new Date().getFullYear();   
 }
