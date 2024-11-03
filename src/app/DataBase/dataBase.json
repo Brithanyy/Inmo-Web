@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "House": [
         {
             "id": "1",
@@ -284,3 +285,338 @@
     ]
 }
 
+=======
+  "House": [
+    {
+      "id": "1",
+      "idUsuario": "1",
+      "tipoPropiedad": "Casa",
+      "tituloPropiedad": "Importante residencia de patrimonio histórico “Villa Blaquier”, en estratégica ubicación",
+      "descripcionPropiedad": "En estratégica ubicación, a cien metros de la costa, se encuentra esta importante residencia de estilo inglés, patrimonio histórico Nacional “Villa Blaquier”, emplazada sobre dos lotes contiguos que suman 2.620 m2 de superficie total, con 901 m2 cubiertos. De arquitectura con lineamientos del pintoresquismo inglés, conservando su estilo señorial y con su jardín rodeado por un muro perimetral en piedra, esta importante residencia se desarrolla en dos niveles principales, más sótano y entretecho. Al ingresar en planta baja posee, amplio hall y recepción con importante escalera de roble, sala de lectura, sector de estar y comedor de generosas dimensiones, ambos con hogar, pisos de roble de Eslavonia y cielorrasos con detalles decorativos. Siguiendo en la misma planta, cuenta con luminosa cocina, comedor diario y antecocina. Mientras que en planta alta, posee comunicados entre sí por importante hall distribuidor con arcos de medio punto; siete dormitorios, cuatros baños, dos dependencias de servicio y terraza. Por último, en el sótano posee cuatro dormitorios y en el entretecho cuenta con un espacio de servicios e instalaciones. Villa Blaquier (Historia) Es una de las primeras casonas ubicadas en la Loma Stella Maris, propiedad de Marta Unzué y Adolfo Blaquier. Su arquitectura sigue los lineamientos del pintoresquismo inglés construido por Adán Gandolfi en 1905, con el proyecto de los arquitectos ingleses Walter Basset-Smith y Collcutt. Tuvo varias modificaciones y ampliaciones, en 1914 llevada a cabo por los constructores Mannelli y Lemmi, otra en 1920 por los mismos constructores y proyectistas y en 1934 por el constructor Septimio Polidoro. Las cubiertas originalmente de chapas, fueron reemplazadas por tejas francesas posiblemente en la década de 1960. Uno de sus recursos formales y materiales es la combinación de revoque rústico con falsos encadenados y dinteles en ladrillo.",
+      "precioPropiedad": "3.500.000",
+      "superficieCubierta": "901.00",
+      "superficieTotal": "2620.00",
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "localidad": "Mar del Plata",
+        "nombre_calle": "Alvear",
+        "numero_calle": "2100"
+      },
+      "ubicacionPropiedad": {
+        "lat": -38.028525871072354,
+        "lng": -57.556245092703485
+      },
+      "imagenes": [
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/28942019886575860202712353741904192472274539372584190742085248963969253482505-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/63829724088677767858499655831209168878812031663451820820132715959600919466254-592x444.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/91761962737041493768990403110280830171902653493495842738190951146457647390267-1170x785.jpg"
+      ],
+      "reseñas": [],
+      "valoracionPromedio": 0,
+      "cantidadAmbientes": 13,
+      "cantidadDormitorios": 11,
+      "cantidadBaños": 4
+    },
+    {
+      "id": "2",
+      "idUsuario": "1",
+      "tipoPropiedad": "Casa",
+      "tituloPropiedad": "Importante residencia de categoría en esquina del barrio Los Troncos.",
+      "descripcionPropiedad": "En el inmejorable entorno del exclusivo y tradicional barrio Los Troncos, sobre lote en esquina de 1.005 m2, con frentes de 33,30 mts, se encuentra esta importante residencia de 687 m2. Con ingreso sobre calle Mendoza, la propiedad se desarrolla en dos plantas, retirada del frente con reja y parque perimetral. Al ingresar, en planta baja posee hall de acceso, luminoso estar, amplio comedor principal, cocina de generosas dimensiones con isla central, sala de máquinas, lavadero y family. Además, en la misma planta, posee cómodo dormitorio en suite. Luego en subsuelo cuenta con amplia cava con sector de estar. Ya en planta alta, posee cuatro cómodos dormitorios en suite, el principal con vestidor, baño con hidromasaje y balcón terraza; y los dormitorios restantes con salida a balcón corrido al frente. Además, la propiedad posee en construcción independiente, garage para dos autos con cocina, baño y sala de juegos en planta alta; trotadora para dos autos el cual se accede por calle Almafuerte mediante portón automático. Por último, cuenta con jardín, galería, espacio de fogón y piscina climatizada. Esta exclusiva residencia cuenta con detalles de estilo y confort, tales como, calefacción por losa radiante, aberturas de aluminio con DVH, aire acondicionado en todos los ambientes y cerraduras con código y huella.",
+      "precioPropiedad": "1.500.000",
+      "superficieCubierta": "687.00",
+      "superficieTotal": "1005.00",
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "localidad": "Mar del Plata",
+        "nombre_calle": "Almafuerte & Mendoza",
+        "numero_calle": ""
+      },
+      "ubicacionPropiedad": {
+        "lat": -38.02563971092374,
+        "lng": -57.54583073420621
+      },
+      "imagenes": [
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/09/6424537_8980428460110675653334811827279762947715580132478763069985742143017965678874-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/09/6424537_32956693033423316746116733170844621487458223811657185461561397534035275720027-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/09/6424537_78258559777041816372687999694508481800082484833788176692747482671983585533357-1170x785.jpg"
+      ],
+      "reseñas": [],
+      "valoracionPromedio": 0,
+      "cantidadAmbientes": 6,
+      "cantidadDormitorios": 5,
+      "cantidadBaños": 6
+    },
+    {
+      "id": "3",
+      "idUsuario": "1",
+      "tipoPropiedad": "Casa",
+      "tituloPropiedad": "Importante propiedad lindera al Golf de Acantilados",
+      "descripcionPropiedad": "Lindera al Golf de Acantilados, se encuentra esta importante propiedad de 850 m2 cubiertos aproximadamente, sobre lote de 87,50 mts x 85 mts y una superficie total de 7.437 m2. La propiedad posee siete dormitorios en suite, sauna, gimnasio, dos canchas de tenis-paddle, piscina climatizada cubierta y descubierta, y estacionamiento para veinte autos.",
+      "precioPropiedad": "1.100.000",
+      "superficieCubierta": "850.00",
+      "superficieTotal": "7437.00",
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "localidad": "Mar del Plata",
+        "nombre_calle": "Calle",
+        "numero_calle": "500"
+      },
+      "ubicacionPropiedad": {
+        "lat": -34.73760241839671,
+        "lng": -58.15726535998022
+      },
+      "imagenes": [
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/66818730257999374965985413939996853571130240033461052076110643381788883860536-1170x675.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/79745685425591856593765076797330389419829051148581864852876683107879259052442-1170x675.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/104058356633816449853640830022269604444647573339949832311677529755266088230136-1170x675.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/107192895254347550812891311360157024588007479539999098183164486662216463064352-1170x675.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/30340071463415678471620334354615865593053154069142981567606634680028290644862-1170x675.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/113841731658123027208082077042919602757921517504409216203004035261865462178253-1170x675.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/39489232891907189322656862137522744015838021882996245425380377828034728693785-1170x675.jpg"
+      ],
+      "reseñas": [],
+      "valoracionPromedio": 0,
+      "cantidadAmbientes": 8,
+      "cantidadDormitorios": 7,
+      "cantidadBaños": 7
+    },
+    {
+      "id": "cd6b",
+      "tituloPropiedad": "Casa en la costa marplatence",
+      "descripcionPropiedad": "casa que esta ubicada en una zona muy bonita",
+      "precioPropiedad": "15000",
+      "superficieCubierta": 100,
+      "superficieTotal": 200,
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "localidad": "Mar del Plata",
+        "nombre_calle": "Dorrego",
+        "numero_calle": 152
+      },
+      "ubicacionPropiedad": {
+        "lat": -16515,
+        "lng": -6156
+      },
+      "imagenes": [
+        "https://plus.unsplash.com/premium_photo-1661883964999-c1bcb57a7357?q=80&w=2028&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      ],
+      "cantidadAmbientes": 5,
+      "cantidadDormitorios": 3,
+      "cantidadBanos": 3
+    },
+    {
+      "id": "cbdd",
+      "tituloPropiedad": "sdffdffgfd",
+      "descripcionPropiedad": "fsdfsdfd",
+      "precioPropiedad": "1555",
+      "superficieCubierta": 65,
+      "superficieTotal": 151,
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "b",
+        "localidad": "Mar del Plata",
+        "nombre_calle": "Dorrego",
+        "numero_calle": 152
+      },
+      "ubicacionPropiedad": {
+        "lat": -56465413,
+        "lng": -531531
+      },
+      "imagenes": [
+        "https://plus.unsplash.com/premium_photo-1661915661139-5b6a4e4a6fcc?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://plus.unsplash.com/premium_photo-1661876449499-26de7959878f?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D"
+      ],
+      "cantidadAmbientes": 3,
+      "cantidadDormitorios": 5,
+      "cantidadBanos": 3
+    }
+  ],
+  "Departament": [
+    {
+      "id": "1",
+      "idUsuario": "1",
+      "tipoPropiedad": "Departamento",
+      "tituloPropiedad": "Piso único, con las mejores visuales al mar y a las playas de Bahía Varese",
+      "descripcionPropiedad": "En el excelente entorno de Playa de los Ingleses, actualmente Bahía Varese y a metros de Av. Colón, se encuentra este importante piso, en edificio de categoría, con las mejores visuales al mar y a las playas de Bahía Varese. La unidad de 460 m2 cuenta con palier privado, amplio hall principal de recepción, estar con vista al mar amplio y luminoso, al igual que el segundo estar y el comedor principal, dos balcones al frente, toilette de recepción y cocina de generosas dimensiones con comedor diario. En el área de servicio, posee hall de servicio, dos dependencias, dos baños con ducha, lavadero y sector de planchado. Luego, en el área privada, cuenta además con seis cómodos dormitorios con pisos de madera, de los cuales tres son en suite, y dos baños con ducha para servicio de los dormitorios restantes. Por último, cuenta con dos cocheras, detalles de calidad como pisos de porcelanato y ventanas con DVH; y se encuentra en excelente estado de conservación y mantenimiento.",
+      "precioPropiedad": "1.290.000",
+      "superficieCubierta": "460.00",
+      "superficieTotal": "0.00",
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "localidad": "Mar del Plata",
+        "nombre_calle": "Lavalle",
+        "numero_calle": "2253"
+      },
+      "ubicacionPropiedad": {
+        "lat": -34.2775226454072,
+        "lng": -58.4378653582099
+      },
+      "imagenes": [
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/28540220840333246253196049465433573833160766726281517190234630650041812640839-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/110722081382001877521779420409914093092849683191677281954789773596513919644872-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/7187042042372033868737078513083776425139458121160738519038882448373063236706-592x444.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/95341285531063244886264137015523325417621475200210120606076708338996133517234-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/31902119414764478559563055561164532167105055722619215099662711121646116757165-1170x785.jpg"
+      ],
+      "reseñas": [],
+      "valoracionPromedio": 0,
+      "cantidadAmbientes": 7,
+      "cantidadDormitorios": 6,
+      "cantidadBaños": 5
+    },
+    {
+      "id": "2",
+      "idUsuario": "1",
+      "tipoPropiedad": "Departamento",
+      "tituloPropiedad": "Importante piso con vista al mar, sobre el Parque San Martín. ",
+      "descripcionPropiedad": "UNICAMENTE FAMILIAS. NO SE ACEPTAN MASCOTAS. En el excelente entorno de Playa Grande, sobre el Parque San Martín, se encuentra este exclusivo piso de categoría frente al mar con 218 m2. Al ingresar, cuenta con un amplio y luminoso estar comedor con aire acondicionado y salida al balcón terraza, frente al mar con las mejores vistas, cocina con comedor diario, lavadero, toilette de recepción, dependencia de servicio con baño y tres cómodos dormitorios en suite, el principal con vestidor, baño con ducha e hidromasaje, aire acondicionado y salida a balcón. Posee cochera, baulera y acceso a los amenities que ofrece el edificio, tales como piscina climatizada exterior, piscina contracorriente en el interior, gimnasio, salón de usos múltiples, sauna seco y húmedo, vestuarios, sala de microcine y seguridad las 24 hs.",
+      "precioPropiedad": "840.000",
+      "superficieCubierta": "218.00",
+      "superficieTotal": "0.00",
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "localidad": "Mar del Plata",
+        "nombre_calle": "San Lorenzo",
+        "numero_calle": "48"
+      },
+      "ubicacionPropiedad": {
+        "lat": -38.02422096816466,
+        "lng": -57.53131874959616
+      },
+      "imagenes": [
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/67909503801766230710127697696028057534900743408348003198761666369556889469713-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/13735197468289090326869523029232921218515089391663196752382858459340505199672-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/70463950166674103041494306881672021794108681396428765284332807479626327063564-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/6980699683202156269414987695647695712459495837074428851773367261770296321991-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/16131508304292206628522451683075309282296297262038527402332020898415611589178-1170x785.jpg"
+      ],
+      "reseñas": [],
+      "valoracionPromedio": 0,
+      "cantidadAmbientes": 4,
+      "cantidadDormitorios": 3,
+      "cantidadBaños": 3
+    },
+    {
+      "id": "3",
+      "idUsuario": "1",
+      "tipoPropiedad": "Departamento",
+      "tituloPropiedad": "Exclusivo Penthouse con vistas al mar y a Playa Chica.",
+      "descripcionPropiedad": "En el excelente entorno de Playa Chica, dentro de la tercera torre desarrollada del Maral Explanada, proyecto del prestigioso Arquitecto Cesar Pelli, se encuentra este exclusivo Penthouse de cuatro ambientes. La unidad de 252 m2 totales cuenta con amplio y luminoso estar comedor con salida a balcón corrido, vista al mar, toilette de recepción, cocina semi integrada con barra desayunadora, comedor diario, y lavadero separado con toilette. Mientras que en el área privada, posee tres dormitorios en suite, el principal con vestidor, dos de ellos con hidromasaje y vista al mar. La unidad posee además calefacción por aire central, como así también el acceso a los excelentes amenities que el complejo ofrece, tales como piscina climatizada interior, piscina lúdica con hidroterapia, minipiscina con hidromasaje, circuito de agua, sauna seco, sauna húmedo, sala de masajes, sector de relax, microcine, business center, sala de juegos, Sky club (sala de estar en piso 24), quincho en piso 24, áreas verdes y de recreación proyectadas en 5.200 m2, sistema de seguridad con vigilancia las 24 hs. con circuito cerrado de TV en áreas comunes, central telefónica IP, WIFI en zonas comunes, laundry, sistema de reciclado de agua, sistema ablandador de agua y grupo electrógeno de emergencias.",
+      "precioPropiedad": "1.262.760",
+      "superficieCubierta": "252.00",
+      "superficieTotal": "0.00",
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "localidad": "Mar del Plata",
+        "nombre_calle": "Aristobulo del Valle",
+        "numero_calle": "2700"
+      },
+      "ubicacionPropiedad": {
+        "lat": -38.067135807391516,
+        "lng": -57.55044189099178
+      },
+      "imagenes": [
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/7666859355367772731510277033184705103221400752730239450068971703751235361161-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/45074775308229534751052748919982738167854483692282594529057328454354687023609-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/101387698497192965668455042141745740409464081985834809463449238612893532330398-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/47433823563523489135607513818743380211565815794476329735853062031205862392198-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/85760909781528740157728112220118989867097295684253074653508080251639136350970-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/54233234164841737138968516032252937779793193155751798549209858417661919613663-1170x785.jpg"
+      ],
+      "reseñas": [],
+      "valoracionPromedio": 0,
+      "cantidadAmbientes": 4,
+      "cantidadDormitorios": 3,
+      "cantidadBaños": 3
+    }
+  ],
+  "Land": [
+    {
+      "id": "1",
+      "idUsuario": "1",
+      "tipoPropiedad": "Terreno",
+      "tituloPropiedad": "Importante lote para desarrollo, en estratégica ubicación del barrio Chauvin",
+      "descripcionPropiedad": "En estratégica ubicación del barrio Chauvín, se encuentra este importante lote irregular para desarrollo de 5.703 m2 con salida a tres calles. Cuenta con 54,14 mts de frente sobre calle Larrea, fondos de 105,50 mts y 97,8 mts con salida a calle Azcuénaga y Mitre. El lote se encuentra emplazado sobre distrito E1, zona destinada a la localización de usos urbanos de equipamiento y servicios, compatibles con uso residencial de densidad media, con FOS 0,5 y dados los indicadores de la zona, incentivos y premios vigentes, cuenta con la factibilidad de construir 21.500 m2 en planta baja más 6 pisos superiores.",
+      "precioPropiedad": "1.800.000",
+      "superficieCubierta": "0.00",
+      "superficieTotal": "5703.00",
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "localidad": "Mar del Plata",
+        "nombre_calle": "Larrea ",
+        "numero_calle": "2700"
+      },
+      "ubicacionPropiedad": {
+        "lat": -34.60364095575595,
+        "lng": -58.40227827379617
+      },
+      "imagenes": [
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/78223624115823532142901047624017338459660865389659973379707640428265351465641-1170x710.jpg"
+      ],
+      "reseñas": [],
+      "valoracionPromedio": 0
+    },
+    {
+      "id": "2",
+      "idUsuario": "1",
+      "tipoPropiedad": "Terreno",
+      "tituloPropiedad": "Importante manzana a metros del acceso a Santa Clara y del Mar",
+      "descripcionPropiedad": "En excelente ubicación, a metros del acceso a Santa Clara y del mar, se ubica esta importante manzana de 8476 m2 de superficie total, con 75 mts de frente y 110 mts de fondo. Actualmente posee una superficie cubierta de 195 m2, cerco de alambrado perimetral y cuenta con la posibilidad de subdivisión.",
+      "precioPropiedad": "1.200.000",
+      "superficieCubierta": "195.00",
+      "superficieTotal": "8476.00",
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "localidad": "Santa Clara del Mar",
+        "nombre_calle": "Av. Orensanz",
+        "numero_calle": "200"
+      },
+      "ubicacionPropiedad": {
+        "lat": -37.84723764378247,
+        "lng": -57.50622844775513
+      },
+      "imagenes": [
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/78223624115823532142901047624017338459660865389659973379707640428265351465641-592x444.jpg"
+      ],
+      "reseñas": [],
+      "valoracionPromedio": 0
+    },
+    {
+      "id": "3",
+      "idUsuario": "1",
+      "tipoPropiedad": "Terreno",
+      "tituloPropiedad": "Importante lote triangular frente al mar, en zona Norte",
+      "descripcionPropiedad": "En excelente ubicación de zona Norte, frente al mar con inmejorables visuales, se encuentra este lote o fracción de 710 m2 en forma triangular y con salida a tres calles. Cuenta con 58,10 mts de frente sobre Av. Felix U. Camet, 51 mts sobre calle Libres del Sur y 27,83 mts sobre calle Alice. Se encuentra emplazado sobre Distrito R3, zona destinada a la localización de uso residencial de densidad media con viviendas individuales y colectivas, por lo cual cuenta con la factibilidad de desarrollar en él 2.000 m2 en hasta 8 niveles (planta baja y siete pisos superiores).",
+      "precioPropiedad": "Consultar",
+      "superficieCubierta": "0.00",
+      "superficieTotal": "710.00",
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "localidad": "Mar del Plata",
+        "nombre_calle": "Félix U. Camet ",
+        "numero_calle": "2000"
+      },
+      "ubicacionPropiedad": {
+        "lat": -37.96078385724408,
+        "lng": -57.54054177658493
+      },
+      "imagenes": [
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/19298789541537480219016916454635015919635137298194722280325467950727249684792-1170x785.jpg"
+      ],
+      "reseñas": [],
+      "valoracionPromedio": 0
+    }
+  ]
+}
+>>>>>>> 04618902ffd16653c2484d572bade2c5d4d00616
