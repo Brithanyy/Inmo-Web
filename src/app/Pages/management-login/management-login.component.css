@@ -88,6 +88,19 @@ html, body {
     box-shadow: 0 0 5px 3px rgba(34, 181, 78, 0.568);
 }
 
+.cardError{
+    background-color: #ffebee; 
+    border: 1px solid #ef9a9a; 
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 300px;
+    margin-left: 300px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 /* Media Queries para ajustar el tamaño de la tarjeta en pantallas pequeñas */
 @media (max-width: 576px) {
     .transparent-card {

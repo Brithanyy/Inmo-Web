@@ -1,31 +1,117 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { User } from '../../Models/User.model';
+import { UserService } from '../../Services/User/user.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule],
   templateUrl: './management-login.component.html',
   styleUrl: './management-login.component.css'
 })
-export class LoginComponent {
-  logo = 'assets/IMG/LogoTipo.jpeg'
-  usuario = {
-    user: '', //Almacena el valor del nombre de usuario
-    password: '' // Almacena el valor de la contraseña
+export class LoginComponent implements OnInit {
+
+  logo = 'assets/IMG/LogoTipo.jpeg';
+  usuarios: User[] = [];
+  mensajeError: string = '';
+  isPasswordVisible: boolean = false;
+
+  servicioUsuario =  inject(UserService);
+  router = inject(Router);
+  formBuiler = inject(FormBuilder);
+  formLogin = this.formBuiler.nonNullable.group({
+
+    userName: ['', Validators.required],
+    password: ['', [Validators.required,  Validators.minLength(8)]]
+  });
+
+  ngOnInit(): void {
+    this.cargarUsuarios();
   }
-  isPasswordVisible: boolean = false; // Controla la visibilidad de la contraseña
+
+  cargarUsuarios() {
+    this.servicioUsuario.getAllUsers().subscribe({
+
+      next: (returnedUsers: User[]) => this.usuarios = returnedUsers,
+
+      error: (returnedError) => {
+        this.mensajeError = "Error al cargar usuarios"
+        this.showErrorMessage(this.mensajeError);
+      }
+    });
+  }
 
   togglePasswordVisibility() {
-    this.isPasswordVisible = !this.isPasswordVisible; // Alterna la visibilidad
+    this.isPasswordVisible = !this.isPasswordVisible;
   }
 
-  userAdmin = 'admin';
-  passAdmin = 'admin';
+  get userName() {
+    return this.formLogin.get('userName');
+  }
+
+  get password() {
+    return this.formLogin.get('password');
+  }
 
   login() {
-    if(this.usuario.user === this.userAdmin && this.usuario.password === this.passAdmin) alert("INICIANDO SESION");
+
+    if (this.formLogin.valid) {
+
+      this.mensajeError = '';
+
+      let usuarioBuffer: User = this.formLogin.getRawValue();
+
+      this.servicioUsuario.getUserByCredentials(usuarioBuffer.userName, usuarioBuffer.password).subscribe({
+
+        next: (returnedUsers: User[]) => {
+
+          if (returnedUsers.length > 0) {
+
+            const user = returnedUsers[0];
+
+            this.servicioUsuario.updateUserLoggedStatus(String(user.id), true).subscribe({
+
+              next: () => this.router.navigate(['/management-home']),
+
+              error: () => {
+
+                this.mensajeError = "Error al actualizar el estado del usuario";
+                this.showErrorMessage(this.mensajeError);
+              }
+            });
+          } 
+          else {
+
+            this.mensajeError = "Credenciales inválidas";
+            this.showErrorMessage(this.mensajeError);
+          }
+        },
+
+        error: () => {
+          this.mensajeError = "Error en el inicio de sesión: ";
+          this.showErrorMessage(this.mensajeError);
+        }
+      });
+    }
+
+    else {
+      this.mensajeError = "Por favor, complete todos los campos";
+      this.showErrorMessage(this.mensajeError);
+    }
   }
 
+  private showErrorMessage(mensaje: string) {
+
+    this.mensajeError = mensaje;
+  
+    setTimeout(() => {
+      this.mensajeError = '';
+    }, 3000);
+  }
 }

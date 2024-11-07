@@ -13,6 +13,7 @@ import { ManagementAddLandComponent } from './Pages/management-add-land/manageme
 import { DepartamentDetailComponent } from './Pages/departament-detail/departament-detail.component';
 import { HouseDetailComponent } from './Pages/house-detail/house-detail.component';
 import { LandDetailComponent } from './Pages/land-detail/land-detail.component';
+import { ManagementHomeComponent } from './Pages/management-home/management-home.component';
 
 export const routes: Routes = [
 
@@ -69,6 +70,11 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+
+    {
+        path: 'management-home',
+        component: ManagementHomeComponent
     },
 
     {
