@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ManagementHeaderComponent } from "../../Components/management-header/management-header.component";
 import { ManagementFooterComponent } from "../../Components/management-footer/management-footer.component";
 import { Departament } from '../../Models/Departament.model';
-import { AbstractControl, FormArray, FormBuilder, FormGroup, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DepartamentService } from '../../Services/Departament/departament.service';
 
@@ -46,15 +46,15 @@ constructor(private fb: FormBuilder) {
   this.formulario = this.fb.group({
     "tituloPropiedad": ['', [Validators.required]],
     "descripcionPropiedad": ['', [Validators.required]],
-    "precioPropiedad": ['', [Validators.required, Validators.min(1)]],
-    "superficieCubierta": ['', [Validators.required]],
-    "superficieTotal": ['', [Validators.required]],
+    "precioPropiedad": ['', [Validators.required, this.positiveNumberValidator()]],
+    "superficieCubierta": ['', [Validators.required, Validators.min(0)]],
+    "superficieTotal": ['', [Validators.required, Validators.min(0)]],
     "direccionPropiedad": this.fb.group({
-      "pais": ['', [Validators.required]],
-      "provincia": ['', [Validators.required]],
-      "localidad": ['', [Validators.required]],
-      "nombre_calle": ['', [Validators.required]],
-      "numero_calle": ['', [Validators.required, this.noNegativeNumbersValidator()]]
+      "pais": ['', [Validators.required, this.noNumbersAllowedValidator()]],
+      "provincia": ['', [Validators.required, this.noNumbersAllowedValidator()]],
+      "localidad": ['', [Validators.required, this.noNumbersAllowedValidator()]],
+      "nombre_calle": ['', [Validators.required, this.noNumbersAllowedValidator()]],
+      "numero_calle": ['', [Validators.required, this.noNegativeNumbersValidator(), this.onlyNumbersValidator()]]
     }),
     "ubicacionPropiedad": this.fb.group({
       "lat": [0, [Validators.required, this.onlyNegativeValidator()]],
@@ -110,19 +110,52 @@ get cantidadBanos() {
   return this.formulario.get("cantidadBanos");
 }
 
-noNegativeNumbersValidator(): ValidatorFn {
-  return (control: AbstractControl): { [key: string]: any } | null => {
-    const value = control.value;
-    return value < 0 ? { 'negativeNumber': { value } } : null;
-  };
-}
+//! VALIDACIONES PERSONALIZADAS
 
-onlyNegativeValidator(): ValidatorFn {
-  return (control: AbstractControl): { [key: string]: any } | null => {
-    const value = control.value;
-    return (typeof value === 'number' && value < 0) ? null : { 'notNegative': { value } };
-  };
-}
+  //? No letras, solo numeros
+  noNegativeNumbersValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value = control.value;
+      return value < 0 ? { 'negativeNumber': { value } } : null;
+    };
+  }
+
+  //? Solo numeros negativos
+  onlyNegativeValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const value = control.value;
+      return (typeof value === 'number' && value < 0) ? null : { 'notNegative': { value } };
+    };
+  }
+
+  //? No numeros, solo letras
+  noNumbersAllowedValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value = control.value;
+      const hasNumbers = /\d/.test(value);
+      return hasNumbers ? { hasNumbers: true } : null;
+    };
+  }
+
+   //? No letras, solo numeros
+   onlyNumbersValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value = control.value;
+      // Verifica si el valor contiene solo dígitos
+      const isOnlyNumbers = /^\d+$/.test(value);
+      // Si no contiene solo números, retorna un error
+      return !isOnlyNumbers ? { nonNumeric: true } : null;
+    };
+  }
+
+   //? Solo numeros positivos
+   positiveNumberValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value = control.value;
+      const isPositiveNumber = /^[+]?\d+(\.\d+)?$/.test(value) && parseFloat(value) > 0;
+      return !isPositiveNumber ? { nonPositiveNumber: true } : null;
+    };
+  }
 
 addImage(imageUrl: string) {
   const imagesArray = this.formulario.get('imagenes') as FormArray;
