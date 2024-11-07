@@ -1,1 +1,18 @@
-<p>management-home works!</p>
+<app-navbar></app-navbar>
+
+<!-- Botón de cerrar sesión -->
+<div class="logout-container">
+
+    @if (userBuffer) {
+        <button 
+        (click)="cerrarSesion()" 
+        class="btn btn-danger">
+        Cerrar Sesión
+      </button>
+    }
+
+</div>
+
+<app-list-houses></app-list-houses>
+<app-list-departaments></app-list-departaments>
+<app-list-lands></app-list-lands>
