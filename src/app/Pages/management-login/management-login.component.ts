@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../../Models/User.model';
@@ -15,20 +15,37 @@ import { UserService } from '../../Services/User/user.service';
   templateUrl: './management-login.component.html',
   styleUrl: './management-login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
+  logo = 'assets/IMG/LogoTipo.jpeg';
+  usuarios: User[] = [];
   mensajeError: string = '';
   isPasswordVisible: boolean = false;
 
   servicioUsuario =  inject(UserService);
   router = inject(Router);
-  logo = 'assets/IMG/LogoTipo.jpeg';
   formBuiler = inject(FormBuilder);
   formLogin = this.formBuiler.nonNullable.group({
 
     userName: ['', Validators.required],
     password: ['', [Validators.required,  Validators.minLength(8)]]
   });
+
+  ngOnInit(): void {
+    this.cargarUsuarios();
+  }
+
+  cargarUsuarios() {
+    this.servicioUsuario.getAllUsers().subscribe({
+
+      next: (returnedUsers: User[]) => this.usuarios = returnedUsers,
+
+      error: (returnedError) => {
+        this.mensajeError = "Error al cargar usuarios"
+        this.showErrorMessage(this.mensajeError);
+      }
+    });
+  }
 
   togglePasswordVisibility() {
     this.isPasswordVisible = !this.isPasswordVisible;
@@ -52,33 +69,37 @@ export class LoginComponent {
 
       this.servicioUsuario.getUserByCredentials(usuarioBuffer.userName, usuarioBuffer.password).subscribe({
 
-        next: (returnedUser: User) => {
+        next: (returnedUsers: User[]) => {
 
-          if (returnedUser) {
+          if (returnedUsers.length > 0) {
 
-            this.servicioUsuario.updateUserLoggedStatus(String(returnedUser.id), true).subscribe({
+            const user = returnedUsers[0];
+
+            this.servicioUsuario.updateUserLoggedStatus(String(user.id), true).subscribe({
 
               next: () => this.router.navigate(['/management-home']),
 
-              error: (returnedError) => {
+              error: () => {
 
-                this.mensajeError = "Error al actualizar el estado del usuario: " + returnedError.message;
+                this.mensajeError = "Error al actualizar el estado del usuario";
                 this.showErrorMessage(this.mensajeError);
               }
             });
           } 
-
           else {
-            this.mensajeError = "Error las credenciales del usuario son inválidas";
+
+            this.mensajeError = "Credenciales inválidas";
             this.showErrorMessage(this.mensajeError);
           }
         },
-        error: (returnedError) => {
-          this.mensajeError = "Error en el inicio de sesión";
+
+        error: () => {
+          this.mensajeError = "Error en el inicio de sesión: ";
           this.showErrorMessage(this.mensajeError);
         }
       });
     }
+
     else {
       this.mensajeError = "Por favor, complete todos los campos";
       this.showErrorMessage(this.mensajeError);

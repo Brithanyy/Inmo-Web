@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../../Models/User.model';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +13,15 @@ export class UserService {
   peticionesHTTP = inject(HttpClient);
   urlBase = 'http://localhost:3000/Usuario';
 
-  getUserByCredentials(username: string, password: string): Observable<User> {
-    return this.peticionesHTTP.get<User>(`${this.peticionesHTTP}/users?userName=${username}&password=${password}`);
+  getAllUsers(): Observable<User[]> {
+    return this.peticionesHTTP.get<User[]>(this.urlBase);
+  }
+
+  getUserByCredentials(username: string, password: string): Observable<User[]> {
+    return this.peticionesHTTP.get<User[]>(`${this.urlBase}?userName=${username}&password=${password}`);
   }
 
   updateUserLoggedStatus(id: string, status: boolean): Observable<User> {
-    return this.peticionesHTTP.patch<User>(`${this.peticionesHTTP}/users/${id}`, { estaLogueado: status });
+    return this.peticionesHTTP.patch<User>(`${this.urlBase}/${id}`, { estaLogueado: status });
   }
 }

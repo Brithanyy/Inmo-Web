@@ -335,13 +335,12 @@
       "fecha": "2024-11-04T14:05:30.982Z"
     }
   ],
-  
   "Usuario": [
     {
-      "id":  "68bf",
+      "id": "68bf",
       "userName": "UserAdmin",
       "password": "passwordUserAdmin2024",
-      "estaLogueado": false
+      "estaLogueado": true
     }
   ]
 }
