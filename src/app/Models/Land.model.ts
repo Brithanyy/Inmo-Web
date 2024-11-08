@@ -23,5 +23,4 @@ export interface Land {
         lng: number;
     };
     imagenes: string[];
-    reseñas?: Review[];
 }

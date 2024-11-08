@@ -173,17 +173,19 @@ export class ManagementAddHouseComponent implements OnInit {
   }
 
   onSubmit() {
-
+  
     if (this.formulario.valid) {
-      console.log(this.formulario.value);
       this.house = this.formulario.getRawValue();
       this.houseService.addHouse(this.house).subscribe({
         next: () => {
-          alert("House agregada con exito");
+          alert("Casa agregado con éxito");
           this.formulario.reset();
+          this.redirectToHomeManagement();
         },
         error: (err) => console.log("Error: ", err)
-      })
+      });
+    } else {
+      console.log("El formulario no es válido, no se puede enviar.");
     }
   }
 
@@ -208,6 +210,10 @@ export class ManagementAddHouseComponent implements OnInit {
     this.router.navigate(['/home']);
   }
   
+  redirectToHomeManagement() { 
+    this.router.navigate(['/management-home']);
+  }
+
   private showErrorMessage(mensaje: string) { 
   
     this.mensajeError = mensaje;

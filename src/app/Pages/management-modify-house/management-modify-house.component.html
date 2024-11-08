@@ -1,3 +1,172 @@
 <app-management-header></app-management-header>
-
+<div class="container mt-5">
+    <form class="form-house shadow-lg p-4 rounded" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <h2 class="text-center mb-4">Modificar Casa</h2>
+  
+      <!--! Título Propiedad -->
+      <div class="mb-3">
+        <label for="tituloPropiedad" class="form-label">Título de la Propiedad</label>
+        <input type="text" id="tituloPropiedad" formControlName="tituloPropiedad" class="form-control" placeholder="Ej. Casa en la costa"  [ngClass]="{'is-invalid': tituloPropiedad?.invalid && tituloPropiedad?.touched}">
+        <div *ngIf="tituloPropiedad?.invalid && tituloPropiedad?.touched" class="invalid-feedback">
+          El título de la propiedad es obligatorio.
+        </div>
+      </div>
+  
+      <!--! Descripción Propiedad -->
+      <div class="mb-3">
+        <label for="descripcionPropiedad" class="form-label">Descripción</label>
+        <textarea id="descripcionPropiedad" formControlName="descripcionPropiedad" class="form-control" rows="3" placeholder="Escribe una breve descripción de la propiedad" [ngClass]="{'is-invalid': formulario.get('descripcionPropiedad')?.invalid && formulario.get('descripcionPropiedad')?.touched}"></textarea>
+        <div *ngIf="descripcionPropiedad?.invalid && descripcionPropiedad?.touched" class="invalid-feedback">
+          La descripción es obligatoria.
+        </div>
+      </div>
+  
+      <!--! Precio Propiedad -->
+      <div class="mb-3">
+        <label for="precioPropiedad" class="form-label">Precio</label>
+        <input type="text" id="precioPropiedad" class="form-control" formControlName="precioPropiedad" placeholder="Ej. 100000" [ngClass]="{'is-invalid': precioPropiedad?.touched && (precioPropiedad?.hasError('required') || precioPropiedad?.hasError('nonPositiveNumber'))}">
+            <div *ngIf="precioPropiedad?.invalid && precioPropiedad?.touched" class="invalid-feedback">
+                <div *ngIf="precioPropiedad?.hasError('required')">El precio es obligatorio.</div>
+                <div *ngIf="precioPropiedad?.hasError('nonPositiveNumber')">El precio debe ser mayor que 0 y no se pueden ingresar letras.</div>
+            </div>
+          
+      </div>
+  
+      <!--! Superficie Cubierta y Total -->
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="superficieCubierta" class="form-label">Superficie Cubierta (m²)</label>
+          <input type="number" id="superficieCubierta" formControlName="superficieCubierta" class="form-control" placeholder="Ej. 100" [ngClass]="{'is-invalid': superficieCubierta?.touched && (superficieCubierta?.hasError('required') || superficieCubierta?.hasError('min'))}">
+          <div *ngIf="superficieCubierta?.invalid && superficieCubierta?.touched" class="invalid-feedback">
+            <div *ngIf="superficieCubierta?.hasError('required')">La superficie cubierta es obligatoria.</div>
+            <div *ngIf="superficieCubierta?.hasError('min')">La superficie cubierta debe ser mayor que 0.</div>
+        </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="superficieTotal" class="form-label">Superficie Total (m²)</label>
+          <input type="number" id="superficieTotal" formControlName="superficieTotal" class="form-control" placeholder="Ej. 100" [ngClass]="{'is-invalid': superficieTotal?.touched && (superficieTotal?.hasError('required') || superficieTotal?.hasError('min'))}">
+          <div *ngIf="superficieTotal?.invalid && superficieTotal?.touched" class="invalid-feedback">
+            <div *ngIf="superficieTotal?.hasError('required')">La superficie total es obligatoria.</div>
+            <div *ngIf="superficieTotal?.hasError('min')">La superficie total debe ser mayor que 0.</div>
+        </div>
+        </div>
+      </div>
+  
+      <!--! Dirección Propiedad -->
+      <fieldset class="border p-3 rounded mb-3" formGroupName = "direccionPropiedad">
+        <legend class="h6">Dirección</legend>
+        <div class="mb-3">
+          <label for="pais" class="form-label">País</label>
+          <input type="text" id="pais" formControlName="pais" class="form-control" placeholder="Ej. Argentina"
+          [ngClass]="{'is-invalid': formulario.get('direccionPropiedad.pais')?.touched && (formulario.get('direccionPropiedad.pais')?.hasError('required') || formulario.get('direccionPropiedad.pais')?.hasError('hasNumbers'))}">
+          <div *ngIf="formulario.get('direccionPropiedad.pais')?.invalid && formulario.get('direccionPropiedad.pais')?.touched" class="invalid-feedback">
+              <div *ngIf="formulario.get('direccionPropiedad.pais')?.hasError('required')">El país es obligatorio.</div>
+             <div *ngIf="formulario.get('direccionPropiedad.pais')?.hasError('hasNumbers')">No se permiten números en el país.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="provincia" class="form-label">Provincia</label>
+            <input type="text" id="provincia" formControlName="provincia" class="form-control" placeholder="Ej. Argentina"
+                       [ngClass]="{'is-invalid': formulario.get('direccionPropiedad.provincia')?.touched && (formulario.get('direccionPropiedad.provincia')?.hasError('required') || formulario.get('direccionPropiedad.provincia')?.hasError('hasNumbers'))}">
+                <div *ngIf="formulario.get('direccionPropiedad.provincia')?.invalid && formulario.get('direccionPropiedad.provincia')?.touched" class="invalid-feedback">
+                  <div *ngIf="formulario.get('direccionPropiedad.provincia')?.hasError('required')">La provincia es obligatoria.</div>
+                  <div *ngIf="formulario.get('direccionPropiedad.provincia')?.hasError('hasNumbers')">No se permiten números en la provincia.</div>
+                </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="localidad" class="form-label">Localidad</label>
+            <input type="text" id="localidad" formControlName="localidad" class="form-control" placeholder="Ej. Buenos Aires"
+            [ngClass]="{'is-invalid': formulario.get('direccionPropiedad.localidad')?.touched && (formulario.get('direccionPropiedad.localidad')?.hasError('required') || formulario.get('direccionPropiedad.localidad')?.hasError('hasNumbers'))}">
+                <div *ngIf="formulario.get('direccionPropiedad.localidad')?.invalid && formulario.get('direccionPropiedad.localidad')?.touched" class="invalid-feedback">
+                <div *ngIf="formulario.get('direccionPropiedad.localidad')?.hasError('required')">La localidad es obligatoria.</div>
+                <div *ngIf="formulario.get('direccionPropiedad.localidad')?.hasError('hasNumbers')">No se permiten números en la localidad.</div>
+                </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8 mb-3">
+            <label for="nombre_calle" class="form-label">Calle</label>
+            <input type="text" id="nombre_calle" formControlName="nombre_calle" class="form-control" placeholder="Ej. Av. Libertador"
+                    [ngClass]="{'is-invalid': formulario.get('direccionPropiedad.nombre_calle')?.touched && (formulario.get('direccionPropiedad.nombre_calle')?.hasError('required') || formulario.get('direccionPropiedad.nombre_calle')?.hasError('hasNumbers'))}">
+                        <div *ngIf="formulario.get('direccionPropiedad.nombre_calle')?.invalid && formulario.get('direccionPropiedad.nombre_calle')?.touched" class="invalid-feedback">
+                            <div *ngIf="formulario.get('direccionPropiedad.nombre_calle')?.hasError('required')">La calle es obligatoria.</div>
+                            <div *ngIf="formulario.get('direccionPropiedad.nombre_calle')?.hasError('hasNumbers')">No se permiten números en el nombre de la calle.</div>
+                        </div>  
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="numero_calle" class="form-label">Número</label>
+            <input type="text" id="numero_calle" formControlName="numero_calle" class="form-control" placeholder="Ej. 123"
+               [ngClass]="{'is-invalid': formulario.get('direccionPropiedad.numero_calle')?.touched && (formulario.get('direccionPropiedad.numero_calle')?.hasError('required'))}">
+                 <div *ngIf="formulario.get('direccionPropiedad.numero_calle')?.invalid && formulario.get('direccionPropiedad.numero_calle')?.touched" class="invalid-feedback">
+                    <div *ngIf="formulario.get('direccionPropiedad.numero_calle')?.hasError('required')">El numero de la calle es obligatoria.</div>
+                    <div *ngIf="formulario.get('direccionPropiedad.numero_calle')?.hasError('nonNumeric')">No se permiten letras en el numero de la calle ni numeros negativos.</div>
+                </div>
+          </div>
+        </div>
+      </fieldset>
+  
+      <!--! Ubicación Propiedad -->
+      <fieldset class="border p-3 rounded mb-3" formGroupName = "ubicacionPropiedad">
+        <legend class="h6">Ubicación</legend>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="lat" class="form-label">Latitud</label>
+            <input type="number" id="lat" class="form-control" formControlName="lat" placeholder="Ej. -34.6037" [ngClass]="{'is-invalid': formulario.get('ubicacionPropiedad.lat')?.touched && (formulario.get('ubicacionPropiedad.lat')?.hasError('required') || formulario.get('ubicacionPropiedad.lat')?.hasError('notNegative'))}">
+               <div *ngIf="formulario.get('ubicacionPropiedad.lat')?.invalid && formulario.get('ubicacionPropiedad.lat')?.touched && formulario.get('ubicacionPropiedad.lat')?.hasError('notNegative')" class="invalid-feedback">
+                  <div *ngIf="formulario.get('ubicacionPropiedad.lat')?.hasError('required')">La latitud es obligatoria.</div>
+                  <div *ngIf="formulario.get('ubicacionPropiedad.lat')?.hasError('notNegative')">La latitud cubierta debe ser menor que 0.</div>
+               </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lng" class="form-label">Longitud</label>
+            <input type="number" id="lng" class="form-control" formControlName="lng" placeholder="Ej. -58.3816" [ngClass]="{'is-invalid': formulario.get('ubicacionPropiedad.lng')?.touched && (formulario.get('ubicacionPropiedad.lng')?.hasError('required') || formulario.get('ubicacionPropiedad.lng')?.hasError('notNegative'))}">
+               <div *ngIf="formulario.get('ubicacionPropiedad.lng')?.invalid && formulario.get('ubicacionPropiedad.lng')?.touched && formulario.get('ubicacionPropiedad.lng')?.hasError('notNegative')" class="invalid-feedback">
+                  <div *ngIf="formulario.get('ubicacionPropiedad.lng')?.hasError('required')">La latitud es obligatoria.</div>
+                  <div *ngIf="formulario.get('ubicacionPropiedad.lng')?.hasError('notNegative')">La latitud cubierta debe ser menor que 0.</div>
+                </div>
+          </div>
+        </div>
+      </fieldset>
+  
+      <!--! Características de la Casa -->
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label for="cantidadAmbientes" class="form-label">Ambientes</label>
+          <input type="number" id="cantidadAmbientes" formControlName="cantidadAmbientes" class="form-control" 
+                 [ngClass]="{'is-invalid': cantidadAmbientes?.invalid && cantidadAmbientes?.touched}">
+          <div *ngIf="cantidadAmbientes?.invalid && cantidadAmbientes?.touched && cantidadAmbientes?.hasError('negativeNumber')" class="invalid-feedback">
+            La cantidad de ambientes es obligatoria y no se permiten números negativos.
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-3">
+          <label for="cantidadDormitorios" class="form-label">Dormitorios</label>
+          <input type="number" id="cantidadDormitorios" formControlName="cantidadDormitorios" class="form-control" 
+                 [ngClass]="{'is-invalid': cantidadDormitorios?.invalid && cantidadDormitorios?.touched}">
+          <div *ngIf="cantidadDormitorios?.invalid && cantidadDormitorios?.touched && cantidadDormitorios?.hasError('negativeNumber')" class="invalid-feedback">
+            La cantidad de dormitorios es obligatoria y no se permiten números negativos.
+          </div>
+        </div>
+        
+        <div class="col-md-4 mb-3">
+          <label for="cantidadBanos" class="form-label">Baños</label>
+          <input type="number" id="cantidadBanos" formControlName="cantidadBanos" class="form-control" 
+                 [ngClass]="{'is-invalid': cantidadBanos?.invalid && cantidadBanos?.touched}">
+          <div *ngIf="cantidadBanos?.invalid && cantidadBanos?.touched && cantidadBanos?.hasError('negativeNumber')" class="invalid-feedback">
+            La cantidad de baños es obligatoria y no se permiten números negativos.
+          </div>
+        </div>
+      </div>
+      <!--! Cargar Imágenes -->
+      <div class="mb-3">
+        <label for="imagen" class="form-label">Agregar Imágenes (URL)</label>
+        <input type="text" id="imagen" #imagenInput class="form-control" placeholder="Ej. http://ejemplo.com/imagen.jpg">
+        <button type="button" class="btn btn-secondary mt-2 personalizado" (click)="addImage(imagenInput.value); imagenInput.value=''">Agregar Imagen</button>
+      </div>
+  
+      <!--! Botón Enviar -->
+      <button type="submit" class="btn text-white w-100 mt-3 personalizado">Modificar Casa</button> 
+    </form>
+  </div>
 <app-management-footer></app-management-footer>

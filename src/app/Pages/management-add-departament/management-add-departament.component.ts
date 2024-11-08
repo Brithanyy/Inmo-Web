@@ -180,15 +180,17 @@ addImage(imageUrl: string) {
 onSubmit() {
 
   if (this.formulario.valid) {
-    console.log(this.formulario.value);
     this.departament = this.formulario.getRawValue();
     this.departamentService.addDepartament(this.departament).subscribe({
       next: () => {
-        alert("House agregada con exito");
+        alert("Departamento agregado con éxito");
         this.formulario.reset();
+        this.redirectToHomeManagement();
       },
       error: (err) => console.log("Error: ", err)
-    })
+    });
+  } else {
+    console.log("El formulario no es válido, no se puede enviar.");
   }
 }
 
@@ -213,6 +215,9 @@ redirectToHome() {
   this.router.navigate(['/home']);
 }
 
+redirectToHomeManagement() { 
+  this.router.navigate(['/management-home']);
+}
 private showErrorMessage(mensaje: string) { 
 
   this.mensajeError = mensaje;

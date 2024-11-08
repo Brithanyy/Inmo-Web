@@ -6,6 +6,8 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { UserService } from '../../Services/User/user.service';
 import { User } from '../../Models/User.model';
+import { LandService } from '../../Services/Land/land.service';
+import { Land } from '../../Models/Land.model';
 
 @Component({
   selector: 'app-management-add-land',
@@ -24,7 +26,28 @@ export class ManagementAddLandComponent implements OnInit {
   mensajeError?: string = ''; 
   router = inject(Router); 
   servicioUsuario = inject(UserService); 
+  landService = inject(LandService);
   
+  land: Land = {
+    tipoPropiedad: 'Terreno',
+    tituloPropiedad: '',
+    descripcionPropiedad: '',
+    precioPropiedad: '',
+    superficieCubierta: '',
+    superficieTotal: '',
+    direccionPropiedad: {
+        pais: '',
+        provincia: '',
+        localidad: '',
+        nombre_calle: '',
+        numero_calle: '',
+    },
+    ubicacionPropiedad: {
+        lat: 0,
+        lng: 0,
+    },
+    imagenes: []
+};
   formularioLand : FormGroup
 
   constructor(private fb : FormBuilder) {
@@ -124,6 +147,23 @@ export class ManagementAddLandComponent implements OnInit {
     };
   }
 
+  onSubmit() {
+
+    if (this.formularioLand.valid) {
+      this.land = this.formularioLand.getRawValue();
+      this.landService.addLand(this.land).subscribe({
+        next: () => {
+          alert("Terreno agregado con éxito");
+          this.formularioLand.reset();
+          this.redirectToHomeManagement();
+        },
+        error: (err) => console.log("Error: ", err)
+      });
+    } else {
+      console.log("El formulario no es válido, no se puede enviar.");
+    }
+  }
+
   ngOnInit(): void {
     this.obtenerUsuarioLogueado();
   }
@@ -142,6 +182,10 @@ export class ManagementAddLandComponent implements OnInit {
   
   redirectToHome() { 
     this.router.navigate(['/home']);
+  }
+
+  redirectToHomeManagement() { 
+    this.router.navigate(['/management-home']);
   }
   
   private showErrorMessage(mensaje: string) { 
