@@ -4,6 +4,8 @@ import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angu
 import { Router } from '@angular/router';
 import { User } from '../../Models/User.model';
 import { UserService } from '../../Services/User/user.service';
+import { ManagementHeaderComponent } from "../../Components/management-header/management-header.component";
+import { ManagementFooterComponent } from "../../Components/management-footer/management-footer.component";
 
 @Component({
   selector: 'app-login',
@@ -11,7 +13,10 @@ import { UserService } from '../../Services/User/user.service';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule],
+    ReactiveFormsModule,
+    ManagementHeaderComponent,
+    ManagementFooterComponent
+],
   templateUrl: './management-login.component.html',
   styleUrl: './management-login.component.css'
 })
@@ -28,7 +33,7 @@ export class LoginComponent implements OnInit {
   formLogin = this.formBuiler.nonNullable.group({
 
     userName: ['', Validators.required],
-    password: ['', [Validators.required,  Validators.minLength(8)]]
+    password: ['', [Validators.required]]
   });
 
   ngOnInit(): void {
@@ -101,6 +106,7 @@ export class LoginComponent implements OnInit {
     }
 
     else {
+      console.log(this.formLogin.valid);
       this.mensajeError = "Por favor, complete todos los campos";
       this.showErrorMessage(this.mensajeError);
     }
