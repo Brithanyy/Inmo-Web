@@ -30,6 +30,8 @@ export class ManagementAddDepartamentComponent implements OnInit {
   departamentService = inject(DepartamentService);
 
   departament: Departament = {
+    id: '',
+    idUsuario: "1",
     tipoPropiedad: 'Departamento',
     tituloPropiedad: '',
     descripcionPropiedad: '',
@@ -48,6 +50,7 @@ export class ManagementAddDepartamentComponent implements OnInit {
         lng: 0
     },
     imagenes: [],
+    reseñas: [],
     cantidadAmbientes: 0,
     cantidadDormitorios: 0,
     cantidadBanos: 0
@@ -181,6 +184,9 @@ onSubmit() {
 
   if (this.formulario.valid) {
     this.departament = this.formulario.getRawValue();
+    this.departament.idUsuario = "1";
+    this.departament.tipoPropiedad = "Departamento"
+    this.departament.reseñas = [];
     this.departamentService.addDepartament(this.departament).subscribe({
       next: () => {
         alert("Departamento agregado con éxito");

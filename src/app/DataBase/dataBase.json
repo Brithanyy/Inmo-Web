@@ -30,31 +30,6 @@
       "cantidadBanos": 4
     },
     {
-      "tituloPropiedad": "Importante residencia de categoría en esquina del barrio Los Troncos.",
-      "descripcionPropiedad": "En el inmejorable entorno del exclusivo y tradicional barrio Los Troncos, sobre lote en esquina de 1.005 m2, con frentes de 33,30 mts, se encuentra esta importante residencia de 687 m2. Con ingreso sobre calle Mendoza, la propiedad se desarrolla en dos plantas, retirada del frente con reja y parque perimetral. Al ingresar, en planta baja posee hall de acceso, luminoso estar, amplio comedor principal, cocina de generosas dimensiones con isla central, sala de máquinas, lavadero y family. Además, en la misma planta, posee cómodo dormitorio en suite. Luego en subsuelo cuenta con amplia cava con sector de estar. Ya en planta alta, posee cuatro cómodos dormitorios en suite, el principal con vestidor, baño con hidromasaje y balcón terraza; y los dormitorios restantes con salida a balcón corrido al frente. Además, la propiedad posee en construcción independiente, garage para dos autos con cocina, baño y sala de juegos en planta alta; trotadora para dos autos el cual se accede por calle Almafuerte mediante portón automático. Por último, cuenta con jardín, galería, espacio de fogón y piscina climatizada. Esta exclusiva residencia cuenta con detalles de estilo y confort, tales como, calefacción por losa radiante, aberturas de aluminio con DVH, aire acondicionado en todos los ambientes y cerraduras con código y huella.",
-      "precioPropiedad": "1500000",
-      "superficieCubierta": 68700,
-      "superficieTotal": 100500,
-      "direccionPropiedad": {
-        "pais": "Argentina",
-        "provincia": "Buenos Aires",
-        "localidad": "Mar del Plata",
-        "nombre_calle": "Almafuerte & Mendoza",
-        "numero_calle": "300"
-      },
-      "ubicacionPropiedad": {
-        "lat": -3802563971092374,
-        "lng": -5754583073420621
-      },
-      "imagenes": [
-        "https://plus.unsplash.com/premium_photo-1687960117069-567a456fe5f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHByb3BlcnR5fGVufDB8fDB8fHww"
-      ],
-      "cantidadAmbientes": 6,
-      "cantidadDormitorios": 5,
-      "cantidadBanos": 6,
-      "id": "2"
-    },
-    {
       "id": "3",
       "idUsuario": "1",
       "tipoPropiedad": "Casa",
@@ -334,6 +309,15 @@
       "comentario": "sdfsdf",
       "estrellas": "2",
       "fecha": "2024-11-08T22:11:24.836Z"
+    },
+    {
+      "id": "b0ea",
+      "tipoPropiedad": "Casa",
+      "idPropiedad": "9c9d",
+      "usuario": "sdfsd",
+      "comentario": "sdfdfd",
+      "estrellas": 1,
+      "fecha": "2024-11-08T22:41:08.318Z"
     }
   ],
   "Usuario": [

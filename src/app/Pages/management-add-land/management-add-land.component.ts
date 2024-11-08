@@ -29,6 +29,8 @@ export class ManagementAddLandComponent implements OnInit {
   landService = inject(LandService);
   
   land: Land = {
+    id: '',
+    idUsuario: "1",
     tipoPropiedad: 'Terreno',
     tituloPropiedad: '',
     descripcionPropiedad: '',
@@ -46,7 +48,8 @@ export class ManagementAddLandComponent implements OnInit {
         lat: 0,
         lng: 0,
     },
-    imagenes: []
+    imagenes: [],
+    reseñas: []
 };
   formularioLand : FormGroup
 
@@ -151,6 +154,9 @@ export class ManagementAddLandComponent implements OnInit {
 
     if (this.formularioLand.valid) {
       this.land = this.formularioLand.getRawValue();
+      this.land.idUsuario = "1";
+      this.land.tipoPropiedad = "Terreno"
+      this.land.reseñas = [];
       this.landService.addLand(this.land).subscribe({
         next: () => {
           alert("Terreno agregado con éxito");

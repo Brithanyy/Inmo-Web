@@ -24,6 +24,8 @@ export class ManagementModifyHouseComponent implements OnInit{
   houseService = inject(HouseService);
   router = inject(ActivatedRoute);
   house: House = {
+    id: '',
+    idUsuario: "1",
     tipoPropiedad: 'Casa',
     tituloPropiedad: '',
     descripcionPropiedad: '',
@@ -179,6 +181,9 @@ get cantidadBanos() {
       const id_string = String(id);
       this.house = this.formulario.getRawValue();
       this.house.id = id_string;
+      this.house.idUsuario = "1";
+      this.house.tipoPropiedad = "Casa";
+      this.house.reseñas = [];
       this.houseService.modifyHouse(String(this.house.id),this.house).subscribe({
         next: () => {
           alert("Casa modificada con éxito");

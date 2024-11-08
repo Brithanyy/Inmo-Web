@@ -24,6 +24,8 @@ export class ManagementAddHouseComponent implements OnInit {
   userBuffer?: User; 
 
    house: House = {
+    id: '',
+    idUsuario: "1",
     tipoPropiedad: 'Casa',
     tituloPropiedad: '',
     descripcionPropiedad: '',
@@ -42,6 +44,7 @@ export class ManagementAddHouseComponent implements OnInit {
         lng: 0
     },
     imagenes: [],
+    reseñas: [],
     cantidadAmbientes: 0,
     cantidadDormitorios: 0,
     cantidadBanos: 0
@@ -176,6 +179,9 @@ export class ManagementAddHouseComponent implements OnInit {
   
     if (this.formulario.valid) {
       this.house = this.formulario.getRawValue();
+      this.house.idUsuario = "1";
+      this.house.tipoPropiedad = "Casa";
+      this.house.reseñas = [];
       this.houseService.addHouse(this.house).subscribe({
         next: () => {
           alert("Casa agregado con éxito");

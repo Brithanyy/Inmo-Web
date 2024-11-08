@@ -149,6 +149,9 @@ export class ManagementModifyLandComponent {
       const id_string = String(id);
       this.formularioLand = this.formularioLand.getRawValue();
       this.land.id = id_string;
+      this.land.idUsuario = "1";
+      this.land.tipoPropiedad = "Terreno"
+      this.land.reseñas = [];
       this.landService.modifyLand(String(this.land.id),this.land).subscribe({
         next: () => {
           alert("Casa modificada con éxito");

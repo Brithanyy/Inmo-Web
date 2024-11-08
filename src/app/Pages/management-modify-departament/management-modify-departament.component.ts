@@ -24,6 +24,8 @@ export class ManagementModifyDepartamentComponent implements OnInit{
   departamentService = inject(DepartamentService);
   router = inject(ActivatedRoute);
   departament: Departament = {
+    id: '',
+    idUsuario: "1",
     tipoPropiedad: 'Departamento',
     tituloPropiedad: '',
     descripcionPropiedad: '',
@@ -179,6 +181,9 @@ get cantidadBanos() {
       const id_string = String(id);
       this.departament = this.formulario.getRawValue();
       this.departament.id = id_string;
+      this.departament.idUsuario = "1";
+      this.departament.tipoPropiedad = "Departamento"
+      this.departament.reseñas = [];
       this.departamentService.modifyDepartament(String(this.departament.id),this.departament).subscribe({
         next: () => {
           alert("Departamento modificado con éxito");
