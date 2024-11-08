@@ -1,17 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ManagementHeaderComponent } from "../../Components/management-header/management-header.component";
 import { ManagementFooterComponent } from "../../Components/management-footer/management-footer.component";
 import { AbstractControl, FormArray, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { UserService } from '../../Services/User/user.service';
+import { User } from '../../Models/User.model';
 
 @Component({
   selector: 'app-management-add-land',
   standalone: true,
-  imports: [ManagementHeaderComponent, ManagementFooterComponent, ReactiveFormsModule, CommonModule],
+  imports: [
+    ManagementHeaderComponent, 
+    ManagementFooterComponent, 
+    ReactiveFormsModule, 
+    CommonModule],
   templateUrl: './management-add-land.component.html',
   styleUrl: './management-add-land.component.css'
 })
-export class ManagementAddLandComponent {
+export class ManagementAddLandComponent implements OnInit {
+
+  userBuffer?: User; 
+  mensajeError?: string = ''; 
+  router = inject(Router); 
+  servicioUsuario = inject(UserService); 
   
   formularioLand : FormGroup
 
@@ -67,6 +79,7 @@ export class ManagementAddLandComponent {
    }
 
   addImage(imageUrl: string) {
+
     const imagesArray = this.formularioLand.get('imagenes') as FormArray;
     imagesArray.push(this.fb.control(imageUrl));
   }
@@ -74,6 +87,7 @@ export class ManagementAddLandComponent {
   //! VALIDACIONES PERSONALIZADAS
   //? Solo numeros negativos
   onlyNegativeValidator(): ValidatorFn {
+
     return (control: AbstractControl): { [key: string]: any } | null => {
       const value = control.value;
       return (typeof value === 'number' && value < 0) ? null : { 'notNegative': { value } };
@@ -82,6 +96,7 @@ export class ManagementAddLandComponent {
 
   //? No numeros, solo letras
   noNumbersAllowedValidator(): ValidatorFn {
+
     return (control: AbstractControl): ValidationErrors | null => {
       const value = control.value;
       const hasNumbers = /\d/.test(value);
@@ -91,6 +106,7 @@ export class ManagementAddLandComponent {
 
   //? No letras, solo numeros
   onlyNumbersValidator(): ValidatorFn {
+
     return (control: AbstractControl): ValidationErrors | null => {
       const value = control.value;
       const isOnlyNumbers = /^\d+$/.test(value);
@@ -100,11 +116,41 @@ export class ManagementAddLandComponent {
 
    //? Solo numeros positivos
    positiveNumberValidator(): ValidatorFn {
+
     return (control: AbstractControl): ValidationErrors | null => {
       const value = control.value;
       const isPositiveNumber = /^[+]?\d+(\.\d+)?$/.test(value) && parseFloat(value) > 0;
       return !isPositiveNumber ? { nonPositiveNumber: true } : null;
     };
+  }
+
+  ngOnInit(): void {
+    this.obtenerUsuarioLogueado();
+  }
+
+  obtenerUsuarioLogueado() { 
+
+    this.servicioUsuario.getAllUsers().subscribe({
+  
+      next: (returnedUsers: User[]) => this.userBuffer = returnedUsers.find(user => user.userName === "UserAdmin" && user.password === "passwordUserAdmin2024"),
+    
+      error: () => {
+        this.showErrorMessage("Error al obtener usuario logueado");
+      }
+    });
+  }
+  
+  redirectToHome() { 
+    this.router.navigate(['/home']);
+  }
+  
+  private showErrorMessage(mensaje: string) { 
+  
+    this.mensajeError = mensaje;
+  
+    setTimeout(() => {
+      this.mensajeError = '';
+    }, 3000);
   }
 
 }

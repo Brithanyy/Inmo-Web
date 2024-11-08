@@ -2,3 +2,54 @@ h1 {
     text-align: center;
     margin-top: 20px;
 }
+
+.logout-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    padding: 20px; /* Espaciado alrededor del botón */
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+
+.denied-access-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+  }
+  
+  .denied-access-alert {
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    background-color: #fff;
+    border: 2px solid #dc3545;
+  }
+  
+  .denied-access-alert .alert-heading {
+    color: #dc3545;
+    font-weight: bold;
+  }
+  
+  .denied-access-alert .btn-outline-danger {
+    transition: all 0.3s ease;
+  }
+  
+  .denied-access-alert .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+  }

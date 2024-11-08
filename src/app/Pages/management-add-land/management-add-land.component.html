@@ -1,4 +1,6 @@
-<app-management-header></app-management-header>
+@if (userBuffer?.estaLogueado) {
+
+    <app-management-header></app-management-header>
 <div class="container mt-5">
     <form [formGroup]="formularioLand" class="shadow-lg p-4 rounded form-land">
         <h2 class="text-center mb-4">Registrar Terreno</h2>
@@ -133,12 +135,37 @@
         <div class="mb-3">
             <label for="imagen" class="form-label">Agregar Imágenes (URL)</label>
             <input type="text" id="imagen" #imagenInput class="form-control" placeholder="Ej. http://ejemplo.com/imagen.jpg">
-            <button type="button" class="btn btn-secondary mt-2" (click)="addImage(imagenInput.value); imagenInput.value=''">Agregar Imagen</button>
+            <button type="button" class="btn btn-secondary mt-2 personalizado" (click)="addImage(imagenInput.value); imagenInput.value=''">Agregar Imagen</button>
         </div>
 
         <!--! Botón de Enviar -->
-        <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="formularioLand.invalid">Registrar Terreno</button>
+        <button type="submit" class="btn text-white w-100 mt-3 personalizado" [disabled]="formularioLand.invalid">Agregar Terreno</button>
     </form>
 </div>
 
 <app-management-footer></app-management-footer>
+}
+
+@else {
+
+    <div class="container denied-access-container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="alert alert-danger text-center denied-access-alert" role="alert">
+            <h4 class="alert-heading">
+              <i class="bi bi-exclamation-triangle-fill me-2"></i>Acceso Denegado
+            </h4>
+            <p class="mb-3">No tienes permisos para acceder a esta página.</p>
+            <hr>
+            <div class="d-flex justify-content-center">
+              <button 
+                (click)="redirectToHome()" 
+                 class="btn btn-outline-danger">
+                Ir a Página Principal
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
