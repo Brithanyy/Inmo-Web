@@ -29,6 +29,37 @@
       "cantidadDormitorios": 11,
       "cantidadBanos": 4
     },
+
+    {
+      "id": "2",
+      "idUsuario": "1",
+      "tipoPropiedad": "Casa",
+      "tituloPropiedad": "Importante residencia en el exclusivo barrio Los Troncos",
+      "descripcionPropiedad": "En el excelente y exclusivo entorno del barrio Los Troncos, se encuentra esta importante residencia de 633 m2 cubiertos, sobre lote de 937 m2 con 21,65 mts de frente y 43,30 mts de fondo. Cuenta con reja al frente y muro de piedra. Retirada de la línea municipal y elevada del nivel de vereda, la propiedad se alza con fachada de ladrillo visto, piedra y carpinterías de madera. Al ingresar posee hall de recepción, desde el cual hacia el lado izquierdo, accede a amplio estar o sala de TV con hogar y pisos tarugados, y hacia el lado derecho cuenta con amplia y luminosa cocina con mobiliario Johnson, comedor diario, y lavadero. Siguiendo en el mismo nivel, cuenta con estar comedor de generosas dimensiones con salida a solárium y al parque, toilette de recepción, escritorio, dormitorio, un baño con ducha e importante quincho con parrilla a gas y a leña, baño, equipo de aire acondicionado y salamandra. Desde este último, se puede acceder al parque con piscina climatizada, Jacuzzi y ducha externa. En planta alta, se encuentran cuatro dormitorios en suite, dos de ellos al frente, de los cuales uno posee doble vestidor e hidromasaje y el otro cuenta con balcón e hidromasaje; mientras que los otros dos se orientan hacia el jardín, y uno de ellos posee balcón. Siguiendo en planta alta se encuentra un escritorio y escalera rebatible en hall distribuidor, que da acceso a una amplia bohardilla. Luego, en el subsuelo posee garage para tres autos, despensa y sala de máquinas. Por último, la residencia cuenta con calefacción por radiadores y detalles de primera calidad como riego por aspersión, cortinas eléctricas en dormitorios y calderas industriales con equipo ablandador de agua. Cabe destacar, que se encuentra en muy buen estado de conservación y mantenimiento.",
+      "precioPropiedad": "1.100.000",
+      "superficieCubierta": "633.00 ",
+      "superficieTotal": "937.00",
+      "direccionPropiedad": {
+        "pais": "Argentina",
+        "provincia": "Buenos Aires",
+        "localidad": "Mar del Plata",
+        "nombre_calle": "Mendoza",
+        "numero_calle": "3600"
+      },
+      "ubicacionPropiedad": {  
+        "lat": -32.88878621945242,
+        "lng": -68.84592238307597
+      },
+      "imagenes": [
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/9388833951441531428459974722701074984275053414921386632608972319518415252198-1170x785.jpg",
+        "https://www.roblescasascampos.com/wp-content/uploads/2024/07/91290163680919929533486636764641387447093292117407851579969113769281346783163-592x444.jpg"
+      ],
+      "reseñas": [],
+      "cantidadAmbientes": 9,
+      "cantidadDormitorios": 5,
+      "cantidadBanos": 5
+    },
+
     {
       "id": "3",
       "idUsuario": "1",
@@ -285,39 +316,6 @@
       "comentario": "Este terreno en el barrio Chauvín es una oportunidad única para desarrolladores. Con sus 5.703 m² y salida a tres calles, ofrece un enorme potencial para proyectos de gran envergadura. La ubicación estratégica y la zonificación E1 permiten múltiples usos, combinando residencias y servicios, lo que lo hace ideal para un desarrollo urbano moderno y funcional. Además, la factibilidad de construir 21.500 m² distribuidos en planta baja más seis pisos superiores abre un sinfín de posibilidades. Un lote con gran proyección y excelente ubicación.",
       "estrellas": "4",
       "fecha": "2024-11-03T22:43:49.133Z"
-    },
-    {
-      "id": "e99f",
-      "idPropiedad": "2",
-      "usuario": "asdsad",
-      "comentario": "asds",
-      "estrellas": 1,
-      "fecha": "2024-11-08T22:10:29.845Z"
-    },
-    {
-      "id": "7c52",
-      "idPropiedad": "2",
-      "usuario": "sadsad",
-      "comentario": "sadsad",
-      "estrellas": "2",
-      "fecha": "2024-11-08T22:10:36.643Z"
-    },
-    {
-      "id": "c878",
-      "idPropiedad": "2",
-      "usuario": "werer",
-      "comentario": "sdfsdf",
-      "estrellas": "2",
-      "fecha": "2024-11-08T22:11:24.836Z"
-    },
-    {
-      "id": "b0ea",
-      "tipoPropiedad": "Casa",
-      "idPropiedad": "9c9d",
-      "usuario": "sdfsd",
-      "comentario": "sdfdfd",
-      "estrellas": 1,
-      "fecha": "2024-11-08T22:41:08.318Z"
     }
   ],
   "Usuario": [
