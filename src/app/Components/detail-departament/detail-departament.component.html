@@ -12,6 +12,19 @@
     @else {
             @if(departamentBuffer) {
                 <div class="container mt-4">
+
+                    @if (siEstasEnGestion) {
+                        <div class="button-container mb-3">
+                            <button class="btn me-2 botonModificar" (click)="modificarDepartament()">
+                                <i class="bi bi-pencil"></i> Modificar Departamento
+                            </button>
+                            <button class="btn btn-danger" (click)="eliminarDepartament()">
+                                <i class="bi bi-trash"></i> Eliminar Departamento
+                            </button>
+                        </div>
+                    }
+
+
                     <div class="property-card">
                         <!-- Encabezado con título y precio -->
                         <div class="property-header">

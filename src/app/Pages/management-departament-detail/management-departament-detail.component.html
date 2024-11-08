@@ -1,10 +1,8 @@
-
-
 @if (userBuffer?.estaLogueado) {
 
     <app-management-header></app-management-header>
 
-    <app-detail-departament></app-detail-departament>
+    <app-detail-departament [siEstasEnGestion]="true"></app-detail-departament>
 
     <div class="button-container">
         <button (click)="backToManagementHome()" class=" botonAtras">Atrás</button>

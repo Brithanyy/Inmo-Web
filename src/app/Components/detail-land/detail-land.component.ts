@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { Component, EventEmitter, inject, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router} from '@angular/router';
 import { LandService } from '../../Services/Land/land.service';
 import { Land } from '../../Models/Land.model';
 import { CommonModule } from '@angular/common';
@@ -21,15 +21,19 @@ import { Review } from '../../Models/Review.model';
 })
 export class DetailLandComponent implements OnInit {
 
+  @Input() siEstasEnGestion?: boolean;
+
   activatedRoute = inject(ActivatedRoute);
   servicioLand = inject(LandService);
   servicioReview = inject(ReviewService);
+  router = inject(Router);
 
   landID?: string | null;
   landBuffer?: Land;
   currentImageIndex = 0;
   selectedImage: string | null = null;
   errorServicioLand?: string;
+  mensajeServicioLand?: string;
 
   reviews?: Review[] = [];
   errorServicioResena?: string;
@@ -104,6 +108,27 @@ export class DetailLandComponent implements OnInit {
     if (error) {
       alert(`Error: ${error}`);
     }
+  }
+
+  eliminarLand() {
+    
+    this.servicioLand.deleteLand(String(this.landID)).subscribe({
+
+      next: () => {
+
+        this.mensajeServicioLand = "Propiedad eliminada con éxito";
+        this.showErrorMessage(this.mensajeServicioLand);
+      },
+
+      error: () => {
+        this.mensajeServicioLand = "Error al eliminar la propiedad";
+        this.showErrorMessage(this.mensajeServicioLand);
+      }
+    })
+  }
+
+  modificarLand() {
+    this.router.navigate(['modify-land', this.landID]);
   }
 }
 

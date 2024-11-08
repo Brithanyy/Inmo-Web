@@ -23,7 +23,6 @@ export class CardHouseComponent implements OnInit {
   houseService = inject(HouseService);
   servicioUsuario = inject(UserService); 
 
-
   ngOnInit(): void {
     
     if(this.houseID) {
@@ -52,6 +51,7 @@ export class CardHouseComponent implements OnInit {
 
   directToDetails() {
 
+    this.cerrarSesion();
     this.router.navigate(['house-detail',  this.houseID]);
   }
 
@@ -71,13 +71,25 @@ export class CardHouseComponent implements OnInit {
 
     this.servicioUsuario.getAllUsers().subscribe({  
   
-      next: (returnedUsers: User[]) => this.userBuffer = returnedUsers.find(user => user.userName === "UserAdmin" && user.password === "passwordUserAdmin2024"),
+      next: (returnedUsers: User[]) => {
+
+        this.userBuffer = returnedUsers.find(user => user.userName === "UserAdmin" && user.password === "passwordUserAdmin2024");
+      },
     
       error: () => {
         this.mensajeUsuarioServicio = "Error al obtener usuario logueado";
         this.showErrorMessageServicioUser(this.mensajeUsuarioServicio);
       }
     });
+  }
+  
+  cerrarSesion() {
+
+    this.servicioUsuario.updateUserLoggedStatus(String(this.userBuffer?.id), false).subscribe({
+
+      next: () => console.log("Cambiaste el estado del usuario"),
+      error: () => console.log("Error al cambiar el estado del usuario")
+    })
   }
   
 }

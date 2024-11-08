@@ -12,6 +12,18 @@
     @else {
             @if(landBuffer) {
                 <div class="container mt-4">
+
+                    @if (siEstasEnGestion) {
+                        <div class="button-container mb-3">
+                            <button class="btn me-2 botonModificar" (click)="modificarLand()">
+                                <i class="bi bi-pencil"></i> Modificar Casa
+                            </button>
+                            <button class="btn btn-danger" (click)="eliminarLand()">
+                                <i class="bi bi-trash"></i> Eliminar Casa
+                            </button>
+                        </div>
+                    }
+
                     <div class="property-card">
                         <!-- Encabezado con título y precio -->
                         <div class="property-header">

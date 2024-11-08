@@ -17,6 +17,9 @@ import { ManagementHomeComponent } from './Pages/management-home/management-home
 import { ManagementDepartamentDetailComponent } from './Pages/management-departament-detail/management-departament-detail.component';
 import { ManagementHouseDetailComponent } from './Pages/management-house-detail/management-house-detail.component';
 import { ManagementLandDetailComponent } from './Pages/management-land-detail/management-land-detail.component';
+import { ManagementModifyHouseComponent } from './Pages/management-modify-house/management-modify-house.component';
+import { ManagementModifyDepartamentComponent } from './Pages/management-modify-departament/management-modify-departament.component';
+import { ManagementModifyLandComponent } from './Pages/management-modify-land/management-modify-land.component';
 
 export const routes: Routes = [
 
@@ -99,13 +102,30 @@ export const routes: Routes = [
         path: 'add-house',
         component: ManagementAddHouseComponent
     },
+
     {
         path: 'add-departament',
         component: ManagementAddDepartamentComponent
     },
+
     {
         path: 'add-land',
         component: ManagementAddLandComponent
+    },
+
+    {
+        path: 'modify-house/:id',
+        component: ManagementModifyHouseComponent
+    },
+    
+    {
+        path: 'modify-departament/:id',
+        component: ManagementModifyDepartamentComponent
+    },
+
+    {
+        path: 'modify-land/:id',
+        component: ManagementModifyLandComponent
     },
 
     {

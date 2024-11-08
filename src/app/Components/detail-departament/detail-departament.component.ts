@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { Component, EventEmitter, inject, Input, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Router} from '@angular/router';
 import { DepartamentService } from '../../Services/Departament/departament.service';
 import { Departament } from '../../Models/Departament.model';
 import { CommonModule } from '@angular/common';
@@ -19,15 +19,19 @@ import { Review } from '../../Models/Review.model';
 })
 export class DetailDepartamentComponent implements OnInit {
 
+  @Input() siEstasEnGestion?: boolean;
+
   activatedRoute = inject(ActivatedRoute);
   servicioDepartament = inject(DepartamentService);
   servicioReview = inject(ReviewService);
-
+  router = inject(Router);
+  
   departamentID?: string | null;
   departamentBuffer?: Departament;
   currentImageIndex = 0;
   selectedImage: string | null = null;
   errorServicioDepartament?: string;
+  mensajeServicioDepartament?: string;
 
   reviews?: Review[] = [];
   errorServicioResena?: string;
@@ -102,5 +106,26 @@ export class DetailDepartamentComponent implements OnInit {
     if (error) {
       alert(`Error al cargar las reseña: ${error}`);
     }
+  }
+
+  eliminarDepartament() {
+
+    this.servicioDepartament.deleteDepartament(String(this.departamentID)).subscribe({
+
+      next: () => {
+
+        this.mensajeServicioDepartament = "Propiedad eliminada con éxito";
+        this.showErrorMessage(this.mensajeServicioDepartament);
+      },
+
+      error: () => {
+        this.mensajeServicioDepartament = "Error al eliminar la propiedad";
+        this.showErrorMessage(this.mensajeServicioDepartament);
+      }
+    })
+  }
+
+  modificarDepartament() {
+    this.router.navigate(['modify-departament', this.departamentID]);
   }
 }

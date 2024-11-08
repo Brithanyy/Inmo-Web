@@ -187,20 +187,6 @@
     background: linear-gradient(to right, transparent, #007200, transparent);
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #007200;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: #015201;
-}
-
 .reviews-section {
     margin-top: 30px;
     padding: 20px;
@@ -290,4 +276,12 @@ button:hover {
 .no-reviews-card:hover {
     background-color: #ffcdd2;
     transition: background-color 0.3s ease;
+}
+
+.botonModificar {
+    background-color: #007200;
+    color: white;
+}
+.botonModificar:hover {
+    background-color: #015201;
 }

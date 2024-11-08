@@ -1,5 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Component, EventEmitter, inject, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HouseService } from '../../Services/House/house.service';
 import { House } from '../../Models/House.model';
 import { CommonModule } from '@angular/common';
@@ -19,7 +19,10 @@ import { ReviewService } from '../../Services/Review/review.service';
 })
 export class DetailHouseComponent implements OnInit {
 
+  @Input() siEstasEnGestion?: boolean;
+
   activatedRoute = inject(ActivatedRoute);
+  router = inject(Router); //!Toqué acá
   servicioHouse = inject(HouseService);
   servicioReview = inject(ReviewService); 
 
@@ -29,6 +32,7 @@ export class DetailHouseComponent implements OnInit {
   currentImageIndex = 0;
   selectedImage: string | null = null;
   errorServicioHouse?: string;
+  mensajeServicioHouse?: string; //!Toqué acá
 
   reviews?: Review[] = [];
   errorServicioResena?: string;
@@ -103,6 +107,28 @@ export class DetailHouseComponent implements OnInit {
     if (error) {
       alert(`Error al cargar las reseña: ${error}`);
     }
+  }
+
+  eliminarHouse() { //!Toqué acá
+
+    this.servicioHouse.deleteHouse(String(this.houseID)).subscribe({
+
+      next: () => {
+
+        this.mensajeServicioHouse = "Propiedad eliminada con éxito";
+        this.showErrorMessage(this.mensajeServicioHouse);
+      },
+
+      error: () => {
+        this.mensajeServicioHouse = "Error al eliminar la propiedad";
+        this.showErrorMessage(this.mensajeServicioHouse);
+      }
+    })
+  }
+
+  modificarHouse() { //!Toqué acá
+
+    this.router.navigate(['modify-house', this.houseID]);
   }
 }
 
