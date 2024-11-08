@@ -315,9 +315,35 @@
       "comentario": "Este terreno en el barrio Chauvín es una oportunidad única para desarrolladores. Con sus 5.703 m² y salida a tres calles, ofrece un enorme potencial para proyectos de gran envergadura. La ubicación estratégica y la zonificación E1 permiten múltiples usos, combinando residencias y servicios, lo que lo hace ideal para un desarrollo urbano moderno y funcional. Además, la factibilidad de construir 21.500 m² distribuidos en planta baja más seis pisos superiores abre un sinfín de posibilidades. Un lote con gran proyección y excelente ubicación.",
       "estrellas": "4",
       "fecha": "2024-11-03T22:43:49.133Z"
-    } 
+    },
+    {
+      "id": "dfeb",
+      "tipoPropiedad": "Casa",
+      "idPropiedad": "2",
+      "usuario": "fdsf",
+      "comentario": "fsddfds",
+      "estrellas": "3",
+      "fecha": "2024-11-08T00:53:59.740Z"
+    },
+    {
+      "id": "b2e9",
+      "tipoPropiedad": "Departamento",
+      "idPropiedad": "3",
+      "usuario": "dsfdgdXXD",
+      "comentario": "xfcxf",
+      "estrellas": "3",
+      "fecha": "2024-11-08T01:16:30.435Z"
+    },
+    {
+      "id": "9ff1",
+      "tipoPropiedad": "Departamento",
+      "idPropiedad": "3",
+      "usuario": "sdfsdf",
+      "comentario": "sdifhsd",
+      "estrellas": "5",
+      "fecha": "2024-11-08T01:17:27.381Z"
+    }
   ],
-  
   "Usuario": [
     {
       "id": "68bf",
