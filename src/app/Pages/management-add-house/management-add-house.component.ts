@@ -1,10 +1,13 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { House } from '../../Models/House.model';
-import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HouseService } from '../../Services/House/house.service';
 import { ManagementHeaderComponent } from "../../Components/management-header/management-header.component";
 import { ManagementFooterComponent } from "../../Components/management-footer/management-footer.component";
+import { Router } from '@angular/router';
+import { UserService } from '../../Services/User/user.service';
+import { User } from '../../Models/User.model';
 
 @Component({
   selector: 'app-management-add-house',
@@ -13,7 +16,12 @@ import { ManagementFooterComponent } from "../../Components/management-footer/ma
   templateUrl: './management-add-house.component.html',
   styleUrl: './management-add-house.component.css'
 })
-export class ManagementAddHouseComponent {
+export class ManagementAddHouseComponent implements OnInit {
+
+  mensajeError?: string = ''; 
+  router = inject(Router); 
+  servicioUsuario = inject(UserService); 
+  userBuffer?: User; 
 
    house: House = {
     tipoPropiedad: 'Casa',
@@ -165,6 +173,7 @@ export class ManagementAddHouseComponent {
   }
 
   onSubmit() {
+
     if (this.formulario.valid) {
       console.log(this.formulario.value);
       this.house = this.formulario.getRawValue();
@@ -177,6 +186,35 @@ export class ManagementAddHouseComponent {
       })
     }
   }
+
+  ngOnInit(): void {
+    
+    this.obtenerUsuarioLogueado();
+  }
+
+  obtenerUsuarioLogueado() { 
+
+    this.servicioUsuario.getAllUsers().subscribe({
   
+      next: (returnedUsers: User[]) => this.userBuffer = returnedUsers.find(user => user.userName === "UserAdmin" && user.password === "passwordUserAdmin2024"),
+    
+      error: () => {
+        this.showErrorMessage("Error al obtener usuario logueado");
+      }
+    });
+  }
+
+  redirectToHome() {
+    this.router.navigate(['/home']);
+  }
+  
+  private showErrorMessage(mensaje: string) { 
+  
+    this.mensajeError = mensaje;
+  
+    setTimeout(() => {
+      this.mensajeError = '';
+    }, 3000);
+  }
 
 }

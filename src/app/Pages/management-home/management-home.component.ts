@@ -1,7 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { UserService } from '../../Services/User/user.service';
 import { User } from '../../Models/User.model';
-import { NavbarComponent } from "../../Components/navbar/navbar.component";
 import { ListHousesComponent } from '../../Components/list-houses/list-houses.component';
 import { ListDepartamentsComponent } from '../../Components/list-departaments/list-departaments.component';
 import { ListLandsComponent } from '../../Components/list-lands/list-lands.component';
@@ -12,11 +11,10 @@ import { ManagementHeaderComponent } from "../../Components/management-header/ma
   selector: 'app-management-home',
   standalone: true,
   imports: [
-    NavbarComponent,
-    ListHousesComponent,
+    ManagementHeaderComponent,
     ListDepartamentsComponent,
-    ListLandsComponent,
-    ManagementHeaderComponent
+    ListHousesComponent,
+    ListLandsComponent
 ],
   templateUrl: './management-home.component.html',
   styleUrl: './management-home.component.css'
@@ -38,13 +36,14 @@ export class ManagementHomeComponent implements OnInit{
 
     this.servicioUsuario.getAllUsers().subscribe({
 
-      next: (returnedUsers: User[]) => this.userBuffer = returnedUsers.find(user => user.estaLogueado === true),
+      next: (returnedUsers: User[]) => this.userBuffer = returnedUsers.find(user => user.userName === "UserAdmin" && user.password === "passwordUserAdmin2024"),
     
       error: () => {
         this.showErrorMessage("Error al obtener usuario logueado");
       }
     });
   }
+
   cerrarSesion() {
     if (this.userBuffer && this.userBuffer.id) {
       
@@ -56,6 +55,10 @@ export class ManagementHomeComponent implements OnInit{
         }
       });
     }
+  }
+
+  redirectToHome() {
+    this.router.navigate(['/home']);
   }
 
   private showErrorMessage(mensaje: string) {

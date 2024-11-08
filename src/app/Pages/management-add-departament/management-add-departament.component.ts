@@ -1,19 +1,34 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ManagementHeaderComponent } from "../../Components/management-header/management-header.component";
 import { ManagementFooterComponent } from "../../Components/management-footer/management-footer.component";
 import { Departament } from '../../Models/Departament.model';
 import { AbstractControl, FormArray, FormBuilder, FormGroup, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { DepartamentService } from '../../Services/Departament/departament.service';
+import { Router } from '@angular/router';
+import { UserService } from '../../Services/User/user.service';
+import { User } from '../../Models/User.model';
 
 @Component({
   selector: 'app-management-add-departament',
   standalone: true,
-  imports: [ManagementHeaderComponent, ManagementFooterComponent,ReactiveFormsModule, CommonModule],
+  imports: [
+    ManagementHeaderComponent,
+     ManagementFooterComponent,
+     ReactiveFormsModule, 
+     CommonModule
+    ],
   templateUrl: './management-add-departament.component.html',
   styleUrl: './management-add-departament.component.css'
 })
-export class ManagementAddDepartamentComponent {
+export class ManagementAddDepartamentComponent implements OnInit { 
+
+  userBuffer?: User;
+  mensajeError?: string = ''; 
+  router = inject(Router); 
+  servicioUsuario = inject(UserService); 
+  departamentService = inject(DepartamentService);
+
   departament: Departament = {
     tipoPropiedad: 'Departamento',
     tituloPropiedad: '',
@@ -39,11 +54,10 @@ export class ManagementAddDepartamentComponent {
 };
 formulario : FormGroup;
 
-departamentService = inject(DepartamentService);
-
-
 constructor(private fb: FormBuilder) {
+
   this.formulario = this.fb.group({
+
     "tituloPropiedad": ['', [Validators.required]],
     "descripcionPropiedad": ['', [Validators.required]],
     "precioPropiedad": ['', [Validators.required, this.positiveNumberValidator()]],
@@ -66,6 +80,7 @@ constructor(private fb: FormBuilder) {
     "cantidadBanos": ['', [Validators.required, this.noNegativeNumbersValidator()]] 
   });
 }
+
 get tituloPropiedad() {
   return this.formulario.get("tituloPropiedad");
 }
@@ -163,6 +178,7 @@ addImage(imageUrl: string) {
 }
 
 onSubmit() {
+
   if (this.formulario.valid) {
     console.log(this.formulario.value);
     this.departament = this.formulario.getRawValue();
@@ -174,6 +190,36 @@ onSubmit() {
       error: (err) => console.log("Error: ", err)
     })
   }
+}
+
+ngOnInit(): void { 
+
+  this.obtenerUsuarioLogueado();
+}
+
+obtenerUsuarioLogueado() { 
+
+  this.servicioUsuario.getAllUsers().subscribe({
+
+    next: (returnedUsers: User[]) => this.userBuffer = returnedUsers.find(user => user.userName === "UserAdmin" && user.password === "passwordUserAdmin2024"),
+  
+    error: () => {
+      this.showErrorMessage("Error al obtener usuario logueado");
+    }
+  });
+}
+
+redirectToHome() { 
+  this.router.navigate(['/home']);
+}
+
+private showErrorMessage(mensaje: string) { 
+
+  this.mensajeError = mensaje;
+
+  setTimeout(() => {
+    this.mensajeError = '';
+  }, 3000);
 }
 
 }

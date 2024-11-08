@@ -2,18 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Departament } from '../../Models/Departament.model';
 import { DepartamentService } from '../../Services/Departament/departament.service';
 import { CardDepartamentComponent } from "../card-departament/card-departament.component";
-import { FooterComponent } from "../footer/footer.component";
-import { NavbarComponent } from "../navbar/navbar.component";
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-list-departaments',
   standalone: true,
   imports: [
-    CardDepartamentComponent,
-    FooterComponent,
-    NavbarComponent,
-    RouterLink
+    CardDepartamentComponent
 ],
   templateUrl: './list-departaments.component.html',
   styleUrl: './list-departaments.component.css'
