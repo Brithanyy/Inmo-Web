@@ -117,13 +117,14 @@ export class DetailHouseComponent implements OnInit {
 
         this.mensajeServicioHouse = "Propiedad eliminada con éxito";
         this.showErrorMessage(this.mensajeServicioHouse);
+        this.router.navigate(['management-home']);
       },
 
       error: () => {
         this.mensajeServicioHouse = "Error al eliminar la propiedad";
         this.showErrorMessage(this.mensajeServicioHouse);
       }
-    })
+    });
   }
 
   modificarHouse() { //!Toqué acá
