@@ -2,11 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { UserService } from '../../Services/User/user.service';
 import { User } from '../../Models/User.model';
 import { NavbarComponent } from "../../Components/navbar/navbar.component";
-import { PropertiesComponent } from "../properties/properties.component";
 import { ListHousesComponent } from '../../Components/list-houses/list-houses.component';
 import { ListDepartamentsComponent } from '../../Components/list-departaments/list-departaments.component';
 import { ListLandsComponent } from '../../Components/list-lands/list-lands.component';
 import { Router } from '@angular/router';
+import { ManagementHeaderComponent } from "../../Components/management-header/management-header.component";
 
 @Component({
   selector: 'app-management-home',
@@ -15,7 +15,8 @@ import { Router } from '@angular/router';
     NavbarComponent,
     ListHousesComponent,
     ListDepartamentsComponent,
-    ListLandsComponent
+    ListLandsComponent,
+    ManagementHeaderComponent
 ],
   templateUrl: './management-home.component.html',
   styleUrl: './management-home.component.css'
@@ -44,9 +45,17 @@ export class ManagementHomeComponent implements OnInit{
       }
     });
   }
-
   cerrarSesion() {
-    
+    if (this.userBuffer && this.userBuffer.id) {
+      
+      this.servicioUsuario.updateUserLoggedStatus(String(this.userBuffer.id), false).subscribe({
+
+        next: () => this.router.navigate(['/login']),
+        error: () => {
+          this.showErrorMessage("Error al cerrar sesión");
+        }
+      });
+    }
   }
 
   private showErrorMessage(mensaje: string) {

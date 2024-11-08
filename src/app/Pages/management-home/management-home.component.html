@@ -1,16 +1,15 @@
 <app-navbar></app-navbar>
 
-<!-- Botón de cerrar sesión -->
-<div class="logout-container">
 
+<!-- Contenedor centrado para el botón de cerrar sesión -->
+<div class="logout-container">
     @if (userBuffer) {
         <button 
         (click)="cerrarSesion()" 
-        class="btn btn-danger">
+         class="btn btn-danger">
         Cerrar Sesión
       </button>
     }
-
 </div>
 
 <app-list-houses></app-list-houses>
