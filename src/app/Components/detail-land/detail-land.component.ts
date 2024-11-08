@@ -38,6 +38,8 @@ export class DetailLandComponent implements OnInit {
   reviews?: Review[] = [];
   errorServicioResena?: string;
   isLoading = true;
+  mensajeResenia?: string = '';
+  errorResenia?: string = '';
 
   ngOnInit(): void {
 
@@ -129,6 +131,40 @@ export class DetailLandComponent implements OnInit {
 
   modificarLand() {
     this.router.navigate(['modify-land', this.landID]);
+  }
+
+  eliminarResenia(idReseña: string | undefined) {
+
+    this.servicioReview.deleteReview(idReseña).subscribe({
+
+      next: () => {
+        this.reviews = this.reviews?.filter(review => review.id !== idReseña);
+        this.mensajeResenia = "Reseña eliminada con éxito";
+        this.showMessageReseña();
+      },
+      error: () => {
+        this.errorServicioResena = "Error al eliminar la reseña";
+        this.showErrorReseña();
+      }
+  });
+  }
+
+  showMessageReseña() {
+
+    setTimeout(() => {
+      
+      this.mensajeResenia = '';
+
+    }, 3000);
+  }
+
+  showErrorReseña() {
+
+    setTimeout(() => {
+      
+      this.errorResenia = '';
+
+    }, 3000);
   }
 }
 

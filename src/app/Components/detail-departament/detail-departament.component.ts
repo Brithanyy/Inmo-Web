@@ -32,6 +32,8 @@ export class DetailDepartamentComponent implements OnInit {
   selectedImage: string | null = null;
   errorServicioDepartament?: string;
   mensajeServicioDepartament?: string;
+  mensajeResenia?: string = '';
+  errorResenia?: string = '';
 
   reviews?: Review[] = [];
   errorServicioResena?: string;
@@ -127,5 +129,39 @@ export class DetailDepartamentComponent implements OnInit {
 
   modificarDepartament() {
     this.router.navigate(['modify-departament', this.departamentID]);
+  }
+
+  eliminarResenia(idReseña: string | undefined) {
+
+    this.servicioReview.deleteReview(idReseña).subscribe({
+
+      next: () => {
+          this.reviews = this.reviews?.filter(review => review.id !== idReseña);
+          this.mensajeResenia = "Reseña eliminada con éxito";
+          this.showMessageReseña();
+      },
+      error: (error) => {
+          this.errorServicioResena = "Error al eliminar la reseña";
+          this.showErrorReseña();
+      }
+  });
+  }
+
+  showMessageReseña() {
+
+    setTimeout(() => {
+      
+      this.mensajeResenia = '';
+
+    }, 3000);
+  }
+
+  showErrorReseña() {
+
+    setTimeout(() => {
+      
+      this.errorResenia = '';
+
+    }, 3000);
   }
 }

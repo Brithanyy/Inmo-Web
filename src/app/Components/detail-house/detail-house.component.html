@@ -118,12 +118,35 @@
                                     </div>
                                     <p class="review-comment">{{review.comentario}}</p>
                                     <p class="review-date">{{review.fecha | date:'dd/MM/yyyy'}}</p>
+
+                                    @if (siEstasEnGestion) {
+                                        <div class="text-center mt-3">
+                                            <button class="btn btn-danger" (click)="eliminarResenia(review.id)">
+                                                <i class="bi bi-trash"></i> Eliminar Reseña
+                                            </button>
+                                        </div>
+                                    }
                                 </div>
                             }
                         </div>
                     } @else {
                         <div class="no-reviews-card">
                             <p>No hay reseñas para esta propiedad</p>
+                        </div>
+                    }
+
+                    @if (mensajeResenia) {
+  
+                        <div class="containerMensajeReseña">
+                            <div class="mensajeReseña">
+                                <p>Reseña eliminada con éxito</p>
+                            </div>
+                        </div>
+                    }
+                    @if (errorResenia) {
+
+                        <div class="no-reviews-card">
+                            <p>Error al eliminar la reseña</p>
                         </div>
                     }
                 }

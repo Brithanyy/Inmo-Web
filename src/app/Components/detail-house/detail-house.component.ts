@@ -22,7 +22,7 @@ export class DetailHouseComponent implements OnInit {
   @Input() siEstasEnGestion?: boolean;
 
   activatedRoute = inject(ActivatedRoute);
-  router = inject(Router); //!Toqué acá
+  router = inject(Router); 
   servicioHouse = inject(HouseService);
   servicioReview = inject(ReviewService); 
 
@@ -32,11 +32,13 @@ export class DetailHouseComponent implements OnInit {
   currentImageIndex = 0;
   selectedImage: string | null = null;
   errorServicioHouse?: string;
-  mensajeServicioHouse?: string; //!Toqué acá
+  mensajeServicioHouse?: string; 
 
   reviews?: Review[] = [];
   errorServicioResena?: string;
   isLoading = true; 
+  mensajeResenia?: string = '';
+  errorResenia?: string = '';
 
   ngOnInit(): void {
 
@@ -109,7 +111,7 @@ export class DetailHouseComponent implements OnInit {
     }
   }
 
-  eliminarHouse() { //!Toqué acá
+  eliminarHouse() { 
 
     this.servicioHouse.deleteHouse(String(this.houseID)).subscribe({
 
@@ -127,9 +129,43 @@ export class DetailHouseComponent implements OnInit {
     });
   }
 
-  modificarHouse() { //!Toqué acá
+  modificarHouse() { 
 
     this.router.navigate(['modify-house', this.houseID]);
+  }
+
+  eliminarResenia(idReseña: string | undefined) {
+
+    this.servicioReview.deleteReview(idReseña).subscribe({
+
+      next: () => {
+          this.reviews = this.reviews?.filter(review => review.id !== idReseña);
+          this.mensajeResenia = "Reseña eliminada con éxito";
+          this.showMessageReseña();
+      },
+      error: () => {
+          this.errorServicioResena = "Error al eliminar la reseña";
+          this.showErrorReseña();
+      }
+  });
+  }
+
+  showMessageReseña() {
+
+    setTimeout(() => {
+      
+      this.mensajeResenia = '';
+
+    }, 3000);
+  }
+
+  showErrorReseña() {
+
+    setTimeout(() => {
+      
+      this.errorResenia = '';
+
+    }, 3000);
   }
 }
 
