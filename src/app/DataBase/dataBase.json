@@ -317,22 +317,31 @@
       "fecha": "2024-11-03T22:43:49.133Z"
     },
     {
-      "id": "b9d9",
+      "id": "dfeb",
       "tipoPropiedad": "Casa",
       "idPropiedad": "2",
-      "usuario": "hjjhhjk",
-      "comentario": "hgjhkj",
-      "estrellas": 1,
-      "fecha": "2024-11-04T13:58:44.519Z"
+      "usuario": "fdsf",
+      "comentario": "fsddfds",
+      "estrellas": "3",
+      "fecha": "2024-11-08T00:53:59.740Z"
     },
     {
-      "id": "358e",
-      "tipoPropiedad": "Casa",
-      "idPropiedad": "1",
-      "usuario": "hjb",
-      "comentario": "hjjbm",
+      "id": "b2e9",
+      "tipoPropiedad": "Departamento",
+      "idPropiedad": "3",
+      "usuario": "dsfdgdXXD",
+      "comentario": "xfcxf",
       "estrellas": "3",
-      "fecha": "2024-11-04T14:05:30.982Z"
+      "fecha": "2024-11-08T01:16:30.435Z"
+    },
+    {
+      "id": "9ff1",
+      "tipoPropiedad": "Departamento",
+      "idPropiedad": "3",
+      "usuario": "sdfsdf",
+      "comentario": "sdifhsd",
+      "estrellas": "5",
+      "fecha": "2024-11-08T01:17:27.381Z"
     }
   ],
   "Usuario": [
