@@ -6,6 +6,7 @@ import { ListDepartamentsComponent } from '../../Components/list-departaments/li
 import { ListLandsComponent } from '../../Components/list-lands/list-lands.component';
 import { Router } from '@angular/router';
 import { ManagementHeaderComponent } from "../../Components/management-header/management-header.component";
+import { ManagementFooterComponent } from "../../Components/management-footer/management-footer.component";
 
 @Component({
   selector: 'app-management-home',
@@ -14,7 +15,8 @@ import { ManagementHeaderComponent } from "../../Components/management-header/ma
     ManagementHeaderComponent,
     ListDepartamentsComponent,
     ListHousesComponent,
-    ListLandsComponent
+    ListLandsComponent,
+    ManagementFooterComponent
 ],
   templateUrl: './management-home.component.html',
   styleUrl: './management-home.component.css'

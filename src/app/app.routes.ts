@@ -14,6 +14,9 @@ import { DepartamentDetailComponent } from './Pages/departament-detail/departame
 import { HouseDetailComponent } from './Pages/house-detail/house-detail.component';
 import { LandDetailComponent } from './Pages/land-detail/land-detail.component';
 import { ManagementHomeComponent } from './Pages/management-home/management-home.component';
+import { ManagementDepartamentDetailComponent } from './Pages/management-departament-detail/management-departament-detail.component';
+import { ManagementHouseDetailComponent } from './Pages/management-house-detail/management-house-detail.component';
+import { ManagementLandDetailComponent } from './Pages/management-land-detail/management-land-detail.component';
 
 export const routes: Routes = [
 
@@ -75,6 +78,21 @@ export const routes: Routes = [
     {
         path: 'management-home',
         component: ManagementHomeComponent
+    },
+
+    {
+        path: 'management-departament-detail/:id',
+        component: ManagementDepartamentDetailComponent
+    },
+
+    {
+        path: 'management-house-detail/:id',
+        component: ManagementHouseDetailComponent
+    },
+
+    {
+        path: 'management-land-detail/:id',
+        component: ManagementLandDetailComponent
     },
 
     {

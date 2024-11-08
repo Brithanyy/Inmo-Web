@@ -340,7 +340,7 @@
       "id": "68bf",
       "userName": "UserAdmin",
       "password": "passwordUserAdmin2024",
-      "estaLogueado": false
+      "estaLogueado": true
     }
   ]
 }

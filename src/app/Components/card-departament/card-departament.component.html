@@ -16,8 +16,20 @@
           <strong>Ambientes:</strong> {{ departament.cantidadAmbientes }}
       </p>
       </div>
-      <div class="card-footer bg-white border-top-0">
-      <button class="btn btn-primary w-100" (click)="directToDetails()">Ver detalles</button>
-      </div>
+
+      @if(userBuffer?.estaLogueado) {
+
+        <div class="card-footer bg-white border-top-0">
+          <button class="btn btn-primary w-100" (click)="directToDetailsManagement()">Ver detalles</button>
+        </div>
+      }
+
+      @else {
+        
+        <div class="card-footer bg-white border-top-0">
+          <button class="btn btn-primary w-100" (click)="directToDetails()">Ver detalles</button>
+        </div>
+      }
+
     </div>
 }

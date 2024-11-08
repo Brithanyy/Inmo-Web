@@ -1,7 +1,9 @@
-import { Component, inject, Inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { HouseService } from '../../Services/House/house.service';
 import { House } from '../../Models/House.model';
 import { Router } from '@angular/router';
+import { UserService } from '../../Services/User/user.service';
+import { User } from '../../Models/User.model';
 
 @Component({
   selector: 'app-card-house',
@@ -11,17 +13,16 @@ import { Router } from '@angular/router';
   styleUrl: './card-house.component.css'
 })
 export class CardHouseComponent implements OnInit {
-
-  router = inject(Router);
-
+  
   @Input() houseID: string | undefined;
-
+  userBuffer?: User;  
   house: House | undefined;
-
-  houseService = inject(HouseService);
-
-  //*Si es que aparece un error, lo interpolamos y mostramos un mensaje si es que esta variable no está vacía
   errorReturned?: string;
+  mensajeUsuarioServicio?: string = '';  
+  router = inject(Router);
+  houseService = inject(HouseService);
+  servicioUsuario = inject(UserService); 
+
 
   ngOnInit(): void {
     
@@ -38,9 +39,12 @@ export class CardHouseComponent implements OnInit {
         }
       });
     }
+
+    this.obtenerUsuarioLogueado(); 
   }
 
   showErrorMessage() {
+
     if (this.errorReturned) {
       alert(`Error al cargar la propiedad: ${this.errorReturned}`);
     }
@@ -51,4 +55,29 @@ export class CardHouseComponent implements OnInit {
     this.router.navigate(['house-detail',  this.houseID]);
   }
 
+  directToDetailsManagement() {
+    this.router.navigate(['management-house-detail',  this.houseID]);
+  }
+
+  showErrorMessageServicioUser(mensaje: string) { 
+
+    setTimeout(() => {
+      
+      mensaje = '';
+    }, 3000);
+  }
+
+  obtenerUsuarioLogueado() { 
+
+    this.servicioUsuario.getAllUsers().subscribe({  
+  
+      next: (returnedUsers: User[]) => this.userBuffer = returnedUsers.find(user => user.userName === "UserAdmin" && user.password === "passwordUserAdmin2024"),
+    
+      error: () => {
+        this.mensajeUsuarioServicio = "Error al obtener usuario logueado";
+        this.showErrorMessageServicioUser(this.mensajeUsuarioServicio);
+      }
+    });
+  }
+  
 }

@@ -2,6 +2,8 @@ import { Land } from './../../Models/Land.model';
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LandService } from '../../Services/Land/land.service';
+import { User } from '../../Models/User.model';
+import { UserService } from '../../Services/User/user.service';
 
 @Component({
   selector: 'app-card-land',
@@ -12,13 +14,14 @@ import { LandService } from '../../Services/Land/land.service';
 })
 export class CardLandComponent implements OnInit {
 
-  router  = inject(Router);
+  userBuffer?: User;  
+  errorReturned?: string;
+  mensajeUsuarioServicio?: string = '';  
   @Input() landID: string | undefined;
   land: Land | undefined;
+  router  = inject(Router);
   landService = inject(LandService);
-
-  //*Si es que aparece un error, lo interpolamos y mostramos un mensaje si es que esta variable no está vacía
-  errorReturned?: string;
+  servicioUsuario = inject(UserService);
 
   ngOnInit(): void {
     
@@ -35,6 +38,8 @@ export class CardLandComponent implements OnInit {
         }
       });
     }
+
+    this.obtenerUsuarioLogueado(); 
   }
 
   showErrorMessage() {
@@ -46,6 +51,31 @@ export class CardLandComponent implements OnInit {
   directToDetails() {
 
     this.router.navigate(['land-detail',  this.landID]);
+  }
+
+  directToDetailsManagement() { 
+    this.router.navigate(['management-land-detail',  this.landID]);
+  }
+
+  showErrorMessageServicioUser(mensaje: string) { 
+
+    setTimeout(() => {
+      
+      mensaje = '';
+    }, 3000);
+  }
+
+  obtenerUsuarioLogueado() { 
+
+    this.servicioUsuario.getAllUsers().subscribe({  
+  
+      next: (returnedUsers: User[]) => this.userBuffer = returnedUsers.find(user => user.userName === "UserAdmin" && user.password === "passwordUserAdmin2024"),
+    
+      error: () => {
+        this.mensajeUsuarioServicio = "Error al obtener usuario logueado";
+        this.showErrorMessageServicioUser(this.mensajeUsuarioServicio);
+      }
+    });
   }
 
 }
