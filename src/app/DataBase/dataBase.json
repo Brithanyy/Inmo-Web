@@ -29,7 +29,6 @@
       "cantidadDormitorios": 11,
       "cantidadBanos": 4
     },
-
     {
       "id": "2",
       "idUsuario": "1",
@@ -46,7 +45,7 @@
         "nombre_calle": "Mendoza",
         "numero_calle": "3600"
       },
-      "ubicacionPropiedad": {  
+      "ubicacionPropiedad": {
         "lat": -32.88878621945242,
         "lng": -68.84592238307597
       },
@@ -59,7 +58,6 @@
       "cantidadDormitorios": 5,
       "cantidadBanos": 5
     },
-
     {
       "id": "3",
       "idUsuario": "1",
