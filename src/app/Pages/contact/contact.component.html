@@ -17,28 +17,28 @@
                     <form (ngSubmit)="enviarFormulario()" [formGroup]="formulario">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control custom-focus" id="nombre" placeholder="Nombre" formControlName = "nombre">
+                            <input type="text" class="form-control custom-focus" id="nombre" placeholder="Nombre" formControlName = "nombre"
+                            [ngClass]="{'is-invalid': nombre?.invalid && nombre?.touched}">
+                            <div *ngIf="nombre?.invalid && nombre?.touched" class="invalid-feedback">
+                                El nombre no debe quedar vacío.
+                              </div>
                         </div>
-                        <div class="alert alert-danger" role="alert" [hidden]="nombre?.valid || !nombre?.touched">
-                            El nombre no debe de quedar vacío
-                          </div>
                         <div class="mb-3">
                             <label class="form-label">Correo Electrónico</label>
-                            <input type="email" class="form-control custom-focus" placeholder="Email" formControlName = "correo">
+                            <input type="email" class="form-control custom-focus" placeholder="Email" formControlName = "correo"
+                            [ngClass]="{'is-invalid': correo?.invalid && correo?.touched || correo?.hasError('email')}">
+                            <div *ngIf="correo?.invalid && correo?.touched" class="invalid-feedback">
+                                <div *ngIf="correo?.hasError('required')">El correo electronico no debe quedar vacío.</div>
+                                <div *ngIf="correo?.hasError('email')"> Por favor, ingresa un correo electrónico válido en el formato: usuario&#64;dominio.com</div>
+                            </div>
                         </div>
-                        <div class="alert alert-danger" role="alert" [hidden]="correo?.valid || !correo?.hasError('required') || !correo?.touched">
-                            El correo no debe de quedar vacío
-                          </div>
-                          <div class="alert alert-danger" role="alert" [hidden]="!correo?.hasError('email') || correo?.hasError('required') || !correo?.touched">
-                            Por favor, ingresa un correo electrónico válido en el formato: usuario&#64;dominio.com
-                          </div>
                         <div class="mb-3">
                             <label class="form-label">Mensaje</label>
-                            <textarea class="form-control custom-focus" rows="3" placeholder="Deje aquí su consulta" formControlName = "mensaje"></textarea>
+                            <textarea class="form-control custom-focus" rows="3" placeholder="Deje aquí su consulta" formControlName = "mensaje" [ngClass]="{'is-invalid': mensaje?.invalid && mensaje?.touched}"></textarea>
+                            <div *ngIf="mensaje?.invalid && mensaje?.touched" class="invalid-feedback">
+                                LLa consulta no debe de quedar vacía.
+                              </div>
                         </div>
-                        <div class="alert alert-danger" role="alert" [hidden]="mensaje?.valid || !mensaje?.touched">
-                            La consulta no debe de quedar vacía
-                          </div>
                         <div class="mt-5 d-flex justify-content-center">
                             <button class="btn btn-success w-100" type="submit">Enviar</button>
                         </div>
