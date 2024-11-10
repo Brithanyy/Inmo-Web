@@ -17,8 +17,8 @@
             class="form-control"
             id="usuario"
             formControlName="usuario"
-            />
-            <div *ngIf="formAdd.get('usuario')?.invalid && formAdd.get('usuario')?.touched" class="text-danger">
+            [ngClass]="{'is-invalid': formAdd.get('usuario')?.invalid && formAdd.get('usuario')?.touched}"/>
+            <div *ngIf="formAdd.get('usuario')?.invalid && formAdd.get('usuario')?.touched" class="invalid-feedback">
             El nombre de usuario es requerido.
             </div>
         </div>
@@ -30,8 +30,8 @@
             id="comentario"
             rows="3"
             formControlName="comentario"
-            ></textarea>
-            <div *ngIf="formAdd.get('comentario')?.invalid && formAdd.get('comentario')?.touched" class="text-danger">
+            [ngClass]="{'is-invalid': formAdd.get('comentario')?.invalid && formAdd.get('comentario')?.touched}"></textarea>
+            <div *ngIf="formAdd.get('comentario')?.invalid && formAdd.get('comentario')?.touched" class="invalid-feedback">
             El comentario es requerido.
             </div>
         </div>
