@@ -118,6 +118,7 @@ export class DetailDepartamentComponent implements OnInit {
 
         this.mensajeServicioDepartament = "Propiedad eliminada con éxito";
         this.showErrorMessage(this.mensajeServicioDepartament);
+        this.router.navigate(['management-home']);
       },
 
       error: () => {

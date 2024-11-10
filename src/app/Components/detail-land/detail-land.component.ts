@@ -120,6 +120,7 @@ export class DetailLandComponent implements OnInit {
 
         this.mensajeServicioLand = "Propiedad eliminada con éxito";
         this.showErrorMessage(this.mensajeServicioLand);
+        this.router.navigate(['management-home']);
       },
 
       error: () => {

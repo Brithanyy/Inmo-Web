@@ -1,6 +1,6 @@
 <app-management-header></app-management-header>
 <div class="container mt-5">
-    <form [formGroup]="formularioLand" class="shadow-lg p-4 rounded form-land">
+    <form [formGroup]="formularioLand" class="shadow-lg p-4 rounded form-land" (ngSubmit)="onSubmit()">
         <h2 class="text-center mb-4">Modificar Terreno</h2>
 
         <!--! Título de la Propiedad -->

@@ -1,8 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { CardHouseComponent } from "../card-house/card-house.component";
-import { FooterComponent } from "../footer/footer.component";
-import { NavbarComponent } from "../navbar/navbar.component";
 import { Land } from '../../Models/Land.model';
 import { LandService } from '../../Services/Land/land.service';
 import { CardLandComponent } from "../card-land/card-land.component";
@@ -12,16 +9,12 @@ import { CardLandComponent } from "../card-land/card-land.component";
   standalone: true,
   imports: [
     CommonModule,
-    CardHouseComponent,
-    FooterComponent,
-    NavbarComponent,
     CardLandComponent
 ],
   templateUrl: './featured-lands.component.html',
   styleUrl: './featured-lands.component.css'
 })
 export class FeaturedLandsComponent implements OnInit {
-
 
   lands: Land[] = [];
 

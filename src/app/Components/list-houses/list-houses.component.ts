@@ -3,11 +3,6 @@ import { Component, inject, OnInit } from '@angular/core';
 import { House } from '../../Models/House.model';
 import { HouseService } from '../../Services/House/house.service';
 import { CardHouseComponent } from "../card-house/card-house.component";
-import { FooterComponent } from "../footer/footer.component";
-import { NavbarComponent } from "../navbar/navbar.component";
-import { HeaderComponent } from "../header/header.component";
-import { RouterLink } from '@angular/router';
-
 
 @Component({
   selector: 'app-list-houses',
@@ -15,10 +10,6 @@ import { RouterLink } from '@angular/router';
   imports: [
     CommonModule,
     CardHouseComponent,
-    FooterComponent,
-    NavbarComponent,
-    HeaderComponent,
-    RouterLink
 ],
   templateUrl: './list-houses.component.html',
   styleUrl: './list-houses.component.css'

@@ -23,13 +23,12 @@
     color: #007200;
 }
 
-/* Estilos del carrusel */
 .carousel-container {
     position: relative;
-    width: 500px; /* Ancho fijo más pequeño */
-    height: 500px; /* Altura igual al ancho para hacerlo cuadrado */
+    width: 500px; 
+    height: 500px; 
     overflow: hidden;
-    margin: 20px auto; /* centro el carrusel */
+    margin: 20px auto; 
 }
 
 .carousel-image {
@@ -69,7 +68,6 @@
     border-radius: 15px;
 }
 
-/* Modal para imagen ampliada */
 .modal {
     position: fixed;
     top: 0;
@@ -84,9 +82,9 @@
 }
 
 .modal-image {
-    max-width: 800px; /* Limitamos el ancho máximo */
-    max-height: 600px; /* Limitamos la altura máxima */
-    object-fit: contain; /* Mantiene la proporción sin estirar */
+    max-width: 800px; 
+    max-height: 600px; 
+    object-fit: contain; 
 }
 
 .close-modal {
@@ -124,7 +122,7 @@
 
 .characteristics-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 20px;
     padding: 0 20px;
 }
@@ -149,7 +147,6 @@
     margin: 20px 0;
 }
 
-/*Estilos para el precio*/
 .price {
     font-size: 2.5em;
     font-weight: bold;

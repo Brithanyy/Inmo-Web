@@ -20,6 +20,7 @@ import { Land } from '../../Models/Land.model';
   styleUrl: './management-modify-land.component.css'
 })
 export class ManagementModifyLandComponent {
+  
   redirec = inject(Router); 
   landService = inject(LandService);
   router = inject(ActivatedRoute);
@@ -64,7 +65,7 @@ export class ManagementModifyLandComponent {
         lat: [0, [Validators.required, this.onlyNegativeValidator()]],
         lng: [0, [Validators.required, this.onlyNegativeValidator()]],
       }),
-      imagenes: this.fb.array([], Validators.required), // Para las imágenes se utilizará un array
+      imagenes: this.fb.array([], Validators.required), 
     });
   }
 
@@ -147,14 +148,14 @@ export class ManagementModifyLandComponent {
     if (this.formularioLand.valid) {
       const id = this.router.snapshot.paramMap.get("id");
       const id_string = String(id);
-      this.formularioLand = this.formularioLand.getRawValue();
+      this.land= this.formularioLand.getRawValue();
       this.land.id = id_string;
       this.land.idUsuario = "1";
       this.land.tipoPropiedad = "Terreno"
       this.land.reseñas = [];
       this.landService.modifyLand(String(this.land.id),this.land).subscribe({
         next: () => {
-          alert("Casa modificada con éxito");
+          alert("Terreno modificado con éxito");
           this.formularioLand.reset();
           this.redirectToHomeManagement();
         },
@@ -168,11 +169,7 @@ export class ManagementModifyLandComponent {
   redirectToHomeManagement() { 
     this.redirec.navigate(['/management-home']);
   }
-  ngOnInit() {
-    this.loadDepartament();
-  }
-
-  loadDepartament() {
+  loadLand() {
     const id = this.router.snapshot.paramMap.get("id");
     const id_string = String(id);
     this.landService.getLand(id_string).subscribe({
@@ -183,6 +180,10 @@ export class ManagementModifyLandComponent {
       error: (err) => console.log("Error: ", err)
     })
   }
+  ngOnInit() {
+    this.loadLand();
+  }
+ 
   loadDefaultValues() {
     const defaultValues = {
       tituloPropiedad: this.land.tituloPropiedad,
@@ -204,6 +205,11 @@ export class ManagementModifyLandComponent {
     };
 
     this.formularioLand.patchValue(defaultValues);
+
+    const imagesArray = this.formularioLand.get('imagenes') as FormArray;
+    this.land.imagenes.forEach(image => {
+      imagesArray.push(this.fb.control(image));
+    });
   }
 
 }

@@ -1,9 +1,3 @@
-.button-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
 button {
     padding: 10px 20px;
     background-color: #007200; 
@@ -16,5 +10,11 @@ button {
 
 button:hover {
     background-color: #015201; 
-
 }
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+

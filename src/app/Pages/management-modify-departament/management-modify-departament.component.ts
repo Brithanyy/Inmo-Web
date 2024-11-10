@@ -19,7 +19,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './management-modify-departament.component.html',
   styleUrl: './management-modify-departament.component.css'
 })
-export class ManagementModifyDepartamentComponent implements OnInit{
+export class ManagementModifyDepartamentComponent implements OnInit {
+
   redirec = inject(Router); 
   departamentService = inject(DepartamentService);
   router = inject(ActivatedRoute);
@@ -177,8 +178,10 @@ get cantidadBanos() {
   onSubmit() {
 
     if (this.formulario.valid) {
+
       const id = this.router.snapshot.paramMap.get("id");
       const id_string = String(id);
+      
       this.departament = this.formulario.getRawValue();
       this.departament.id = id_string;
       this.departament.idUsuario = "1";
@@ -236,9 +239,14 @@ get cantidadBanos() {
       cantidadAmbientes: this.departament.cantidadAmbientes,
       cantidadDormitorios: this.departament.cantidadDormitorios,
       cantidadBanos: this.departament.cantidadBanos,
+
     };
 
     this.formulario.patchValue(defaultValues);
+    const imagesArray = this.formulario.get('imagenes') as FormArray;
+    this.departament.imagenes.forEach(image => {
+      imagesArray.push(this.fb.control(image));
+    });
   }
 
 }

@@ -51,7 +51,7 @@ export class ManagementHomeComponent implements OnInit{
       
       this.servicioUsuario.updateUserLoggedStatus(String(this.userBuffer.id), false).subscribe({
 
-        next: () => this.router.navigate(['/login']),
+        next: () => this.router.navigate(['/home']),
         error: () => {
           this.showErrorMessage("Error al cerrar sesión");
         }

@@ -2,7 +2,6 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Departament } from '../../Models/Departament.model';
 import { DepartamentService } from '../../Services/Departament/departament.service';
 import { CardDepartamentComponent } from "../card-departament/card-departament.component";
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-list-departaments',

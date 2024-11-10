@@ -3,8 +3,6 @@ import { Component, inject, OnInit } from '@angular/core';
 import { House } from '../../Models/House.model';
 import { HouseService } from '../../Services/House/house.service';
 import { CardHouseComponent } from "../card-house/card-house.component";
-import { FooterComponent } from "../footer/footer.component";
-import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-featured-houses',
@@ -12,8 +10,6 @@ import { NavbarComponent } from "../navbar/navbar.component";
   imports: [
     CommonModule,
     CardHouseComponent,
-    FooterComponent,
-    NavbarComponent,
   ],
   templateUrl: './featured-houses.component.html',
   styleUrl: './featured-houses.component.css'

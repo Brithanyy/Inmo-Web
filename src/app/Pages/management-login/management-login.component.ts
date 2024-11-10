@@ -4,8 +4,6 @@ import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angu
 import { Router } from '@angular/router';
 import { User } from '../../Models/User.model';
 import { UserService } from '../../Services/User/user.service';
-import { ManagementHeaderComponent } from "../../Components/management-header/management-header.component";
-import { ManagementFooterComponent } from "../../Components/management-footer/management-footer.component";
 
 @Component({
   selector: 'app-login',
@@ -14,8 +12,6 @@ import { ManagementFooterComponent } from "../../Components/management-footer/ma
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    ManagementHeaderComponent,
-    ManagementFooterComponent
 ],
   templateUrl: './management-login.component.html',
   styleUrl: './management-login.component.css'

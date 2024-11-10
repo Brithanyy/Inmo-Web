@@ -8,7 +8,13 @@ import { ListLandsComponent } from "../../Components/list-lands/list-lands.compo
 @Component({
   selector: 'app-properties',
   standalone: true,
-  imports: [NavbarComponent, FooterComponent, ListHousesComponent, ListDepartamentsComponent, ListLandsComponent],
+  imports: [
+    NavbarComponent, 
+    FooterComponent, 
+    ListHousesComponent, 
+    ListDepartamentsComponent, 
+    ListLandsComponent
+  ],
   templateUrl: './properties.component.html',
   styleUrl: './properties.component.css'
 })

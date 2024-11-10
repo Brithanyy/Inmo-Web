@@ -12,7 +12,12 @@ import { User } from '../../Models/User.model';
 @Component({
   selector: 'app-management-add-house',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, ManagementHeaderComponent, ManagementFooterComponent],
+  imports: [
+    ReactiveFormsModule, 
+    CommonModule, 
+    ManagementHeaderComponent, 
+    ManagementFooterComponent
+  ],
   templateUrl: './management-add-house.component.html',
   styleUrl: './management-add-house.component.css'
 })

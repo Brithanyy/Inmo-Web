@@ -19,7 +19,8 @@ import { House } from '../../Models/House.model';
   templateUrl: './management-modify-house.component.html',
   styleUrl: './management-modify-house.component.css'
 })
-export class ManagementModifyHouseComponent implements OnInit{
+export class ManagementModifyHouseComponent implements OnInit {
+  
   redirec = inject(Router); 
   houseService = inject(HouseService);
   router = inject(ActivatedRoute);
@@ -201,10 +202,10 @@ get cantidadBanos() {
     this.redirec.navigate(['/management-home']);
   }
   ngOnInit() {
-    this.loadDepartament();
+    this.loadHouse();
   }
 
-  loadDepartament() {
+  loadHouse() {
     const id = this.router.snapshot.paramMap.get("id");
     const id_string = String(id);
     this.houseService.getHouse(id_string).subscribe({
@@ -239,5 +240,9 @@ get cantidadBanos() {
     };
 
     this.formulario.patchValue(defaultValues);
+    const imagesArray = this.formulario.get('imagenes') as FormArray;
+    this.house.imagenes.forEach(image => {
+      imagesArray.push(this.fb.control(image));
+    });
   }
 }

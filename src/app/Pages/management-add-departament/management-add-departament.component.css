@@ -1,4 +1,4 @@
-.form-house {
+  .form-house {
     background-color: #f8f9fa;
     border-radius: 10px;
     animation: fadeIn 0.8s ease-in-out;
@@ -13,8 +13,6 @@
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
   }
-
-
 
   .personalizado {
 

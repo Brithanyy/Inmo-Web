@@ -1,38 +1,40 @@
-.card {
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    animation: zoom 15s infinite alternate;
+    overflow: hidden; 
+  }
+
+  h1, h2, h5 {
+    color: #007200;
+  }
+
+ /*! Animación para el zoom del fondo */
+ @keyframes zoom {
+    0% {
+        background-size: 100% 100%; 
+    }
+    100% {
+        background-size: 110% 110%; 
+    }
+  }
+
+  .transparent-card {
+    background-color: #ffffff; 
+    border: 2px solid rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 8px; 
+  }
+
+  .card {
     margin: 15px 0;
   }
   
   .img-fluid {
     margin-bottom: 20px;
 }
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    /* background-image: url('https://images.unsplash.com/photo-1725898250159-ee8a47321570?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
-    background-size: cover; /* Cubre todo el área */
-    background-position: center center; /* Centra la imagen de fondo */
-    background-repeat: no-repeat; /* Evita la repetición de la imagen */
-    animation: zoom 15s infinite alternate; /* Animación de zoom en el fondo */
-    overflow: hidden; /* Evita el scroll de la página */
-  }
-
-  h1, h2, h5 {
-    color: #007200;
-  }
- /*! Animación para el zoom del fondo */
- @keyframes zoom {
-    0% {
-        background-size: 100% 100%; /* Tamaño inicial */
-    }
-    100% {
-        background-size: 110% 110%; /* Tamaño final */
-    }
-  }
-  .transparent-card {
-    background-color: #ffffff; /* Fondo semitransparente */
-    border: 2px solid rgba(0, 0, 0, 0.2); /*Borde sutil */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-    border-radius: 8px; /* Bordes redondeados */
-  }
