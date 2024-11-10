@@ -1,11 +1,14 @@
 {
   "House": [
     {
+      "id": "1",
+      "idUsuario": "1",
+      "tipoPropiedad": "Casa",
       "tituloPropiedad": "Importante residencia de patrimonio histórico “Villa Blaquier”, en estratégica ubicación",
       "descripcionPropiedad": "En estratégica ubicación, a cien metros de la costa, se encuentra esta importante residencia de estilo inglés, patrimonio histórico Nacional “Villa Blaquier”, emplazada sobre dos lotes contiguos que suman 2.620 m2 de superficie total, con 901 m2 cubiertos. De arquitectura con lineamientos del pintoresquismo inglés, conservando su estilo señorial y con su jardín rodeado por un muro perimetral en piedra, esta importante residencia se desarrolla en dos niveles principales, más sótano y entretecho. Al ingresar en planta baja posee, amplio hall y recepción con importante escalera de roble, sala de lectura, sector de estar y comedor de generosas dimensiones, ambos con hogar, pisos de roble de Eslavonia y cielorrasos con detalles decorativos. Siguiendo en la misma planta, cuenta con luminosa cocina, comedor diario y antecocina. Mientras que en planta alta, posee comunicados entre sí por importante hall distribuidor con arcos de medio punto; siete dormitorios, cuatros baños, dos dependencias de servicio y terraza. Por último, en el sótano posee cuatro dormitorios y en el entretecho cuenta con un espacio de servicios e instalaciones. Villa Blaquier (Historia) Es una de las primeras casonas ubicadas en la Loma Stella Maris, propiedad de Marta Unzué y Adolfo Blaquier. Su arquitectura sigue los lineamientos del pintoresquismo inglés construido por Adán Gandolfi en 1905, con el proyecto de los arquitectos ingleses Walter Basset-Smith y Collcutt. Tuvo varias modificaciones y ampliaciones, en 1914 llevada a cabo por los constructores Mannelli y Lemmi, otra en 1920 por los mismos constructores y proyectistas y en 1934 por el constructor Septimio Polidoro. Las cubiertas originalmente de chapas, fueron reemplazadas por tejas francesas posiblemente en la década de 1960. Uno de sus recursos formales y materiales es la combinación de revoque rústico con falsos encadenados y dinteles en ladrillo.",
-      "precioPropiedad": "3500000",
-      "superficieCubierta": 90100,
-      "superficieTotal": 262000,
+      "precioPropiedad": "3.500.000",
+      "superficieCubierta": "901.00",
+      "superficieTotal": "2620.00",
       "direccionPropiedad": {
         "pais": "Argentina",
         "provincia": "Buenos Aires",
@@ -21,20 +24,20 @@
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/28942019886575860202712353741904192472274539372584190742085248963969253482505-1170x785.jpg",
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/91761962737041493768990403110280830171902653493495842738190951146457647390267-1170x785.jpg"
       ],
+      "reseñas": [],
       "cantidadAmbientes": 13,
       "cantidadDormitorios": 11,
-      "cantidadBanos": 4,
-      "id": "1",
-      "idUsuario": "1",
-      "tipoPropiedad": "Casa",
-      "reseñas": []
+      "cantidadBanos": 4
     },
     {
+      "id": "2",
+      "idUsuario": "1",
+      "tipoPropiedad": "Casa",
       "tituloPropiedad": "Importante residencia en el exclusivo barrio Los Troncos",
       "descripcionPropiedad": "En el excelente y exclusivo entorno del barrio Los Troncos, se encuentra esta importante residencia de 633 m2 cubiertos, sobre lote de 937 m2 con 21,65 mts de frente y 43,30 mts de fondo. Cuenta con reja al frente y muro de piedra. Retirada de la línea municipal y elevada del nivel de vereda, la propiedad se alza con fachada de ladrillo visto, piedra y carpinterías de madera. Al ingresar posee hall de recepción, desde el cual hacia el lado izquierdo, accede a amplio estar o sala de TV con hogar y pisos tarugados, y hacia el lado derecho cuenta con amplia y luminosa cocina con mobiliario Johnson, comedor diario, y lavadero. Siguiendo en el mismo nivel, cuenta con estar comedor de generosas dimensiones con salida a solárium y al parque, toilette de recepción, escritorio, dormitorio, un baño con ducha e importante quincho con parrilla a gas y a leña, baño, equipo de aire acondicionado y salamandra. Desde este último, se puede acceder al parque con piscina climatizada, Jacuzzi y ducha externa. En planta alta, se encuentran cuatro dormitorios en suite, dos de ellos al frente, de los cuales uno posee doble vestidor e hidromasaje y el otro cuenta con balcón e hidromasaje; mientras que los otros dos se orientan hacia el jardín, y uno de ellos posee balcón. Siguiendo en planta alta se encuentra un escritorio y escalera rebatible en hall distribuidor, que da acceso a una amplia bohardilla. Luego, en el subsuelo posee garage para tres autos, despensa y sala de máquinas. Por último, la residencia cuenta con calefacción por radiadores y detalles de primera calidad como riego por aspersión, cortinas eléctricas en dormitorios y calderas industriales con equipo ablandador de agua. Cabe destacar, que se encuentra en muy buen estado de conservación y mantenimiento.",
-      "precioPropiedad": "1100000",
-      "superficieCubierta": 633,
-      "superficieTotal": 937,
+      "precioPropiedad": "1.100.000",
+      "superficieCubierta": "633.00 ",
+      "superficieTotal": "937.00",
       "direccionPropiedad": {
         "pais": "Argentina",
         "provincia": "Buenos Aires",
@@ -43,27 +46,27 @@
         "numero_calle": "3600"
       },
       "ubicacionPropiedad": {
-        "lat": -3288878621945242,
-        "lng": -6884592238307597
+        "lat": -32.88878621945242,
+        "lng": -68.84592238307597
       },
       "imagenes": [
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/9388833951441531428459974722701074984275053414921386632608972319518415252198-1170x785.jpg",
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/91290163680919929533486636764641387447093292117407851579969113769281346783163-592x444.jpg"
       ],
+      "reseñas": [],
       "cantidadAmbientes": 9,
       "cantidadDormitorios": 5,
-      "cantidadBanos": 5,
-      "id": "2",
-      "idUsuario": "1",
-      "tipoPropiedad": "Casa",
-      "reseñas": []
+      "cantidadBanos": 5
     },
     {
+      "id": "3",
+      "idUsuario": "1",
+      "tipoPropiedad": "Casa",
       "tituloPropiedad": "Importante propiedad lindera al Golf de Acantilados",
       "descripcionPropiedad": "Lindera al Golf de Acantilados, se encuentra esta importante propiedad de 850 m2 cubiertos aproximadamente, sobre lote de 87,50 mts x 85 mts y una superficie total de 7.437 m2. La propiedad posee siete dormitorios en suite, sauna, gimnasio, dos canchas de tenis-paddle, piscina climatizada cubierta y descubierta, y estacionamiento para veinte autos.",
-      "precioPropiedad": "1100000",
-      "superficieCubierta": 85000,
-      "superficieTotal": 743700,
+      "precioPropiedad": "1.100.000",
+      "superficieCubierta": "850.00",
+      "superficieTotal": "7437.00",
       "direccionPropiedad": {
         "pais": "Argentina",
         "provincia": "Buenos Aires",
@@ -84,22 +87,22 @@
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/113841731658123027208082077042919602757921517504409216203004035261865462178253-1170x675.jpg",
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/39489232891907189322656862137522744015838021882996245425380377828034728693785-1170x675.jpg"
       ],
+      "reseñas": [],
       "cantidadAmbientes": 8,
       "cantidadDormitorios": 7,
-      "cantidadBanos": 7,
-      "id": "3",
-      "idUsuario": "1",
-      "tipoPropiedad": "Casa",
-      "reseñas": []
+      "cantidadBanos": 7
     }
   ],
   "Departament": [
     {
+      "id": "1",
+      "idUsuario": "1",
+      "tipoPropiedad": "Departamento",
       "tituloPropiedad": "Piso único, con las mejores visuales al mar y a las playas de Bahía Varese",
       "descripcionPropiedad": "En el excelente entorno de Playa de los Ingleses, actualmente Bahía Varese y a metros de Av. Colón, se encuentra este importante piso, en edificio de categoría, con las mejores visuales al mar y a las playas de Bahía Varese. La unidad de 460 m2 cuenta con palier privado, amplio hall principal de recepción, estar con vista al mar amplio y luminoso, al igual que el segundo estar y el comedor principal, dos balcones al frente, toilette de recepción y cocina de generosas dimensiones con comedor diario. En el área de servicio, posee hall de servicio, dos dependencias, dos baños con ducha, lavadero y sector de planchado. Luego, en el área privada, cuenta además con seis cómodos dormitorios con pisos de madera, de los cuales tres son en suite, y dos baños con ducha para servicio de los dormitorios restantes. Por último, cuenta con dos cocheras, detalles de calidad como pisos de porcelanato y ventanas con DVH; y se encuentra en excelente estado de conservación y mantenimiento.",
-      "precioPropiedad": "1290000",
-      "superficieCubierta": 46000,
-      "superficieTotal": 0,
+      "precioPropiedad": "1.290.000",
+      "superficieCubierta": "460.00",
+      "superficieTotal": "0.00",
       "direccionPropiedad": {
         "pais": "Argentina",
         "provincia": "Buenos Aires",
@@ -118,20 +121,20 @@
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/95341285531063244886264137015523325417621475200210120606076708338996133517234-1170x785.jpg",
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/31902119414764478559563055561164532167105055722619215099662711121646116757165-1170x785.jpg"
       ],
+      "reseñas": [],
       "cantidadAmbientes": 7,
       "cantidadDormitorios": 6,
-      "cantidadBanos": 5,
-      "id": "1",
-      "idUsuario": "1",
-      "tipoPropiedad": "Departamento",
-      "reseñas": []
+      "cantidadBanos": 5
     },
     {
+      "id": "2",
+      "idUsuario": "1",
+      "tipoPropiedad": "Departamento",
       "tituloPropiedad": "Importante piso con vista al mar, sobre el Parque San Martín. ",
       "descripcionPropiedad": "UNICAMENTE FAMILIAS. NO SE ACEPTAN MASCOTAS. En el excelente entorno de Playa Grande, sobre el Parque San Martín, se encuentra este exclusivo piso de categoría frente al mar con 218 m2. Al ingresar, cuenta con un amplio y luminoso estar comedor con aire acondicionado y salida al balcón terraza, frente al mar con las mejores vistas, cocina con comedor diario, lavadero, toilette de recepción, dependencia de servicio con baño y tres cómodos dormitorios en suite, el principal con vestidor, baño con ducha e hidromasaje, aire acondicionado y salida a balcón. Posee cochera, baulera y acceso a los amenities que ofrece el edificio, tales como piscina climatizada exterior, piscina contracorriente en el interior, gimnasio, salón de usos múltiples, sauna seco y húmedo, vestuarios, sala de microcine y seguridad las 24 hs.",
-      "precioPropiedad": "840000",
-      "superficieCubierta": 21800,
-      "superficieTotal": 0,
+      "precioPropiedad": "840.000",
+      "superficieCubierta": "218.00",
+      "superficieTotal": "0.00",
       "direccionPropiedad": {
         "pais": "Argentina",
         "provincia": "Buenos Aires",
@@ -150,20 +153,20 @@
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/6980699683202156269414987695647695712459495837074428851773367261770296321991-1170x785.jpg",
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/16131508304292206628522451683075309282296297262038527402332020898415611589178-1170x785.jpg"
       ],
+      "reseñas": [],
       "cantidadAmbientes": 4,
       "cantidadDormitorios": 3,
-      "cantidadBanos": 3,
-      "id": "2",
-      "idUsuario": "1",
-      "tipoPropiedad": "Departamento",
-      "reseñas": []
+      "cantidadBanos": 3
     },
     {
+      "id": "3",
+      "idUsuario": "1",
+      "tipoPropiedad": "Departamento",
       "tituloPropiedad": "Exclusivo Penthouse con vistas al mar y a Playa Chica.",
       "descripcionPropiedad": "En el excelente entorno de Playa Chica, dentro de la tercera torre desarrollada del Maral Explanada, proyecto del prestigioso Arquitecto Cesar Pelli, se encuentra este exclusivo Penthouse de cuatro ambientes. La unidad de 252 m2 totales cuenta con amplio y luminoso estar comedor con salida a balcón corrido, vista al mar, toilette de recepción, cocina semi integrada con barra desayunadora, comedor diario, y lavadero separado con toilette. Mientras que en el área privada, posee tres dormitorios en suite, el principal con vestidor, dos de ellos con hidromasaje y vista al mar. La unidad posee además calefacción por aire central, como así también el acceso a los excelentes amenities que el complejo ofrece, tales como piscina climatizada interior, piscina lúdica con hidroterapia, minipiscina con hidromasaje, circuito de agua, sauna seco, sauna húmedo, sala de masajes, sector de relax, microcine, business center, sala de juegos, Sky club (sala de estar en piso 24), quincho en piso 24, áreas verdes y de recreación proyectadas en 5.200 m2, sistema de seguridad con vigilancia las 24 hs. con circuito cerrado de TV en áreas comunes, central telefónica IP, WIFI en zonas comunes, laundry, sistema de reciclado de agua, sistema ablandador de agua y grupo electrógeno de emergencias.",
-      "precioPropiedad": "1262760",
-      "superficieCubierta": 25200,
-      "superficieTotal": 0,
+      "precioPropiedad": "1.262.760",
+      "superficieCubierta": "252.00",
+      "superficieTotal": "0.00",
       "direccionPropiedad": {
         "pais": "Argentina",
         "provincia": "Buenos Aires",
@@ -183,22 +186,22 @@
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/85760909781528740157728112220118989867097295684253074653508080251639136350970-1170x785.jpg",
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/54233234164841737138968516032252937779793193155751798549209858417661919613663-1170x785.jpg"
       ],
+      "reseñas": [],
       "cantidadAmbientes": 4,
       "cantidadDormitorios": 3,
-      "cantidadBanos": 3,
-      "id": "3",
-      "idUsuario": "1",
-      "tipoPropiedad": "Departamento",
-      "reseñas": []
+      "cantidadBanos": 3
     }
   ],
   "Land": [
     {
+      "id": "1",
+      "idUsuario": "1",
+      "tipoPropiedad": "Terreno",
       "tituloPropiedad": "Importante lote para desarrollo, en estratégica ubicación del barrio Chauvin",
       "descripcionPropiedad": "En estratégica ubicación del barrio Chauvín, se encuentra este importante lote irregular para desarrollo de 5.703 m2 con salida a tres calles. Cuenta con 54,14 mts de frente sobre calle Larrea, fondos de 105,50 mts y 97,8 mts con salida a calle Azcuénaga y Mitre. El lote se encuentra emplazado sobre distrito E1, zona destinada a la localización de usos urbanos de equipamiento y servicios, compatibles con uso residencial de densidad media, con FOS 0,5 y dados los indicadores de la zona, incentivos y premios vigentes, cuenta con la factibilidad de construir 21.500 m2 en planta baja más 6 pisos superiores.",
-      "precioPropiedad": "1800000",
-      "superficieCubierta": "000",
-      "superficieTotal": "570300",
+      "precioPropiedad": "1.800.000",
+      "superficieCubierta": "0.00",
+      "superficieTotal": "5703.00",
       "direccionPropiedad": {
         "pais": "Argentina",
         "provincia": "Buenos Aires",
@@ -213,17 +216,17 @@
       "imagenes": [
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/78223624115823532142901047624017338459660865389659973379707640428265351465641-1170x710.jpg"
       ],
-      "id": "1",
-      "idUsuario": "1",
-      "tipoPropiedad": "Terreno",
       "reseñas": []
     },
     {
+      "id": "2",
+      "idUsuario": "1",
+      "tipoPropiedad": "Terreno",
       "tituloPropiedad": "Importante manzana a metros del acceso a Santa Clara y del Mar",
       "descripcionPropiedad": "En excelente ubicación, a metros del acceso a Santa Clara y del mar, se ubica esta importante manzana de 8476 m2 de superficie total, con 75 mts de frente y 110 mts de fondo. Actualmente posee una superficie cubierta de 195 m2, cerco de alambrado perimetral y cuenta con la posibilidad de subdivisión.",
-      "precioPropiedad": "1200000",
-      "superficieCubierta": "19500",
-      "superficieTotal": "847600",
+      "precioPropiedad": "1.200.000",
+      "superficieCubierta": "195.00",
+      "superficieTotal": "8476.00",
       "direccionPropiedad": {
         "pais": "Argentina",
         "provincia": "Buenos Aires",
@@ -238,17 +241,17 @@
       "imagenes": [
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/78223624115823532142901047624017338459660865389659973379707640428265351465641-592x444.jpg"
       ],
-      "id": "2",
-      "idUsuario": "1",
-      "tipoPropiedad": "Terreno",
       "reseñas": []
     },
     {
+      "id": "3",
+      "idUsuario": "1",
+      "tipoPropiedad": "Terreno",
       "tituloPropiedad": "Importante lote triangular frente al mar, en zona Norte",
       "descripcionPropiedad": "En excelente ubicación de zona Norte, frente al mar con inmejorables visuales, se encuentra este lote o fracción de 710 m2 en forma triangular y con salida a tres calles. Cuenta con 58,10 mts de frente sobre Av. Felix U. Camet, 51 mts sobre calle Libres del Sur y 27,83 mts sobre calle Alice. Se encuentra emplazado sobre Distrito R3, zona destinada a la localización de uso residencial de densidad media con viviendas individuales y colectivas, por lo cual cuenta con la factibilidad de desarrollar en él 2.000 m2 en hasta 8 niveles (planta baja y siete pisos superiores).",
-      "precioPropiedad": "150000",
-      "superficieCubierta": "000",
-      "superficieTotal": "71000",
+      "precioPropiedad": "1.500.00",
+      "superficieCubierta": "0.00",
+      "superficieTotal": "710.00",
       "direccionPropiedad": {
         "pais": "Argentina",
         "provincia": "Buenos Aires",
@@ -263,9 +266,6 @@
       "imagenes": [
         "https://www.roblescasascampos.com/wp-content/uploads/2024/07/19298789541537480219016916454635015919635137298194722280325467950727249684792-1170x785.jpg"
       ],
-      "id": "3",
-      "idUsuario": "1",
-      "tipoPropiedad": "Terreno",
       "reseñas": []
     }
   ],
@@ -323,24 +323,6 @@
       "comentario": "¡Este terreno es una joya! La ubicación frente al mar en la zona Norte de Mar del Plata es insuperable. Me sorprendió el tamaño y la forma triangular, que le da una personalidad única. Desde el primer momento, me imaginé un proyecto espectacular aprovechando la vista y la tranquilidad del lugar. Además, está cerca de todo, lo que lo hace perfecto para quien busca algo exclusivo pero sin alejarse de la ciudad. Recomiendo este lote al 100%, ¡vale cada centavo!",
       "estrellas": "5",
       "fecha": "2024-11-10T20:25:41.972Z"
-    },
-    {
-      "id": "58c9",
-      "tipoPropiedad": "Terreno",
-      "idPropiedad": "1",
-      "usuario": "sdfsf",
-      "comentario": "sdfsdfsd",
-      "estrellas": 1,
-      "fecha": "2024-11-10T21:16:41.947Z"
-    },
-    {
-      "id": "a344",
-      "tipoPropiedad": "Casa",
-      "idPropiedad": "1",
-      "usuario": "fdfg",
-      "comentario": "gdgdfgdff",
-      "estrellas": 1,
-      "fecha": "2024-11-10T21:17:12.519Z"
     }
   ],
   "Usuario": [
@@ -348,7 +330,7 @@
       "id": "68bf",
       "userName": "UserAdmin",
       "password": "passwordUserAdmin2024",
-      "estaLogueado": true
+      "estaLogueado": false
     }
   ]
 }
