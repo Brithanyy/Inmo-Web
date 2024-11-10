@@ -136,28 +136,38 @@
         <div class="col-md-4 mb-3">
           <label for="cantidadAmbientes" class="form-label">Ambientes</label>
           <input type="number" id="cantidadAmbientes" formControlName="cantidadAmbientes" class="form-control" 
-                 [ngClass]="{'is-invalid': cantidadAmbientes?.invalid && cantidadAmbientes?.touched}">
-          <div *ngIf="cantidadAmbientes?.invalid && cantidadAmbientes?.touched && cantidadAmbientes?.hasError('negativeNumber')" class="invalid-feedback">
-            La cantidad de ambientes es obligatoria y no se permiten números negativos.
-          </div>
+                 [ngClass]="{'is-invalid': cantidadAmbientes?.invalid && cantidadAmbientes?.touched || cantidadAmbientes?.hasError('negativeNumber')}">
+                 <div *ngIf="cantidadAmbientes?.invalid && cantidadAmbientes?.touched" class="invalid-feedback">
+                  La cantidad de ambientes es obligatoria
+                </div>
+                  <div *ngIf="cantidadAmbientes?.hasError('negativeNumber')" class="invalid-feedback">
+                    La cantidad de ambientes no puede ser menor que 0.
+                  </div>
         </div>
         
         <div class="col-md-4 mb-3">
           <label for="cantidadDormitorios" class="form-label">Dormitorios</label>
           <input type="number" id="cantidadDormitorios" formControlName="cantidadDormitorios" class="form-control" 
-                 [ngClass]="{'is-invalid': cantidadDormitorios?.invalid && cantidadDormitorios?.touched}">
-          <div *ngIf="cantidadDormitorios?.invalid && cantidadDormitorios?.touched && cantidadDormitorios?.hasError('negativeNumber')" class="invalid-feedback">
-            La cantidad de dormitorios es obligatoria y no se permiten números negativos.
+                 [ngClass]="{'is-invalid': cantidadDormitorios?.invalid && cantidadDormitorios?.touched || cantidadDormitorios?.hasError('negativeNumber') }">
+          <div *ngIf="cantidadDormitorios?.invalid && cantidadDormitorios?.touched" class="invalid-feedback">
+            La cantidad de dormitorios es obligatoria
           </div>
+            <div *ngIf="cantidadDormitorios?.hasError('negativeNumber')" class="invalid-feedback">
+              La cantidad de dormitorios no puede ser menor que 0.
+            </div>
+         
         </div>
         
         <div class="col-md-4 mb-3">
           <label for="cantidadBanos" class="form-label">Baños</label>
           <input type="number" id="cantidadBanos" formControlName="cantidadBanos" class="form-control" 
-                 [ngClass]="{'is-invalid': cantidadBanos?.invalid && cantidadBanos?.touched}">
-          <div *ngIf="cantidadBanos?.invalid && cantidadBanos?.touched && cantidadBanos?.hasError('negativeNumber')" class="invalid-feedback">
-            La cantidad de baños es obligatoria y no se permiten números negativos.
-          </div>
+                 [ngClass]="{'is-invalid': cantidadBanos?.invalid && cantidadBanos?.touched || cantidadBanos?.hasError('negativeNumber')}">
+                 <div *ngIf="cantidadBanos?.invalid && cantidadBanos?.touched" class="invalid-feedback">
+                  La cantidad de baños es obligatoria
+                </div>
+                  <div *ngIf="cantidadBanos?.hasError('negativeNumber')" class="invalid-feedback">
+                    La cantidad de baños no puede ser menor que 0.
+                  </div>
         </div>
       </div>
       <!--! Cargar Imágenes -->
