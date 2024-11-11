@@ -1,27 +1,47 @@
-# ProyectoFinal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+# Inmo-Web
 
-## Development server
+Inmo-Web es una aplicación web de bienes raíces desarrollada con Angular, TypeScript y JSON-Server que ofrece una experiencia interactiva y moderna para explorar, gestionar y reseñar propiedades.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Características: La aplicación está dividida en dos tipos de dominios
 
-## Code scaffolding
+Dominios Públicos: Los usuarios pueden acceder sin necesidad de autenticación a las siguientes páginas:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Home: Página principal con una introducción a los servicios ofrecidos.
 
-## Build
+Propiedades: Listado de propiedades disponibles, con opción de aplicar filtros por tipo de propiedad.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Contacto: Página de contacto que permite a los visitantes comunicarse con nosotros de forma sencilla.
 
-## Running unit tests
+Sobre Nosotros: Información sobre la empresa y su misión en el mercado inmobiliario.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Detalles de Propiedad: Vista detallada de cada propiedad, donde se incluye información completa sobre la propiedad seleccionada. También cuenta con la funcionalidad de agregar reseñas, lo que permite a los usuarios compartir sus opiniones sobre propiedades específicas.
 
-## Running end-to-end tests
+Dominios Privados: Los dominios privados están disponibles solo para usuarios autenticados (a quienes se les proporciona un usuario para iniciar sesión). Una vez logueados, los usuarios pueden acceder a las siguientes funcionalidades adicionales:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Modificar y Eliminar Propiedades: Permite la gestión completa de las propiedades listadas en la plataforma.
 
-## Further help
+Eliminar Reseñas: Permite eliminar reseñas que se hayan agregado a una propiedad específica.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Nota: Aunque las rutas en Inmo-Web no están protegidas formalmente, si el usuario intenta acceder a dominios privados sin estar autenticado, se mostrará una alerta de "Acceso denegado" y será redirigido automáticamente a la página de inicio.
+
+## Authors
+
+[@Brithanyy](https://github.com/Brithanyy) - Brisa Ortiz
+
+[@Rouse02](https://github.com/Rouse02) - Rocio Ortiz
+
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm i
+  
+```
+```bash
+  json-server --watch src\app\DataBase\dataBase.json
+  
+```
+    
