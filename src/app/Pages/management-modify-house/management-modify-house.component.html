@@ -168,5 +168,24 @@
       <!--! Botón Enviar -->
       <button type="submit" class="btn text-white w-100 mt-3 personalizado">Modificar Casa</button> 
     </form>
+
+    @if (mensajeExito) {
+
+      <div class="containerMensajeExito">
+        <div class="mensajeExito">
+          {{mensajeExito}}
+        </div>
+      </div>
+    }
+  
+    @if ( mensajeError) {
+  
+      <div class="containerMensajeError">
+        <div class="mensajeError">
+          {{mensajeError}}
+        </div>
+      </div>
+    }
+
   </div>
 <app-management-footer></app-management-footer>

@@ -24,6 +24,9 @@ export class ManagementModifyDepartamentComponent implements OnInit {
   redirec = inject(Router); 
   departamentService = inject(DepartamentService);
   router = inject(ActivatedRoute);
+  mensajeError?: string = '';
+  mensajeExito?: string = '';
+
   departament: Departament = {
     id: '',
     idUsuario: "1",
@@ -189,14 +192,25 @@ get cantidadBanos() {
       this.departament.reseñas = [];
       this.departamentService.modifyDepartament(String(this.departament.id),this.departament).subscribe({
         next: () => {
-          alert("Departamento modificado con éxito");
-          this.formulario.reset();
-          this.redirectToHomeManagement();
+
+          this.mensajeExito = "Departamento modificado con éxito";
+          this.showMessage(this.mensajeExito);
+
+          setTimeout(() => {
+            this.formulario.reset();
+            this.redirectToHomeManagement();
+          }, 4000);
         },
-        error: (err) => console.log("Error: ", err)
+        error: () => {
+
+          this.mensajeError = "Error al modificar un departamento";
+          this.showErrorMessage(this.mensajeError);
+        }
       });
     } else {
-      console.log("El formulario no es válido, no se puede enviar.");
+
+        this.mensajeError = "Formulario no válido. No se puede enviar";
+        this.showErrorMessage(this.mensajeError);
     }
   }
 
@@ -247,6 +261,24 @@ get cantidadBanos() {
     this.departament.imagenes.forEach(image => {
       imagesArray.push(this.fb.control(image));
     });
+  }
+
+  private showErrorMessage(mensaje: string) { 
+  
+    this.mensajeError = mensaje;
+  
+    setTimeout(() => {
+      this.mensajeError = '';
+    }, 3000);
+  }
+  
+  private showMessage(mensaje: string) { 
+  
+    this.mensajeExito = mensaje;
+  
+    setTimeout(() => {
+      this.mensajeExito = '';
+    }, 3000);
   }
 
 }

@@ -23,6 +23,7 @@ import { User } from '../../Models/User.model';
 })
 export class ManagementAddHouseComponent implements OnInit {
 
+  mensajeExito?: string = '';
   mensajeError?: string = ''; 
   router = inject(Router); 
   servicioUsuario = inject(UserService); 
@@ -183,20 +184,32 @@ export class ManagementAddHouseComponent implements OnInit {
   onSubmit() {
   
     if (this.formulario.valid) {
+
       this.house = this.formulario.getRawValue();
       this.house.idUsuario = "1";
       this.house.tipoPropiedad = "Casa";
       this.house.reseñas = [];
       this.houseService.addHouse(this.house).subscribe({
         next: () => {
-          alert("Casa agregado con éxito");
-          this.formulario.reset();
-          this.redirectToHomeManagement();
+
+          this.mensajeExito = "Casa agregada con éxito";
+          this.showMessage(this.mensajeExito);
+
+          setTimeout(() => {
+            this.formulario.reset();
+            this.redirectToHomeManagement();
+          }, 4000);
         },
-        error: (err) => console.log("Error: ", err)
+        error: () => {
+
+          this.mensajeError = "Error al agregar una casa";
+          this.showErrorMessage(this.mensajeError);
+        }
       });
     } else {
-      console.log("El formulario no es válido, no se puede enviar.");
+
+        this.mensajeError = "Formulario no válido. No se puede enviar";
+        this.showErrorMessage(this.mensajeError);
     }
   }
 
@@ -231,6 +244,15 @@ export class ManagementAddHouseComponent implements OnInit {
   
     setTimeout(() => {
       this.mensajeError = '';
+    }, 3000);
+  }
+
+  private showMessage(mensaje: string) { 
+  
+    this.mensajeExito = mensaje;
+  
+    setTimeout(() => {
+      this.mensajeExito = '';
     }, 3000);
   }
 

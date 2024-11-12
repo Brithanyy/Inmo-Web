@@ -24,6 +24,7 @@ export class ManagementAddLandComponent implements OnInit {
 
   userBuffer?: User; 
   mensajeError?: string = ''; 
+  mensajeExito?: string = ''; 
   router = inject(Router); 
   servicioUsuario = inject(UserService); 
   landService = inject(LandService);
@@ -159,14 +160,25 @@ export class ManagementAddLandComponent implements OnInit {
       this.land.reseñas = [];
       this.landService.addLand(this.land).subscribe({
         next: () => {
-          alert("Terreno agregado con éxito");
-          this.formularioLand.reset();
-          this.redirectToHomeManagement();
+
+          this.mensajeExito = "Error al agregar un terreno";
+          this.showMessage(this.mensajeExito);
+
+          setTimeout(() => {
+            this.formularioLand.reset();
+            this.redirectToHomeManagement();
+          }, 4000);
         },
-        error: (err) => console.log("Error: ", err)
+        error: () => {
+
+          this.mensajeError = "Error al agregar un terreno";
+          this.showErrorMessage(this.mensajeError);
+        }
       });
     } else {
-      console.log("El formulario no es válido, no se puede enviar.");
+      
+      this.mensajeError = "Formulario no válido. No se puede enviar";
+      this.showErrorMessage(this.mensajeError);
     }
   }
 
@@ -200,6 +212,15 @@ export class ManagementAddLandComponent implements OnInit {
   
     setTimeout(() => {
       this.mensajeError = '';
+    }, 3000);
+  }
+
+  private showMessage(mensaje: string) { 
+  
+    this.mensajeExito = mensaje;
+  
+    setTimeout(() => {
+      this.mensajeExito = '';
     }, 3000);
   }
 

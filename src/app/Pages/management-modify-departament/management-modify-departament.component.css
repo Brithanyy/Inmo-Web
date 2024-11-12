@@ -82,3 +82,50 @@
   background-color: #dc3545;
   color: white;
 }
+
+.mensajeExito {
+  background-color: #b7f7b7; 
+  border: 1px solid #007200; 
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: #007200; 
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.mensajeExito:hover {
+  background-color: #9df59d;
+  transition: background-color 0.3s ease;
+}
+
+.containerMensajeExito {
+  width: 100%; 
+  padding: 20px; 
+  margin: 0 auto;
+}
+
+.mensajeError {
+  background-color: #f8b1b1; 
+  border: 1px solid red; 
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  color: white; 
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.mensajeError:hover {
+  background-color: #fc7a7a;
+  color: white; 
+  transition: background-color 0.3s ease;
+}
+
+.containerMensajeError {
+  width: 100%; 
+  padding: 20px; 
+  margin: 0 auto;
+}

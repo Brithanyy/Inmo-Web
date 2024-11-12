@@ -25,6 +25,7 @@ export class ManagementAddDepartamentComponent implements OnInit {
 
   userBuffer?: User;
   mensajeError?: string = ''; 
+  mensajeExito?: string = ''; 
   router = inject(Router); 
   servicioUsuario = inject(UserService); 
   departamentService = inject(DepartamentService);
@@ -189,14 +190,25 @@ onSubmit() {
     this.departament.reseñas = [];
     this.departamentService.addDepartament(this.departament).subscribe({
       next: () => {
-        alert("Departamento agregado con éxito");
-        this.formulario.reset();
-        this.redirectToHomeManagement();
+
+        this.mensajeExito = "Departamento agregado con éxito";
+        this.showMessage(this.mensajeExito);
+
+        setTimeout(() => {
+          this.formulario.reset();
+          this.redirectToHomeManagement();
+        }, 4000);
       },
-      error: (err) => console.log("Error: ", err)
+      error: (err) => {
+
+        this.mensajeError = "Error al agregar un departamento";
+        this.showErrorMessage(this.mensajeError);
+      }
     });
   } else {
-    console.log("El formulario no es válido, no se puede enviar.");
+    
+    this.mensajeError = "Formulario no válido. No se puede enviar";
+    this.showErrorMessage(this.mensajeError);
   }
 }
 
@@ -224,12 +236,22 @@ redirectToHome() {
 redirectToHomeManagement() { 
   this.router.navigate(['/management-home']);
 }
-private showErrorMessage(mensaje: string) { 
 
+private showErrorMessage(mensaje: string) { 
+  
   this.mensajeError = mensaje;
 
   setTimeout(() => {
     this.mensajeError = '';
+  }, 3000);
+}
+
+private showMessage(mensaje: string) { 
+
+  this.mensajeExito = mensaje;
+
+  setTimeout(() => {
+    this.mensajeExito = '';
   }, 3000);
 }
 

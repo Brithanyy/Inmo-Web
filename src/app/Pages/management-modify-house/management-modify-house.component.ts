@@ -24,6 +24,9 @@ export class ManagementModifyHouseComponent implements OnInit {
   redirec = inject(Router); 
   houseService = inject(HouseService);
   router = inject(ActivatedRoute);
+  mensajeError?: string = '';
+  mensajeExito?: string = '';
+
   house: House = {
     id: '',
     idUsuario: "1",
@@ -186,15 +189,27 @@ get cantidadBanos() {
       this.house.tipoPropiedad = "Casa";
       this.house.reseñas = [];
       this.houseService.modifyHouse(String(this.house.id),this.house).subscribe({
+
         next: () => {
-          alert("Casa modificada con éxito");
-          this.formulario.reset();
-          this.redirectToHomeManagement();
+
+          this.mensajeExito = "Casa Modificada con éxito";
+          this.showMessage(this.mensajeExito);
+
+          setTimeout(() => {
+            this.formulario.reset();
+            this.redirectToHomeManagement();
+          }, 4000);
         },
-        error: (err) => console.log("Error: ", err)
+        error: (err) => {
+
+          this.mensajeError = "Error al modificar una casa";
+          this.showErrorMessage(this.mensajeError);
+        }
       });
     } else {
-      console.log("El formulario no es válido, no se puede enviar.");
+
+        this.mensajeError = "Formulario no válido. No se puede enviar";
+        this.showErrorMessage(this.mensajeError);
     }
   }
 
@@ -244,5 +259,23 @@ get cantidadBanos() {
     this.house.imagenes.forEach(image => {
       imagesArray.push(this.fb.control(image));
     });
+  }
+
+  private showErrorMessage(mensaje: string) { 
+  
+    this.mensajeError = mensaje;
+  
+    setTimeout(() => {
+      this.mensajeError = '';
+    }, 3000);
+  }
+  
+  private showMessage(mensaje: string) { 
+  
+    this.mensajeExito = mensaje;
+  
+    setTimeout(() => {
+      this.mensajeExito = '';
+    }, 3000);
   }
 }

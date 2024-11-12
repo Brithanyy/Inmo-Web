@@ -1,6 +1,7 @@
 @if (userBuffer?.estaLogueado) {
 
   <app-management-header></app-management-header>
+
   <div class="container mt-5">
     <form class="form-house shadow-lg p-4 rounded" [formGroup]="formulario" (ngSubmit)="onSubmit()">
       <h2 class="text-center mb-4">Agregar Departamento</h2>
@@ -69,7 +70,7 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="provincia" class="form-label">Provincia</label>
-            <input type="text" id="provincia" formControlName="provincia" class="form-control" placeholder="Ej. Argentina"
+            <input type="text" id="provincia" formControlName="provincia" class="form-control" placeholder="Ej. Buenos Aires"
                        [ngClass]="{'is-invalid': formulario.get('direccionPropiedad.provincia')?.touched && (formulario.get('direccionPropiedad.provincia')?.hasError('required') || formulario.get('direccionPropiedad.provincia')?.hasError('hasNumbers'))}">
                 <div *ngIf="formulario.get('direccionPropiedad.provincia')?.invalid && formulario.get('direccionPropiedad.provincia')?.touched" class="invalid-feedback">
                   <div *ngIf="formulario.get('direccionPropiedad.provincia')?.hasError('required')">La provincia es obligatoria.</div>
@@ -180,6 +181,25 @@
       <!--! Botón Enviar -->
       <button type="submit" class="btn text-white w-100 mt-3 personalizado">Agregar Departamento</button> 
     </form>
+
+    @if (mensajeExito) {
+
+      <div class="containerMensajeExito">
+        <div class="mensajeExito">
+          {{mensajeExito}}
+        </div>
+      </div>
+    }
+  
+    @if ( mensajeError) {
+  
+      <div class="containerMensajeError">
+        <div class="mensajeError">
+          {{mensajeError}}
+        </div>
+      </div>
+    }
+
   </div>
   <app-management-footer></app-management-footer>
 }

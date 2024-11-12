@@ -24,6 +24,8 @@ export class ManagementModifyLandComponent {
   redirec = inject(Router); 
   landService = inject(LandService);
   router = inject(ActivatedRoute);
+  mensajeExito?: string = '';
+  mensajeError?: string = '';
 
   land: Land = {
     tipoPropiedad: 'Terreno',
@@ -155,14 +157,25 @@ export class ManagementModifyLandComponent {
       this.land.reseñas = [];
       this.landService.modifyLand(String(this.land.id),this.land).subscribe({
         next: () => {
-          alert("Terreno modificado con éxito");
-          this.formularioLand.reset();
-          this.redirectToHomeManagement();
+          
+          this.mensajeExito = "Terreno modificado con éxito";
+          this.showMessage(this.mensajeExito);
+
+          setTimeout(() => {
+            this.formularioLand.reset();
+            this.redirectToHomeManagement();
+          }, 4000);
         },
-        error: (err) => console.log("Error: ", err)
+        error: (err) => {
+
+          this.mensajeError = "Error al modificar un terreno";
+          this.showErrorMessage(this.mensajeError);
+        }
       });
     } else {
-      console.log("El formulario no es válido, no se puede enviar.");
+          
+      this.mensajeError = "Formulario no válido. No se puede enviar";
+      this.showErrorMessage(this.mensajeError);
     }
   }
 
@@ -210,6 +223,24 @@ export class ManagementModifyLandComponent {
     this.land.imagenes.forEach(image => {
       imagesArray.push(this.fb.control(image));
     });
+  }
+
+  private showErrorMessage(mensaje: string) { 
+  
+    this.mensajeError = mensaje;
+  
+    setTimeout(() => {
+      this.mensajeError = '';
+    }, 3000);
+  }
+  
+  private showMessage(mensaje: string) { 
+  
+    this.mensajeExito = mensaje;
+  
+    setTimeout(() => {
+      this.mensajeExito = '';
+    }, 3000);
   }
 
 }
