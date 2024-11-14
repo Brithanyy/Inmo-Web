@@ -334,13 +334,12 @@
       "fecha": "2024-11-11T11:24:04.222Z"
     }
   ],
-  
   "Usuario": [
     {
       "id": "68bf",
       "userName": "UserAdmin",
       "password": "passwordUserAdmin2024",
-      "estaLogueado": false
+      "estaLogueado": true
     }
   ]
 }
