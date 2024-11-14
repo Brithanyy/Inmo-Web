@@ -150,8 +150,8 @@
 
                     @if (mensajeExito) {
   
-                        <div class="containerMensajeReseña">
-                            <div class="mensajeReseña">
+                        <div class="containerMensaje">
+                            <div class="mensajeExito mt-2">
                                 <p>Reseña eliminada con éxito</p>
                             </div>
                         </div>
@@ -159,8 +159,10 @@
                     
                     @if (mensajeError) {
 
-                        <div class="no-reviews-card">
-                            <p>Error al eliminar la reseña</p>
+                        <div class="containerMensaje">
+                            <div class="no-reviews-card">
+                                <p>Error al eliminar la reseña</p>
+                            </div>
                         </div>
                     }
                 }
