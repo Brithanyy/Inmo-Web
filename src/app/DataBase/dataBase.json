@@ -289,6 +289,15 @@
       "fecha": "2024-11-03T21:42:56.049Z"
     },
     {
+      "id": "68bf",
+      "tipoPropiedad": "Departamento",
+      "idPropiedad": "1",
+      "usuario": "Paola Colino",
+      "comentario": "Esta propiedad es espectacular. La ubicación frente a la Bahía Varese es perfecta, con vistas al mar que realmente impresionan. Los espacios son amplios y muy luminosos, especialmente el estar y los balcones, que ofrecen un ambiente acogedor y lujoso. Las habitaciones son cómodas y bien distribuidas, ideales para una familia grande. Además, los detalles de calidad, como los pisos de porcelanato y las ventanas DVH, realmente se notan. Sin dudas, una propiedad que lo tiene todo para vivir con estilo y confort. Muy recomendada.",
+      "estrellas": "5",
+      "fecha": "2024-11-03T22:27:33.894Z"
+    },
+    {
       "id": "cbcf",
       "tipoPropiedad": "Casa",
       "idPropiedad": "1",
@@ -316,15 +325,16 @@
       "fecha": "2024-11-10T20:25:41.972Z"
     },
     {
-      "id": "1713",
-      "tipoPropiedad": "Departamento",
-      "idPropiedad": "3",
-      "usuario": "sads",
-      "comentario": "sds",
+      "id": "5b01",
+      "tipoPropiedad": "Casa",
+      "idPropiedad": "1",
+      "usuario": "foisjdgsd",
+      "comentario": "ñsdfmsdñfm",
       "estrellas": 1,
-      "fecha": "2024-11-12T16:03:14.384Z"
+      "fecha": "2024-11-11T11:24:04.222Z"
     }
   ],
+  
   "Usuario": [
     {
       "id": "68bf",
