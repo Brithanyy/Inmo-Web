@@ -31,6 +31,9 @@ Nota: Aunque las rutas en Inmo-Web no están protegidas formalmente, si el usuar
 
 [@Rouse02](https://github.com/Rouse02) - Rocio Ortiz
 
+## Link a GitHub (Repositorio)
+
+(https://github.com/Brithanyy/Inmo-Web)
 
 ## Installation
 
@@ -44,8 +47,8 @@ Install my-project with npm
   json-server --watch src\app\DataBase\dataBase.json
   
 ```
-  Para comprobar las rutas de gestión debe hacer lo siguiente:
+  Para iniciar sesión debe hacer lo siguiente:
 
-  --Ruta /login (Aquí debe iniciar sesión con el siguiente usuario. Username: UserAdmin Password: passwordUserAdmin2024).
-  --Una vez logueado, se direcciona a la ruta management-home, desde aquí puede agregar, eliminar y modificar propiedades.
+  --  Ruta /login (Aquí debe iniciar sesión con el siguiente usuario. Username: UserAdmin Password: passwordUserAdmin2024).
+
     
