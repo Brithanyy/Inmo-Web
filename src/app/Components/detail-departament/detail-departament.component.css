@@ -277,7 +277,16 @@
     transition: background-color 0.3s ease;
 }
 
-.mensajeReseña {
+.botonModificar {
+    background-color: #007200;
+    color: white;
+}
+
+.botonModificar:hover {
+    background-color: #015201;
+}
+
+.mensajeExito {
     background-color: #b7f7b7; 
     border: 1px solid #007200; 
     border-radius: 8px;
@@ -289,21 +298,30 @@
     font-weight: 500;
 }
 
-.mensajeReseña:hover {
+.mensajeExito:hover {
     background-color: #9df59d;
     transition: background-color 0.3s ease;
 }
 
-.containerMensajeReseña {
+.mensajeError {
+    background-color: #f59d9d; 
+    border: 1px solid red; 
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    color: red; 
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.mensajeError:hover {
+    background-color: #f59d9d;
+    transition: background-color 0.3s ease;
+}
+
+.containerMensaje {
     width: 100%; 
     padding: 20px; 
     margin: 0 auto;
-}
-
-.botonModificar {
-    background-color: #007200;
-    color: white;
-}
-.botonModificar:hover {
-    background-color: #015201;
 }

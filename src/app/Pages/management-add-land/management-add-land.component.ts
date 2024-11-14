@@ -154,6 +154,7 @@ export class ManagementAddLandComponent implements OnInit {
   onSubmit() {
 
     if (this.formularioLand.valid) {
+
       this.land = this.formularioLand.getRawValue();
       this.land.idUsuario = "1";
       this.land.tipoPropiedad = "Terreno"
@@ -161,13 +162,15 @@ export class ManagementAddLandComponent implements OnInit {
       this.landService.addLand(this.land).subscribe({
         next: () => {
 
-          this.mensajeExito = "Error al agregar un terreno";
+          this.mensajeExito = "Terreno agregado con éxito";
           this.showMessage(this.mensajeExito);
 
+          this.formularioLand.reset();
+
           setTimeout(() => {
-            this.formularioLand.reset();
+            
             this.redirectToHomeManagement();
-          }, 4000);
+          }, 3000);
         },
         error: () => {
 

@@ -32,14 +32,11 @@ export class DetailLandComponent implements OnInit {
   landBuffer?: Land;
   currentImageIndex = 0;
   selectedImage: string | null = null;
-  errorServicioLand?: string;
-  mensajeServicioLand?: string;
-
   reviews?: Review[] = [];
-  errorServicioResena?: string;
   isLoading = true;
-  mensajeResenia?: string = '';
-  errorResenia?: string = '';
+  mensajeExito?: string = '';
+  mensajeError?: string = '';
+
 
   ngOnInit(): void {
 
@@ -54,8 +51,8 @@ export class DetailLandComponent implements OnInit {
       },
 
       error: (returnedError) => {
-        this.errorServicioLand = returnedError.message;
-        this.showErrorMessage(this.errorServicioLand);
+        this.mensajeError = "Error al obtener la propiedad";
+        this.showMessageError();
         this.isLoading = false;
       }
     });
@@ -77,9 +74,9 @@ export class DetailLandComponent implements OnInit {
           this.isLoading = false;
         },
 
-        error: (returnedError) => {
-          this.errorServicioResena = returnedError.message;
-          this.showErrorMessage(this.errorServicioResena);
+        error: () => {
+          this.mensajeError = 'Error al obtener las reseñas para la propiedad';
+          this.showMessageError();
           this.isLoading = false;
         }
       });
@@ -118,14 +115,21 @@ export class DetailLandComponent implements OnInit {
 
       next: () => {
 
-        this.mensajeServicioLand = "Propiedad eliminada con éxito";
-        this.showErrorMessage(this.mensajeServicioLand);
-        this.router.navigate(['management-home']);
+        this.mensajeExito = "Propiedad eliminada con éxito";
+        this.showMessage();
+
+        setTimeout(() => {
+          this.router.navigate(['management-home']);
+        }, 3000);
       },
 
       error: () => {
-        this.mensajeServicioLand = "Error al eliminar la propiedad";
-        this.showErrorMessage(this.mensajeServicioLand);
+        this.mensajeError = "Error al eliminar la propiedad";
+        this.showMessageError();
+
+        setTimeout(() => {
+          this.router.navigate(['management-home']);
+        }, 3000);
       }
     })
   }
@@ -140,30 +144,30 @@ export class DetailLandComponent implements OnInit {
 
       next: () => {
         this.reviews = this.reviews?.filter(review => review.id !== idReseña);
-        this.mensajeResenia = "Reseña eliminada con éxito";
-        this.showMessageReseña();
+        this.mensajeExito = "Reseña eliminada con éxito";
+        this.showMessage();
       },
       error: () => {
-        this.errorServicioResena = "Error al eliminar la reseña";
-        this.showErrorReseña();
+        this.mensajeError = "Error al eliminar la reseña";
+        this.showMessageError();
       }
   });
   }
 
-  showMessageReseña() {
+  showMessage() {
 
     setTimeout(() => {
       
-      this.mensajeResenia = '';
+      this.mensajeExito = '';
 
     }, 3000);
   }
 
-  showErrorReseña() {
+  showMessageError() {
 
     setTimeout(() => {
       
-      this.errorResenia = '';
+      this.mensajeError = '';
 
     }, 3000);
   }

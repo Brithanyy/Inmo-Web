@@ -193,9 +193,9 @@ onSubmit() {
 
         this.mensajeExito = "Departamento agregado con éxito";
         this.showMessage(this.mensajeExito);
-
+        this.formulario.reset();
+          
         setTimeout(() => {
-          this.formulario.reset();
           this.redirectToHomeManagement();
         }, 4000);
       },

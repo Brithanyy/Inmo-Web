@@ -3,9 +3,9 @@
 } 
 @else {
 
-    @if (errorServicioLand) {
+    @if (mensajeError) {
         <div class="alert alert-danger">
-            {{errorServicioLand}}
+            {{mensajeError}}
         </div>
     } 
 
@@ -21,6 +21,18 @@
                             <button class="btn btn-danger" (click)="eliminarLand()">
                                 <i class="bi bi-trash"></i> Eliminar Terreno
                             </button>
+
+                            @if (mensajeError) {
+                                <div class="mensajeError mt-2">
+                                    {{mensajeError}}
+                                </div>
+                            } 
+
+                            @if (mensajeExito) {
+                                <div class="mensajeExito mt-2">
+                                    {{mensajeExito}}
+                                </div>
+                            } 
                         </div>
                     }
 
@@ -82,9 +94,9 @@
                     </div>
                 </div>
         
-                @if(errorServicioResena) {
+                @if(mensajeError) {
                     <div class="alert alert-danger">
-                        {{errorServicioResena}}
+                        {{mensajeError}}
                     </div>
                 }
         
@@ -121,7 +133,7 @@
                         </div>
                     }
 
-                    @if (mensajeResenia) {
+                    @if (mensajeExito) {
   
                         <div class="containerMensajeReseña">
                             <div class="mensajeReseña">
@@ -129,7 +141,7 @@
                             </div>
                         </div>
                     }
-                    @if (errorResenia) {
+                    @if (mensajeError) {
 
                         <div class="no-reviews-card">
                             <p>Error al eliminar la reseña</p>

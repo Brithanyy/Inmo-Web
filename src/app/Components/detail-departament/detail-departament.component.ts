@@ -30,10 +30,8 @@ export class DetailDepartamentComponent implements OnInit {
   departamentBuffer?: Departament;
   currentImageIndex = 0;
   selectedImage: string | null = null;
-  errorServicioDepartament?: string;
-  mensajeServicioDepartament?: string;
-  mensajeResenia?: string = '';
-  errorResenia?: string = '';
+  mensajeExito?: string = '';
+  mensajeError?: string = '';
 
   reviews?: Review[] = [];
   errorServicioResena?: string;
@@ -51,9 +49,9 @@ export class DetailDepartamentComponent implements OnInit {
         this.loadReviews();
       },
 
-      error: (returnedError) => {
-        this.errorServicioDepartament = returnedError.mesagge;
-        this.showErrorMessage(this.errorServicioDepartament);
+      error: () => {
+        this.mensajeError = "Error al obtener la propiedad";
+        this.showMessageError();
         this.isLoading = false;
       }
     });
@@ -75,9 +73,9 @@ export class DetailDepartamentComponent implements OnInit {
           this.isLoading = false;
         },
 
-        error: (returnedError) => {
-          this.errorServicioResena = returnedError.message;
-          this.showErrorMessage(this.errorServicioResena);
+        error: () => {
+          this.mensajeError = 'Error al obtener las reseñas para la propiedad';
+          this.showMessageError();
           this.isLoading = false;
         }
       });
@@ -116,14 +114,21 @@ export class DetailDepartamentComponent implements OnInit {
 
       next: () => {
 
-        this.mensajeServicioDepartament = "Propiedad eliminada con éxito";
-        this.showErrorMessage(this.mensajeServicioDepartament);
-        this.router.navigate(['management-home']);
+        this.mensajeExito = "Propiedad eliminada con éxito";
+        this.showMessage();
+
+        setTimeout(() => {
+          this.router.navigate(['management-home']);
+        }, 3000);
       },
 
       error: () => {
-        this.mensajeServicioDepartament = "Error al eliminar la propiedad";
-        this.showErrorMessage(this.mensajeServicioDepartament);
+        this.mensajeError = "Error al eliminar la propiedad";
+        this.showMessageError();
+
+        setTimeout(() => {
+          this.router.navigate(['management-home']);
+        }, 3000);
       }
     })
   }
@@ -138,30 +143,30 @@ export class DetailDepartamentComponent implements OnInit {
 
       next: () => {
           this.reviews = this.reviews?.filter(review => review.id !== idReseña);
-          this.mensajeResenia = "Reseña eliminada con éxito";
-          this.showMessageReseña();
+          this.mensajeExito = "Reseña eliminada con éxito";
+          this.showMessage();
       },
-      error: (error) => {
-          this.errorServicioResena = "Error al eliminar la reseña";
-          this.showErrorReseña();
+      error: () => {
+        this.mensajeError = "Error al eliminar la reseña";
+        this.showMessageError();
       }
   });
   }
-
-  showMessageReseña() {
+  
+  showMessage() {
 
     setTimeout(() => {
       
-      this.mensajeResenia = '';
+      this.mensajeExito = '';
 
     }, 3000);
   }
 
-  showErrorReseña() {
+  showMessageError() {
 
     setTimeout(() => {
       
-      this.errorResenia = '';
+      this.mensajeError = '';
 
     }, 3000);
   }

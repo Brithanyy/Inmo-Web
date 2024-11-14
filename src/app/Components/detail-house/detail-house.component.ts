@@ -1,4 +1,4 @@
-import { Component, EventEmitter, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HouseService } from '../../Services/House/house.service';
 import { House } from '../../Models/House.model';
@@ -31,14 +31,11 @@ export class DetailHouseComponent implements OnInit {
   houseBuffer?: House;
   currentImageIndex = 0;
   selectedImage: string | null = null;
-  errorServicioHouse?: string;
-  mensajeServicioHouse?: string; 
 
   reviews?: Review[] = [];
-  errorServicioResena?: string;
   isLoading = true; 
-  mensajeResenia?: string = '';
-  errorResenia?: string = '';
+  mensajeExito?: string = '';
+  mensajeError?: string = '';
 
   ngOnInit(): void {
 
@@ -52,9 +49,9 @@ export class DetailHouseComponent implements OnInit {
         this.loadReviews();
       },
 
-      error: (returnedError) => {
-        this.errorServicioHouse = returnedError.mesagge;
-        this.showErrorMessage(this.errorServicioHouse);
+      error: () => {
+        this.mensajeError = "Error al obtener la propiedad";
+        this.showMessageError();
         this.isLoading = false;
       }
     });
@@ -67,6 +64,7 @@ export class DetailHouseComponent implements OnInit {
       this.servicioReview.getReviews().subscribe({
 
         next: (returnedReviews) => {
+
           this.reviews = returnedReviews
             .filter(review => review.idPropiedad === this.houseBuffer?.id && review.tipoPropiedad === "Casa")
             .map(review => ({
@@ -76,9 +74,10 @@ export class DetailHouseComponent implements OnInit {
           this.isLoading = false;
         },
 
-        error: (returnedError) => {
-          this.errorServicioResena = returnedError.message;
-          this.showErrorMessage(this.errorServicioResena);
+        error: () => {
+
+          this.mensajeError = 'Error al obtener las reseñas para la propiedad';
+          this.showMessageError();
           this.isLoading = false;
         }
       });
@@ -105,26 +104,27 @@ export class DetailHouseComponent implements OnInit {
     this.selectedImage = null;
   }
 
-  showErrorMessage(error: string | undefined) {
-    if (error) {
-      alert(`Error al cargar las reseña: ${error}`);
-    }
-  }
-
   eliminarHouse() { 
 
     this.servicioHouse.deleteHouse(String(this.houseID)).subscribe({
 
       next: () => {
 
-        this.mensajeServicioHouse = "Propiedad eliminada con éxito";
-        this.showErrorMessage(this.mensajeServicioHouse);
-        this.router.navigate(['management-home']);
+        this.mensajeExito = "Propiedad eliminada con éxito";
+        this.showMessage();
+
+        setTimeout(() => {
+          this.router.navigate(['management-home']);
+        }, 3000);
       },
 
       error: () => {
-        this.mensajeServicioHouse = "Error al eliminar la propiedad";
-        this.showErrorMessage(this.mensajeServicioHouse);
+        this.mensajeError = "Error al eliminar la propiedad";
+        this.showMessageError();
+
+        setTimeout(() => {
+          this.router.navigate(['management-home']);
+        }, 3000);
       }
     });
   }
@@ -140,30 +140,31 @@ export class DetailHouseComponent implements OnInit {
 
       next: () => {
           this.reviews = this.reviews?.filter(review => review.id !== idReseña);
-          this.mensajeResenia = "Reseña eliminada con éxito";
-          this.showMessageReseña();
+
+          this.mensajeExito = "Reseña eliminada con éxito";
+          this.showMessage();
       },
       error: () => {
-          this.errorServicioResena = "Error al eliminar la reseña";
-          this.showErrorReseña();
+          this.mensajeError = "Error al eliminar la reseña";
+          this.showMessageError();
       }
   });
   }
 
-  showMessageReseña() {
+  showMessage() {
 
     setTimeout(() => {
       
-      this.mensajeResenia = '';
+      this.mensajeExito = '';
 
     }, 3000);
   }
 
-  showErrorReseña() {
+  showMessageError() {
 
     setTimeout(() => {
       
-      this.errorResenia = '';
+      this.mensajeError = '';
 
     }, 3000);
   }
